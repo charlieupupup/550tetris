@@ -1,0 +1,26 @@
+module positionMove(startX, startY, key, keyCLK);
+
+	input [3:0] key;
+	input keyCLK; // 10 Mz
+	output [9:0] startX, startY;
+	
+	wire [3:0] key;
+	wire keyCLK;
+	wire [9:0] startX, startY;
+	
+	reg moveFlag;
+	initial assign moveFlag = 1'b0;
+	
+	integer count;
+	initial count = 0;
+	always @(posedge keyCLK) begin
+		count = count + 1;
+		if (count > 18'd250000) begin // moveFlag period = 50 ms
+			moveFlag <= ~moveFlag;
+			count = 0;
+		end
+	end
+	
+	
+
+endmodule

@@ -1,0 +1,21 @@
+module displayImage (myTrue, myADDR, startX, startY, ADDR); 
+
+	input wire [9:0] startX, startY;
+	input wire [18:0] ADDR;
+	output reg myTrue;
+	output reg [18:0] myADDR;
+	
+	reg [18:0] ADDRcolumn, ADDRrow;
+	assign ADDRcolumn <= ADDR % 'd640;
+	assign ADDRrow <= ADDR / 'd640 + 'd1;
+	
+	always @(*) begin
+		if (ADDRcolumn >= startX && ADDRcolumn < startX + 'd64 && ADDRrow >= startY && ADDRrow < startY + 'd48) begin
+			myTrue <= 1'b1;
+			myADDR <= (ADDRrow - startY) * 'd640 + ADDRcolumn - startX + 'd1;
+		end else begin
+			myTrue <= 1'b0;
+		end
+	end
+
+endmodule
