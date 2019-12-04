@@ -13,19 +13,25 @@ module field_background(
 	 
 	integer i;
 
-    /*initial begin
-    for(i=0; i<400; i=i+1) begin
-        field_out = 0;
-    end
+    initial begin
+    field_out <= 0;
         
-    end*/
+    end
 
-    always @ (*) 
-    if (block_check_result==1'b0) begin
-	 for(i=0; i<400; i=i+1) begin
-        field_out[i] = field_in[i];
-    end
+    always @ (*)
+    begin
+        if (reset == 1) begin
+            field_out = 0;
+        end
+	 else if (block_check_result==1'b0) 
+	 
+	   field_out <= field_in;
+	 
+	 else 
+		 field_out <= field_out;
+		
+	 end
         
-    end
+    
  
 endmodule
