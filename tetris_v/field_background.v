@@ -10,16 +10,22 @@ module field_background(
     output [399:0] field_out;
 
     reg [399:0] field_out;
+	 
+	integer i;
 
-    always @(posedge reset) begin
-        field_out = 399'd0;
+    /*initial begin
+    for(i=0; i<400; i=i+1) begin
+        field_out = 0;
     end
-
-    always @ () begin
-    if (block_check_result == 0) begin
         
-        field_out[399:0] = field_in[399:0];
-    end
-    end
+    end*/
 
+    always @ (*) 
+    if (block_check_result==1'b0) begin
+	 for(i=0; i<400; i=i+1) begin
+        field_out[i] = field_in[i];
+    end
+        
+    end
+ 
 endmodule
