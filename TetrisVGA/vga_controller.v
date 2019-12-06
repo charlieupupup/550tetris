@@ -6,33 +6,24 @@ module vga_controller(iRST_n,
                       b_data,
                       g_data,
                       r_data,
-							 key,
-							 keyCLK);
+							 field);
 
 	
 input iRST_n;
 input iVGA_CLK;
+input [399:0] field;
 output reg oBLANK_n;
 output reg oHS;
 output reg oVS;
 output [7:0] b_data;
 output [7:0] g_data;  
 output [7:0] r_data;       
-
-///////////////// Custom
-input [3:0] key;  
-input keyCLK;
-wire [9:0] startX, startY;
-wire [18:0] myADDR;    
-wire myTrue;
-wire [7:0] myIndex;
-///////////////// Custom      
          
 reg [18:0] ADDR;
 reg [23:0] bgr_data;
 wire VGA_CLK_n;
 //wire [7:0] index;
-reg [7:0] index;
+//reg [7:0] index;
 wire [23:0] bgr_data_raw;
 wire cBLANK_n,cHS,cVS,rst;
 ////
@@ -55,45 +46,14 @@ begin
 end
 //////////////////////////
 
-positionMove myPM(startX, startY, key, keyCLK);
-displayImage myImage(myTrue, myADDR, startX, startY, ADDR);
-
 //////INDEX addr.
 assign VGA_CLK_n = ~iVGA_CLK;
-/*
-img_data	img_data_inst (
-	.address ( ADDR ),
-	.clock ( VGA_CLK_n ),
-	.q ( index ),
-	);
-*/
-always @(*) begin
-	if (ADDR < 19'h257fd) index <= 8'h7e;
-	else index <= 8'h15;
-end
-	
-my_data my_data_inst (
-	.address ( myADDR ),
-	.clock ( VGA_CLK_n ),
-	.q ( myIndex ),
-	);	
 
-/////////////////////////
-//////Add switch-input logic here
-	
-//////Color table output
-wire [7:0] theIndex;
-assign theIndex = myTrue ? myIndex : index;
-img_index	img_index_inst (
-	.address ( theIndex ),
-	.clock ( iVGA_CLK ),
-	.q ( bgr_data_raw ),
-	);	
+fieldDisplay myfD(ADDR, field, bgr_data_raw);
 
 //////
 //////latch valid data at falling edge;
 always@(posedge VGA_CLK_n) bgr_data <= bgr_data_raw;
-
 assign b_data = bgr_data[23:16];
 assign g_data = bgr_data[15:8];
 assign r_data = bgr_data[7:0]; 

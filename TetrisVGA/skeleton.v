@@ -1,4 +1,4 @@
-module skeleton(resetn, 
+module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	ps2_clock, ps2_data, 										// ps2 related I/O
 	debug_data_in, debug_addr, leds, 						// extra debugging ports
 	lcd_data, lcd_rw, lcd_en, lcd_rs, lcd_on, lcd_blon,// LCD info
@@ -11,8 +11,8 @@ module skeleton(resetn,
 	VGA_R,   														//	VGA Red[9:0]
 	VGA_G,	 														//	VGA Green[9:0]
 	VGA_B,															//	VGA Blue[9:0]
-	CLOCK_50,   													// 50 MHz clock
-	key);																// Movement input
+	CLOCK_50M);	   											   // 50 MHz clock
+															
 		
 	////////////////////////	VGA	////////////////////////////
 	output			VGA_CLK;   				//	VGA Clock
@@ -23,8 +23,7 @@ module skeleton(resetn,
 	output	[7:0]	VGA_R;   				//	VGA Red[9:0]
 	output	[7:0]	VGA_G;	 				//	VGA Green[9:0]
 	output	[7:0]	VGA_B;   				//	VGA Blue[9:0]
-	input				CLOCK_50;
-	input 	[3:0] key;
+	input				CLOCK_50M;
 
 	////////////////////////	PS2	////////////////////////////
 	input 			resetn;
@@ -37,8 +36,7 @@ module skeleton(resetn,
 	output 	[31:0] 	debug_data_in;
 	output   [11:0]   debug_addr;
 	
-	
-	
+	//------------------------------------------------------------------------------
 	
 	
 	wire			 clock;
@@ -48,54 +46,25 @@ module skeleton(resetn,
 	wire			 ps2_key_pressed;
 	wire	[7:0]	 ps2_out;	
 	
-	// clock divider (by 5, i.e., 10 MHz)
-	pll div(CLOCK_50,inclock);
-	assign clock = CLOCK_50; // clock 10 MHz
+	wire clock_10M, clock_10, clock_1;
+	wire leftTrue, rightTrue, rotateTrue;
 	
-	// UNCOMMENT FOLLOWING LINE AND COMMENT ABOVE LINE TO RUN AT 50 MHz
-	//assign clock = inclock;
+	wire [399:0] field;
 	
-	// your processor
-	processor myprocessor(clock, ~resetn, /*ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data,*/ debug_data_in, debug_addr);
+	// clock divider by 5 to 10 MHz
+	pll div(CLOCK_50M, clock_10M);
+	assign clock = CLOCK_50M; // Now clock is 50 MHz
+	clkCounter myclkCounter(CLOCK_50M, clock_10, clock_1); // 10Hz and 1Hz.
 	
 	// keyboard controller
-	PS2_Interface myps2(clock, resetn, ps2_clock, ps2_data, ps2_key_data, ps2_key_pressed, ps2_out); 
+	PS2_Interface myps2(clock_10, resetn, ps2_clock, ps2_data, ps2_key_data, ps2_key_pressed, ps2_out); // Input clock 10Hz.Output ps2_out.
 	
-	/// ---------------------------- ps2_out is the key. One keyboard press should correspond to only one ps2_out value!!
-	reg [7:0] modify;
-	always @(*) begin	
-		case (ps2_out)
-			8'h21 : modify <= 8'h43;
-			8'h23 : modify <= 8'h44;
-			8'h42 : modify <= 8'h4b;
-			8'h2d : modify <= 8'h52;
-			default : modify = ps2_out;
-		endcase
-	end
-	/// ---------------------------- This is verified by Hexadecimal_To_Seven_Segment module.
-	
-	// lcd controller
-	//lcd mylcd(clock, ~resetn, 1'b1, ps2_out, lcd_data, lcd_rw, lcd_en, lcd_rs, lcd_on, lcd_blon);
-	lcd mylcd(clock, ~resetn, 1'b1, modify, lcd_data, lcd_rw, lcd_en, lcd_rs, lcd_on, lcd_blon); // New lcd module for recitation 5.
-	
-	// example for sending ps2 data to the first two seven segment displays
-	Hexadecimal_To_Seven_Segment hex1(ps2_out[3:0], seg1);
-	Hexadecimal_To_Seven_Segment hex2(ps2_out[7:4], seg2);
-	
-	// the other seven segment displays are currently set to 0
-	Hexadecimal_To_Seven_Segment hex3(4'b0, seg3);
-	Hexadecimal_To_Seven_Segment hex4(4'b0, seg4);
-	Hexadecimal_To_Seven_Segment hex5(4'b0, seg5);
-	Hexadecimal_To_Seven_Segment hex6(4'b0, seg6);
-	Hexadecimal_To_Seven_Segment hex7(4'b0, seg7);
-	Hexadecimal_To_Seven_Segment hex8(4'b0, seg8);
-	
-	// some LEDs that you could use for debugging if you wanted
-	assign leds = 8'b00101011;
-	
+	// Keyboard signal processing
+	keyProcess my_kp(ps2_out, leftTrue, rightTrue, rotateTrue); //////////////
+
 	// VGA
-	Reset_Delay			r0	(.iCLK(CLOCK_50),.oRESET(DLY_RST)	);
-	VGA_Audio_PLL 		p1	(.areset(~DLY_RST),.inclk0(CLOCK_50),.c0(VGA_CTRL_CLK),.c1(AUD_CTRL_CLK),.c2(VGA_CLK)	);
+	Reset_Delay			r0	(.iCLK(CLOCK_50M),.oRESET(DLY_RST)	);
+	VGA_Audio_PLL 		p1	(.areset(~DLY_RST),.inclk0(CLOCK_50M),.c0(VGA_CTRL_CLK),.c1(AUD_CTRL_CLK),.c2(VGA_CLK)	);
 	vga_controller vga_ins(.iRST_n(DLY_RST),
 								 .iVGA_CLK(VGA_CLK),
 								 .oBLANK_n(VGA_BLANK),
@@ -104,8 +73,27 @@ module skeleton(resetn,
 								 .b_data(VGA_B),
 								 .g_data(VGA_G),
 								 .r_data(VGA_R),
-								 .key(key),
-								 .keyCLK(clock)); // clock 10 MHz
+								 .field(field)); // clock 10 MHz
 	
+	
+	
+	//*************************************************************************************************************
+	// Your processor.
+	processor myprocessor(clock, ~resetn, /*ps2_key_pressed, ps2_out, lcd_write_en, lcd_write_data,*/ debug_data_in, debug_addr);
+	// lcd controller
+	lcd mylcd(clock, ~resetn, 1'b1, ps2_out, lcd_data, lcd_rw, lcd_en, lcd_rs, lcd_on, lcd_blon);	
+	// example for sending ps2 data to the first two seven segment displays
+	Hexadecimal_To_Seven_Segment hex1(ps2_out[3:0], seg1);
+	Hexadecimal_To_Seven_Segment hex2(ps2_out[7:4], seg2);	
+	// the other seven segment displays are currently set to 0
+	Hexadecimal_To_Seven_Segment hex3(4'b0, seg3);
+	Hexadecimal_To_Seven_Segment hex4(4'b0, seg4);
+	Hexadecimal_To_Seven_Segment hex5(4'b0, seg5);
+	Hexadecimal_To_Seven_Segment hex6(4'b0, seg6);
+	Hexadecimal_To_Seven_Segment hex7(4'b0, seg7);
+	Hexadecimal_To_Seven_Segment hex8(4'b0, seg8);
+	// some LEDs that you could use for debugging if you wanted
+	assign leds = 8'b00101011;
+	//*************************************************************************************************************
 	
 endmodule
