@@ -21,7 +21,7 @@ initial begin
     block_pos_y_out = 0;
 end
 
-always @ (posedge clk) 
+always @ (posedge clk)  
     if (drop == 1) begin
     block_pos_y_out = block_pos_y_in + 1;
         

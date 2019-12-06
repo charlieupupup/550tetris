@@ -1,48 +1,33 @@
-module field_merge(
-    rotate,
-    block_pos_x,
-    block_pos_y,
-    block_matrix,
-    field_background,
-    field_display
+module field_merge(rotate, block_pos_x, block_pos_y, block_matrix, field_background, field_display
+    
 );
-input [9:0] rotate;
 
+input [1:0] rotate;
 input [4:0] block_pos_x, block_pos_y;
 input [15:0] block_matrix;
 
 input [399:0] field_background;
+
+
+
 output [399:0] field_display;
 
-always @() begin
-for (b_x = 0; b_x < 4; b_x = b_x + 1) begin
-    for (b_y = 0; b_y < 4; b_y = b_y + 1) begin
-    reg [9:0] rotate_tmp;
-    rotate_tmp = rotate % 4;
-    reg [5:0] block_index_tmp;
-    if (rotate_tmp == 0) begin
-        block_index_tmp = b_y * 4 + b_x;
-    end 
-    if (rotate_tmp == 1) begin
-        block_index_tmp = 12 + b_y - (b_x * 4); 
-    end
-    if (rotate_tmp == 2) begin
-        block_index_tmp = 15 - (b_y * 4) - b_x;
-    end
-    if (rotate_tmp == 3) begin
-        block_index_tmp = 3 - b_y + (b_x * 4);
-    end
+field_merge_cell field_merge_cell_0(block_pos_x, block_pos_y, 0, 0, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_1(block_pos_x, block_pos_y, 0, 1, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_2(block_pos_x, block_pos_y, 0, 2, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_3(block_pos_x, block_pos_y, 0, 3, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_4(block_pos_x, block_pos_y, 1, 0, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_5(block_pos_x, block_pos_y, 1, 1, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_6(block_pos_x, block_pos_y, 1, 2, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_7(block_pos_x, block_pos_y, 1, 3, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_8(block_pos_x, block_pos_y, 2, 0, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_9(block_pos_x, block_pos_y, 2, 1, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_10(block_pos_x, block_pos_y, 2, 2, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_11(block_pos_x, block_pos_y, 2, 3, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_12(block_pos_x, block_pos_y, 3, 0, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_13(block_pos_x, block_pos_y, 3, 1, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_14(block_pos_x, block_pos_y, 3, 2, rotate,block_matrix,field_background,field_display);
+field_merge_cell field_merge_cell_15(block_pos_x, block_pos_y, 3, 3, rotate,block_matrix,field_background,field_display);
 
-    reg [9:0] field_index_tmp;
-    field_index_tmp = (block_pos_y + b_y) * 20 + block_pos_x + b_x;
 
-    if (block_pos_x + b_x < 22 && block_pos_y + b_y < 20 && field_backgound[field_index_tmp == 0]) begin
-    field_display[field_index_tmp] = block_matrix[block_index_tmp];  
-    end
-    
-    end
-end     
-    
-end
-
-endmodule // field_merge
+endmodule // field_merge    

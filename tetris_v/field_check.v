@@ -1,5 +1,4 @@
 module field_check(
-    block_check_result,
     block,
     field,
     block_pos_x,

@@ -14,23 +14,26 @@ module field_background(
 	integer i;
 
     initial begin
-    field_out <= 0;
+    field_out = 0;
         
     end
 
-    always @ (*)
-    begin
-        if (reset == 1) begin
+always @ (*) begin
+    
+    if (reset == 1) begin
             field_out = 0;
-        end
-	 else if (block_check_result==1'b0) 
+    end
+	else if (block_check_result==1'b0) begin
 	 
-	   field_out <= field_in;
+	field_out = field_in;
+    end
 	 
-	 else 
-		 field_out <= field_out;
+	else begin
+	field_out = field_out;
+    end
+end
 		
-	 end
+	
         
     
  

@@ -5,6 +5,8 @@ module row_check(
     score_plus
 );
 
+input clk;
+
 input [399:0] matrix_in;
 output [399:0] matrix_out;
 output [3:0] score_plus;
@@ -19,7 +21,10 @@ always @(posedge clk) begin
 end
 
 
-for (y = 19; y > -1 ; y = y - 1) begin
+
+integer y;
+
+/*for (y = 19; y > -1 ; y = y - 1) begin
     full =  1;
     for (x = 19; x > -1; x = x - 1) begin
         full = matrix_process[y * 20 + x] * full;
@@ -35,7 +40,7 @@ for (y = 19; y > -1 ; y = y - 1) begin
         end
     end
     
-end
+end*/
 
 assign matrix_out = matrix_process;
 
