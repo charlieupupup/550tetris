@@ -1,9 +1,11 @@
-module field_background(
+module field_background(clk,
     reset,
     block_check_result,
     field_in,
     field_out
 );
+
+    input clk;
 
     input reset, block_check_result;
     input [399:0] field_in;
@@ -17,23 +19,18 @@ module field_background(
         
     end
 
-always @ (*) begin
+always @ (posedge clk) begin
     
-    if (reset == 1) begin
-            field_out = 0;
+    if (reset) begin
+        field_out <= 0;
     end
-	else if (block_check_result==1'b1) begin
+
+	else if (block_check_result) begin
+	 	field_out <= field_in;
+    end
 	 
-	field_out = field_in;
-    end
-	 
-	else begin
-	field_out = field_out;
-    end
 end
 		
 	
         
-    
- 
 endmodule
