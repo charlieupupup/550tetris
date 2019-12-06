@@ -1,21 +1,13 @@
 module row_check(
-    clk,
-    matrix_in,
-    matrix_out,
-    score_plus
+   input      [399:0]  matrix_in,
+   output reg [399:0]  matrix_out,
+   output reg [3:0]    score_plus
 );
 
-input clk;
 
-input [399:0] matrix_in;
-output [399:0] matrix_out;
-output [3:0] score_plus;
-
-reg [399:0] matrix_process;
-reg score_plus;
 reg full;
 
-always @(posedge clk) begin
+always @() begin
     score_plus = 0;
     matrix_process = matrix_in;
 end

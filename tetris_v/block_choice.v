@@ -16,11 +16,11 @@ reg [15:0] block_matrix;
 
 always @ (*)
 case (block_num)
-    0: block_matrix <= block_0;
-    1: block_matrix <= block_1;
-    2: block_matrix <= block_2;
-    3: block_matrix <= block_3;
-    4: block_matrix <= block_4;
-    default: block_matrix <= block_0;
+    0: block_matrix = block_0;
+    1: block_matrix = block_1;
+    2: block_matrix = block_2;
+    3: block_matrix = block_3;
+    4: block_matrix = block_4;
+    default: block_matrix = block_0;
 endcase
 endmodule // block_choice

@@ -13,8 +13,8 @@ module block_pos(
 input clk, drop, left, right;
 input [4:0] block_pos_x_in, block_pos_y_in;
 
-output [4:0] block_pos_x_out, block_pos_y_out;
-reg [4:0] block_pos_x_out, block_pos_y_out;
+output reg [4:0] block_pos_x_out, block_pos_y_out;
+
 
 initial begin
     block_pos_x_out = 5;
@@ -23,16 +23,16 @@ end
 
 always @ (posedge clk)  
     if (drop == 1) begin
-    block_pos_y_out = block_pos_y_in + 1;
+    block_pos_y_out <= block_pos_y_in + 1;
         
     end
 
     else if (left == 1) begin
-    block_pos_x_out = block_pos_x_in - 1;   
+    block_pos_x_out <= block_pos_x_in - 1;   
     end
 
     else if (right == 1) begin
-    block_pos_x_out = block_pos_x_in + 1;   
+    block_pos_x_out <= block_pos_x_in + 1;   
     end
 
 
