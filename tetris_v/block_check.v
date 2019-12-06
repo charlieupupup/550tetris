@@ -1,45 +1,44 @@
-module block_check(b_x, b_y, block_index_tmp, field_index_tmp,
-    block,
-    field,
-    block_pos_x,
-    block_pos_y,
-    rotate,
+module block_check(b_x, b_y, block_pos_x, block_pos_y,
+    block_matrix,
+    block_index,
+    field_matrix,
+    field_index,
     block_check_result
 );
-input [1:0] b_x, b_y;
-input [15:0] block;
-input [399:0] field;
-input [4:0] block_pos_x, block_pos_y;
-input [9:0] rotate;
 
-output block_check_result;
+input [4:0] b_x, b_y, block_pos_x, block_pos_y;
 
-reg block_check_result;
+input [15:0] block_matrix;
+input [3:0] block_index;
 
-input [3:0] block_index_tmp;
-input [8:0] field_index_tmp;
+input [399:0] field_matrix;
+input [8:0] field_index;
 
-reg [1:0] rotate_tmp = rotate % 4;
-
+output reg block_check_result;
 
 
 always @(*) begin
     
-
-
-    if (block_pos_x + b_x < 20 && block_pos_y + b_y) begin
-        if (block[block_index_tmp] != 0 && field[field_index_tmp] != 0) begin
-            block_check_result = 1; 
+    if ((block_pos_x + b_x < 5'd20) && (block_pos_y + b_y < 5'd20)) begin
+        if ((block_matrix[block_index] == 1'd1) && (field_matrix[field_index] == 1'd1)) begin
+            block_check_result = 1'd1; 
         end
+		else begin
+            block_check_result = 1'd0;
+		end
+    end
 
 
-         else if (block_pos_x + b_x >= 20 || block_pos_y + b_y >=20) begin
-            block_check_result = 1;
-        end
-        
-    end 
     else begin
-    block_check_result = 0;
-    end    
+        if (block_matrix[block_index] == 1'd1) begin
+            block_check_result = 1'd1;
+        end
+
+        else begin
+            block_check_result = 1'd0;
+        end      
+    end
+        
+    
 end
 endmodule // block_check    
