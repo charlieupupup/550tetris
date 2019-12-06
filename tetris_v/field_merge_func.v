@@ -37,6 +37,7 @@ initial begin
 field_display = 0;
 end
 
+/*
 integer i;
 always @(*)begin
 	
@@ -47,12 +48,13 @@ always @(*)begin
 		end
 	end
 end
+*/
 
-/*always @(*) 
-//if (block_pos_x + b_x < 22 && block_pos_y + b_y < 20 && field_background[field_index] == 0) begin
-if(field_background[2] == 0) /*&& block_matrix[block_index]==1)begin
-field_display[field_index_tmp] = 1;  
-end*/
+always @(posedge clk) 
+if (block_pos_x + b_x < 20 && block_pos_y + b_y < 20) begin
+
+field_display[field_index] <= block_matrix[block_index];  
+end
 
     
    
