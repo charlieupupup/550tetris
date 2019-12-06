@@ -20,7 +20,7 @@ wire [8:0] field_index;
 
 
 
-index_block_field(block_pos_x, block_pos_y, b_x, b_y, rotate, block_index, field_index);
-field_merge_func(rotate,block_pos_x,block_pos_y,b_x, b_y, block_matrix, block_index ,field_background, field_index, field_display);
+index_block_field index_block_field_0(block_pos_x, block_pos_y, b_x, b_y, rotate, block_index, field_index);
+field_merge_func index_block_field_0(rotate,block_pos_x,block_pos_y,b_x, b_y, block_matrix, block_index ,field_background, field_index, field_display);
 
-endmodule // field_merge_cell
+endmodule // field_merge_func

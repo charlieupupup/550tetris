@@ -12,7 +12,7 @@ output [399:0] matrix_out;
 output [3:0] score_plus;
 
 reg [399:0] matrix_process;
-reg score_plus;
+reg [3:0] score_plus;
 reg full;
 
 always @(posedge clk) begin
