@@ -1,4 +1,4 @@
-module index_block_field(clk, rotate_tmp,
+module index_block_field(
     block_pos_x, block_pos_y,
     b_x, b_y,
     rotate,
@@ -6,49 +6,42 @@ module index_block_field(clk, rotate_tmp,
        
 );
 
-input clk;
 
-output [3:0] block_index;
-output [8:0] field_index;
 
-input [1:0] b_x, b_y;
+output reg [4:0] block_index;
+output reg [8:0] field_index;
+
+input [4:0] b_x, b_y;
 input [9:0] rotate;
 
 
 input [4:0] block_pos_x, block_pos_y;
 
-reg [3:0] block_index;
-reg [8:0] field_index;
-
-wire [3:0] rotate_tmp;
-assign rotate_tmp = rotate % 4;
-output [3:0] rotate_tmp;
-
-initial begin
-block_index = 0;
-field_index = 0;
-end
+wire [9:0] rotate_tmp;
+assign rotate_tmp = rotate % 10'd4;
+//output [3:0] rotate_tmp;
 
 
-always @ (posedge clk) begin
+
+always @ (rotate_tmp or block_pos_y or block_pos_x or b_y or b_x) begin
     if (rotate_tmp== 0) begin
-        field_index = (block_pos_y + b_y) * 20 + block_pos_x + b_x;
-        block_index = b_y * 4 + b_x;
+        field_index = (block_pos_y + b_y) * 5'd20 + block_pos_x + b_x;
+        block_index = b_y * 5'd4 + b_x;
     end
 
     else if (rotate_tmp== 1) begin
-    field_index = (block_pos_y + b_y) * 20 + block_pos_x + b_x;
-        block_index = 12 + b_y - (b_x * 4); 
+		  field_index = (block_pos_y + b_y) * 5'd20 + block_pos_x + b_x;
+        block_index = 5'd12 + b_y - (b_x * 5'd4); 
     end
     
     else if (rotate_tmp == 2) begin
-    field_index = (block_pos_y + b_y) * 20 + block_pos_x + b_x;
-        block_index = 15 - (b_y * 4) - b_x;
+        field_index = (block_pos_y + b_y) * 5'd20 + block_pos_x + b_x;
+        block_index = 5'd15 - (b_y * 5'd4) - b_x;
     end
 
-    else if (rotate_tmp== 3) begin
-    field_index = (block_pos_y + b_y) * 20 + block_pos_x + b_x;
-        block_index = 3 - b_y + (b_x * 4);
+    else begin
+        field_index = (block_pos_y + b_y) * 5'd20 + block_pos_x + b_x;
+        block_index = 5'd3 - b_y + (b_x * 5'd4);
     end
 
 end
