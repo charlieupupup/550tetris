@@ -10,8 +10,7 @@ module field_background(
     output [399:0] field_out;
 
     reg [399:0] field_out;
-	 
-	integer i;
+
 
     initial begin
     field_out = 0;
@@ -23,7 +22,7 @@ always @ (*) begin
     if (reset == 1) begin
             field_out = 0;
     end
-	else if (block_check_result==1'b0) begin
+	else if (block_check_result==1'b1) begin
 	 
 	field_out = field_in;
     end
