@@ -2,4 +2,4 @@
 !*.v
 !*.c
 !*.gitignore
-！*.md
+*.md
