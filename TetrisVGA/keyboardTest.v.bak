@@ -1,0 +1,13 @@
+module keyboardTest(clock_10, ps2_out, field);
+
+	input clock_10;
+	input [7:0] ps2_out;
+	output reg [399:0] field;
+	
+	initial field <= 400'b0;
+	
+	always @(posedge clock_10) begin
+		if (ps2_out > 'd0) field <= field + 400'b1;
+	end
+
+endmodule

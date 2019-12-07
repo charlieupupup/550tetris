@@ -200,9 +200,8 @@ set_global_assignment -name VERILOG_FILE video_sync_generator.v
 set_global_assignment -name VERILOG_FILE img_index.v
 set_global_assignment -name VERILOG_FILE img_data.v
 set_global_assignment -name CDF_FILE output_files/Chain1.cdf
-set_global_assignment -name VERILOG_FILE positionMove.v
-set_global_assignment -name VERILOG_FILE displayImage.v
 set_global_assignment -name VERILOG_FILE clkCounter.v
 set_global_assignment -name VERILOG_FILE fieldDisplay.v
 set_global_assignment -name VERILOG_FILE keyProcess.v
+set_global_assignment -name VERILOG_FILE keyboardTest.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

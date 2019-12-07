@@ -1,0 +1,34 @@
+module keyboardTest(clock, clock_10, resetn, ps2_out, field);
+
+	input clock, clock_10, resetn;
+	input [7:0] ps2_out;
+	output [399:0] field;
+	
+	reg [399:0] field;
+	reg [7:0] keySignal;
+	integer count_10;
+	
+	initial begin
+		field <= 400'h700000000000000000;
+		keySignal <= 8'b0;
+		count_10 <= 1;
+	end
+	
+	always @(posedge clock) begin
+		if (ps2_out > 8'b0) keySignal <= ps2_out;
+		if (keySignal > 8'b0) count_10 = count_10 + 1;
+		if (count_10 > 'd10000000) begin
+			keySignal <= 8'b0; // Extend ps2_out value from 40 ns to 200 ms.
+			count_10 <= 1;
+		end
+	end
+	
+	always @(posedge clock_10) begin
+		if (~resetn) field <= 400'h700000000000000000;
+		else if (keySignal == 8'h34) field <= field << 1'b1;
+		else if (keySignal == 8'h23) field <= field >> 1'b1;
+		else if (keySignal == 8'h2d) field <= field >> 'd20;
+		else if (keySignal == 8'h2b) field <= field << 'd20;
+	end
+
+endmodule

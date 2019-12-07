@@ -11,7 +11,7 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	VGA_R,   														//	VGA Red[9:0]
 	VGA_G,	 														//	VGA Green[9:0]
 	VGA_B,															//	VGA Blue[9:0]
-	CLOCK_50M);	   											   // 50 MHz clock
+	CLOCK_50);	   											   // 50 MHz clock
 															
 		
 	////////////////////////	VGA	////////////////////////////
@@ -23,7 +23,7 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	output	[7:0]	VGA_R;   				//	VGA Red[9:0]
 	output	[7:0]	VGA_G;	 				//	VGA Green[9:0]
 	output	[7:0]	VGA_B;   				//	VGA Blue[9:0]
-	input				CLOCK_50M;
+	input				CLOCK_50;
 
 	////////////////////////	PS2	////////////////////////////
 	input 			resetn;
@@ -52,19 +52,20 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	wire [399:0] field;
 	
 	// clock divider by 5 to 10 MHz
-	pll div(CLOCK_50M, clock_10M);
-	assign clock = CLOCK_50M; // Now clock is 50 MHz
-	clkCounter myclkCounter(CLOCK_50M, clock_10, clock_1); // 10Hz and 1Hz.
+	pll div(CLOCK_50, clock_10M);
+	assign clock = CLOCK_50; // Now clock is 50 MHz
+	clkCounter myclkCounter(CLOCK_50, clock_10, clock_1); // 10Hz and 1Hz.
 	
 	// keyboard controller
-	PS2_Interface myps2(clock_10, resetn, ps2_clock, ps2_data, ps2_key_data, ps2_key_pressed, ps2_out); // Input clock 10Hz.Output ps2_out.
+	PS2_Interface myps2(clock, resetn, ps2_clock, ps2_data, ps2_key_data, ps2_key_pressed, ps2_out); // Input clock 10Hz.Output ps2_out.
+	keyboardTest mykbTest(clock, clock_10, resetn, ps2_out, field); ///////////////////////
 	
 	// Keyboard signal processing
-	keyProcess my_kp(ps2_out, leftTrue, rightTrue, rotateTrue); //////////////
+	keyProcess my_kp(ps2_out, leftTrue, rightTrue, rotateTrue);////////////////////
 
 	// VGA
-	Reset_Delay			r0	(.iCLK(CLOCK_50M),.oRESET(DLY_RST)	);
-	VGA_Audio_PLL 		p1	(.areset(~DLY_RST),.inclk0(CLOCK_50M),.c0(VGA_CTRL_CLK),.c1(AUD_CTRL_CLK),.c2(VGA_CLK)	);
+	Reset_Delay			r0	(.iCLK(CLOCK_50),.oRESET(DLY_RST)	);
+	VGA_Audio_PLL 		p1	(.areset(~DLY_RST),.inclk0(CLOCK_50),.c0(VGA_CTRL_CLK),.c1(AUD_CTRL_CLK),.c2(VGA_CLK)	);
 	vga_controller vga_ins(.iRST_n(DLY_RST),
 								 .iVGA_CLK(VGA_CLK),
 								 .oBLANK_n(VGA_BLANK),

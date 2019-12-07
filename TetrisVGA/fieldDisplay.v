@@ -17,8 +17,8 @@ module fieldDisplay(ADDR, field, bgr_data_raw);
 	//fieldIndex = yInt * 20 + xInt;
 	
 	always @(*) begin
-		if (xInt > 19) bgr_data_raw <= 24'hd3b06b; // Score board background colour.
-		else if (field[yInt * 20 + xInt] == 1'b1) bgr_data_raw <= 24'hb47c3c; // Square color.
+		if (xInt > 19) bgr_data_raw <= 24'h4f223b; // Score board background colour.
+		else if (field[yInt * 20 + xInt] == 1'b1) bgr_data_raw <= 24'h00aa00; // Square color.
 		else if (field[yInt * 20 + xInt] == 1'b0) bgr_data_raw <= 24'h000000; // Background color.
 	end
 	

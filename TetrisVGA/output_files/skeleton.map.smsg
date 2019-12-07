@@ -1,3 +1,3 @@
-Warning (10268): Verilog HDL information at positionMove.v(20): always construct contains both blocking and non-blocking assignments File: H:/Altera_lite/Github/550tetris/TetrisVGA/positionMove.v Line: 20
 Warning (10268): Verilog HDL information at clkCounter.v(14): always construct contains both blocking and non-blocking assignments File: H:/Altera_lite/Github/550tetris/TetrisVGA/clkCounter.v Line: 14
 Warning (10268): Verilog HDL information at clkCounter.v(22): always construct contains both blocking and non-blocking assignments File: H:/Altera_lite/Github/550tetris/TetrisVGA/clkCounter.v Line: 22
+Warning (10268): Verilog HDL information at keyboardTest.v(17): always construct contains both blocking and non-blocking assignments File: H:/Altera_lite/Github/550tetris/TetrisVGA/keyboardTest.v Line: 17
