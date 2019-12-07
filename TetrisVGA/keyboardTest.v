@@ -1,29 +1,40 @@
-module keyboardTest(clock, clock_10, resetn, ps2_out, field);
+module keyboardTest(clock, clock_b, resetn, ps2_out, field);
 
-	input clock, clock_10, resetn;
+	input clock, clock_b, resetn;
 	input [7:0] ps2_out;
 	output [399:0] field;
 	
 	reg [399:0] field;
 	reg [7:0] keySignal;
-	integer count_10;
+	integer count_b;
+	reg countFlag;
 	
 	initial begin
 		field <= 400'h700000000000000000;
 		keySignal <= 8'b0;
-		count_10 <= 1;
+		count_b <= 1;
 	end
 	
-	always @(posedge clock) begin
+	// Original version
+	/*always @(posedge clock) begin
 		if (ps2_out > 8'b0) keySignal <= ps2_out;
-		if (keySignal > 8'b0) count_10 = count_10 + 1;
-		if (count_10 > 'd10000000) begin
+		if (keySignal > 8'b0) count_b = count_b + 1;
+		if (count_b > 'd4999900) begin
 			keySignal <= 8'b0; // Extend ps2_out value from 40 ns to 200 ms.
-			count_10 <= 1;
+			count_b <= 1;
+		end
+	end*/
+	// Improved version
+	always @(posedge clock) begin
+		if (ps2_out > 8'b0 && count_b < 'd4) keySignal <= ps2_out;
+		if (keySignal > 8'b0 && count_b < 'd4999900) count_b = count_b + 1;
+		else if (count_b >= 'd4999890) begin
+			keySignal <= ps2_out; // Extend ps2_out value from 40 ns to 100 ms.
+			count_b <= 1;
 		end
 	end
 	
-	always @(posedge clock_10) begin
+	always @(posedge clock_b) begin
 		if (~resetn) field <= 400'h700000000000000000;
 		else if (keySignal == 8'h34) field <= field << 1'b1;
 		else if (keySignal == 8'h23) field <= field >> 1'b1;

@@ -46,7 +46,7 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	wire			 ps2_key_pressed;
 	wire	[7:0]	 ps2_out;	
 	
-	wire clock_10M, clock_10, clock_1;
+	wire clock_10M, clock_b, clock_a;
 	wire leftTrue, rightTrue, rotateTrue;
 	
 	wire [399:0] field;
@@ -54,11 +54,11 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	// clock divider by 5 to 10 MHz
 	pll div(CLOCK_50, clock_10M);
 	assign clock = CLOCK_50; // Now clock is 50 MHz
-	clkCounter myclkCounter(CLOCK_50, clock_10, clock_1); // 10Hz and 1Hz.
+	clkCounter myclkCounter(CLOCK_50, clock_b, clock_a); // 20Hz and 1Hz.
 	
 	// keyboard controller
 	PS2_Interface myps2(clock, resetn, ps2_clock, ps2_data, ps2_key_data, ps2_key_pressed, ps2_out); // Input clock 10Hz.Output ps2_out.
-	keyboardTest mykbTest(clock, clock_10, resetn, ps2_out, field); ///////////////////////
+	keyboardTest mykbTest(clock, clock_b, resetn, ps2_out, field); ///////////////////////
 	
 	// Keyboard signal processing
 	keyProcess my_kp(ps2_out, leftTrue, rightTrue, rotateTrue);////////////////////

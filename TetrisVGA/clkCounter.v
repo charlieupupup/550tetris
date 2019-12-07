@@ -1,29 +1,29 @@
-module clkCounter(CLOCK_50M, clock_10, clock_1);
+module clkCounter(CLOCK_50M, clock_b, clock_a);
 
 	input CLOCK_50M;
-	output reg clock_10, clock_1;
+	output reg clock_b, clock_a;
 	
-	integer count_10, count_1;
+	integer count_b, count_a;
 	initial begin
-		count_10 <= 1;
-		count_1 <= 1;
-		clock_10 <= 0;
-		clock_1 <= 0;
+		count_b <= 1;
+		count_a <= 1;
+		clock_b <= 0;
+		clock_a <= 0;
 	end
 	
 	always @(posedge CLOCK_50M) begin
-		count_10 = count_10 + 1;
-		if (count_10 > 'd5000000) begin
-			clock_10 <= ~clock_10;
-			count_10 <= 1;
+		count_b = count_b + 1;
+		if (count_b > 'd5000000) begin
+			clock_b <= ~clock_b;
+			count_b <= 1;
 		end
 	end
 	
-	always @(posedge clock_10) begin
-		count_1 = count_1 + 1;
-		if (count_1 > 'd10) begin
-			clock_1 <= ~clock_1;
-			count_1 <= 1;
+	always @(posedge clock_b) begin
+		count_a = count_a + 1;
+		if (count_a > 'd10) begin
+			clock_a <= ~clock_a;
+			count_a <= 1;
 		end
 	end 
 
