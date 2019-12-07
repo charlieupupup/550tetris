@@ -13,7 +13,7 @@ module clkCounter(CLOCK_50M, clock_b, clock_a);
 	
 	always @(posedge CLOCK_50M) begin
 		count_b = count_b + 1;
-		if (count_b > 'd5000000) begin
+		if (count_b > 'd2500000) begin
 			clock_b <= ~clock_b;
 			count_b <= 1;
 		end
@@ -21,7 +21,7 @@ module clkCounter(CLOCK_50M, clock_b, clock_a);
 	
 	always @(posedge clock_b) begin
 		count_a = count_a + 1;
-		if (count_a > 'd10) begin
+		if (count_a > 'd5) begin
 			clock_a <= ~clock_a;
 			count_a <= 1;
 		end
