@@ -67,11 +67,10 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	keyProcess my_kp(stableKey, leftTrue, rightTrue, rotateTrue, speedTrue);
 
 	// Use LFSR to produce pseudo-random number.
-	lfsr mylfsr(clock_a, random5);/// Clock needs revised.
-	//assign field[2:0] = random5;///////////// Testing only.
+	lfsr my_lfsr(clock_b, 8'b00101010, random5);
 	
 	// Speed power up
-	//speedUp my_su(clock_b, speedTrue, field); /// field should be replaced by downTrue.
+	speedUp my_su(clock_b, speedTrue, field); /// field should be replaced by downTrue.
 	
 	// VGA
 	Reset_Delay			r0	(.iCLK(CLOCK_50),.oRESET(DLY_RST)	);

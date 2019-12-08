@@ -666,6 +666,216 @@ clock_b => stableKey[4]~reg0.CLK
 clock_b => stableKey[5]~reg0.CLK
 clock_b => stableKey[6]~reg0.CLK
 clock_b => stableKey[7]~reg0.CLK
+resetn => ~NO_FANOUT~
+ps2_out[0] => LessThan0.IN16
+ps2_out[0] => keySignal.DATAB
+ps2_out[0] => keySignal.DATAB
+ps2_out[1] => LessThan0.IN15
+ps2_out[1] => keySignal.DATAB
+ps2_out[1] => keySignal.DATAB
+ps2_out[2] => LessThan0.IN14
+ps2_out[2] => keySignal.DATAB
+ps2_out[2] => keySignal.DATAB
+ps2_out[3] => LessThan0.IN13
+ps2_out[3] => keySignal.DATAB
+ps2_out[3] => keySignal.DATAB
+ps2_out[4] => LessThan0.IN12
+ps2_out[4] => keySignal.DATAB
+ps2_out[4] => keySignal.DATAB
+ps2_out[5] => LessThan0.IN11
+ps2_out[5] => keySignal.DATAB
+ps2_out[5] => keySignal.DATAB
+ps2_out[6] => LessThan0.IN10
+ps2_out[6] => keySignal.DATAB
+ps2_out[6] => keySignal.DATAB
+ps2_out[7] => LessThan0.IN9
+ps2_out[7] => keySignal.DATAB
+ps2_out[7] => keySignal.DATAB
+stableKey[0] <= stableKey[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+stableKey[1] <= stableKey[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+stableKey[2] <= stableKey[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+stableKey[3] <= stableKey[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+stableKey[4] <= stableKey[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+stableKey[5] <= stableKey[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+stableKey[6] <= stableKey[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+stableKey[7] <= stableKey[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|keyProcess:my_kp
+stableKey[0] => Equal0.IN2
+stableKey[0] => Equal1.IN7
+stableKey[0] => Equal2.IN3
+stableKey[0] => Equal3.IN3
+stableKey[1] => Equal0.IN1
+stableKey[1] => Equal1.IN6
+stableKey[1] => Equal2.IN7
+stableKey[1] => Equal3.IN2
+stableKey[2] => Equal0.IN7
+stableKey[2] => Equal1.IN2
+stableKey[2] => Equal2.IN2
+stableKey[2] => Equal3.IN7
+stableKey[3] => Equal0.IN6
+stableKey[3] => Equal1.IN5
+stableKey[3] => Equal2.IN1
+stableKey[3] => Equal3.IN1
+stableKey[4] => Equal0.IN5
+stableKey[4] => Equal1.IN1
+stableKey[4] => Equal2.IN6
+stableKey[4] => Equal3.IN6
+stableKey[5] => Equal0.IN0
+stableKey[5] => Equal1.IN0
+stableKey[5] => Equal2.IN0
+stableKey[5] => Equal3.IN0
+stableKey[6] => Equal0.IN4
+stableKey[6] => Equal1.IN4
+stableKey[6] => Equal2.IN5
+stableKey[6] => Equal3.IN5
+stableKey[7] => Equal0.IN3
+stableKey[7] => Equal1.IN3
+stableKey[7] => Equal2.IN4
+stableKey[7] => Equal3.IN4
+leftTrue <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+rightTrue <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+rotateTrue <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+speedTrue <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|lfsr:my_lfsr
+clock => clock.IN8
+seed[0] => seed[0].IN1
+seed[1] => seed[1].IN1
+seed[2] => seed[2].IN1
+seed[3] => seed[3].IN1
+seed[4] => seed[4].IN1
+seed[5] => seed[5].IN1
+seed[6] => seed[6].IN1
+seed[7] => seed[7].IN1
+q[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|lfsr:my_lfsr|dffe_ref:dffeMatrix8[0].dffe_
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|skeleton|lfsr:my_lfsr|dffe_ref:dffeMatrix8[1].dffe_
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|skeleton|lfsr:my_lfsr|dffe_ref:dffeMatrix8[2].dffe_
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|skeleton|lfsr:my_lfsr|dffe_ref:dffeMatrix8[3].dffe_
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|skeleton|lfsr:my_lfsr|dffe_ref:dffeMatrix8[4].dffe_
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|skeleton|lfsr:my_lfsr|dffe_ref:dffeMatrix8[5].dffe_
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|skeleton|lfsr:my_lfsr|dffe_ref:dffeMatrix8[6].dffe_
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|skeleton|lfsr:my_lfsr|dffe_ref:dffeMatrix8[7].dffe_
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+en => q~reg0.ENA
+clr => q~reg0.ACLR
+
+
+|skeleton|lfsr:my_lfsr|mux2In:muxMatri2[5].mux_
+low => out.DATAA
+high => out.DATAB
+cond => out.OUTPUTSELECT
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|lfsr:my_lfsr|mux2In:muxMatri2[6].mux_
+low => out.DATAA
+high => out.DATAB
+cond => out.OUTPUTSELECT
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|lfsr:my_lfsr|mux2In:mux_2
+low => out.DATAA
+high => out.DATAB
+cond => out.OUTPUTSELECT
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|lfsr:my_lfsr|mux2In:mux_0
+low => out.DATAA
+high => out.DATAB
+cond => out.OUTPUTSELECT
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|lfsr:my_lfsr|mux2In:mux_1
+low => out.DATAA
+high => out.DATAB
+cond => out.OUTPUTSELECT
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|lfsr:my_lfsr|mux2In:mux_3
+low => out.DATAA
+high => out.DATAB
+cond => out.OUTPUTSELECT
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|lfsr:my_lfsr|mux2In:mux_4
+low => out.DATAA
+high => out.DATAB
+cond => out.OUTPUTSELECT
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|lfsr:my_lfsr|mux2In:mux_7
+low => out.DATAA
+high => out.DATAB
+cond => out.OUTPUTSELECT
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|speedUp:my_su
 clock_b => field[0]~reg0.CLK
 clock_b => field[1]~reg0.CLK
 clock_b => field[2]~reg0.CLK
@@ -1066,430 +1276,13 @@ clock_b => field[396]~reg0.CLK
 clock_b => field[397]~reg0.CLK
 clock_b => field[398]~reg0.CLK
 clock_b => field[399]~reg0.CLK
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-resetn => field.OUTPUTSELECT
-ps2_out[0] => LessThan0.IN16
-ps2_out[0] => keySignal.DATAB
-ps2_out[0] => keySignal.DATAB
-ps2_out[1] => LessThan0.IN15
-ps2_out[1] => keySignal.DATAB
-ps2_out[1] => keySignal.DATAB
-ps2_out[2] => LessThan0.IN14
-ps2_out[2] => keySignal.DATAB
-ps2_out[2] => keySignal.DATAB
-ps2_out[3] => LessThan0.IN13
-ps2_out[3] => keySignal.DATAB
-ps2_out[3] => keySignal.DATAB
-ps2_out[4] => LessThan0.IN12
-ps2_out[4] => keySignal.DATAB
-ps2_out[4] => keySignal.DATAB
-ps2_out[5] => LessThan0.IN11
-ps2_out[5] => keySignal.DATAB
-ps2_out[5] => keySignal.DATAB
-ps2_out[6] => LessThan0.IN10
-ps2_out[6] => keySignal.DATAB
-ps2_out[6] => keySignal.DATAB
-ps2_out[7] => LessThan0.IN9
-ps2_out[7] => keySignal.DATAB
-ps2_out[7] => keySignal.DATAB
+clock_b => speedCount[0].CLK
+clock_b => speedCount[1].CLK
+clock_b => speedCount[2].CLK
+clock_b => speedCount[3].CLK
+speedTrue => LessThan0.IN6
+speedTrue => LessThan0.IN7
+speedTrue => LessThan0.IN8
 field[0] <= field[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 field[1] <= field[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 field[2] <= field[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -1890,127 +1683,6 @@ field[396] <= field[396]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 field[397] <= field[397]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 field[398] <= field[398]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 field[399] <= field[399]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-stableKey[0] <= stableKey[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-stableKey[1] <= stableKey[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-stableKey[2] <= stableKey[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-stableKey[3] <= stableKey[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-stableKey[4] <= stableKey[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-stableKey[5] <= stableKey[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-stableKey[6] <= stableKey[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-stableKey[7] <= stableKey[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|skeleton|keyProcess:my_kp
-stableKey[0] => Equal0.IN2
-stableKey[0] => Equal1.IN7
-stableKey[0] => Equal2.IN3
-stableKey[0] => Equal3.IN3
-stableKey[1] => Equal0.IN1
-stableKey[1] => Equal1.IN6
-stableKey[1] => Equal2.IN7
-stableKey[1] => Equal3.IN2
-stableKey[2] => Equal0.IN7
-stableKey[2] => Equal1.IN2
-stableKey[2] => Equal2.IN2
-stableKey[2] => Equal3.IN7
-stableKey[3] => Equal0.IN6
-stableKey[3] => Equal1.IN5
-stableKey[3] => Equal2.IN1
-stableKey[3] => Equal3.IN1
-stableKey[4] => Equal0.IN5
-stableKey[4] => Equal1.IN1
-stableKey[4] => Equal2.IN6
-stableKey[4] => Equal3.IN6
-stableKey[5] => Equal0.IN0
-stableKey[5] => Equal1.IN0
-stableKey[5] => Equal2.IN0
-stableKey[5] => Equal3.IN0
-stableKey[6] => Equal0.IN4
-stableKey[6] => Equal1.IN4
-stableKey[6] => Equal2.IN5
-stableKey[6] => Equal3.IN5
-stableKey[7] => Equal0.IN3
-stableKey[7] => Equal1.IN3
-stableKey[7] => Equal2.IN4
-stableKey[7] => Equal3.IN4
-leftTrue <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
-rightTrue <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
-rotateTrue <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
-speedTrue <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|skeleton|lfsr:mylfsr
-clock => loadFlag.CLK
-clock => q[0]~reg0.CLK
-clock => q[1]~reg0.CLK
-clock => q[2]~reg0.CLK
-clock => dffeMatrix8[0].dffe_.ACLR
-clock => dffeMatrix8[1].dffe_.ACLR
-clock => dffeMatrix8[2].dffe_.ACLR
-clock => dffeMatrix8[3].dffe_.ACLR
-clock => dffeMatrix8[4].dffe_.ACLR
-clock => dffeMatrix8[5].dffe_.ACLR
-clock => dffeMatrix8[6].dffe_.ACLR
-clock => dffeMatrix8[7].dffe_.ACLR
-q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|skeleton|lfsr:mylfsr|mux2In:muxMatrix7[0].mux_
-low => out.DATAA
-high => out.DATAB
-cond => out.OUTPUTSELECT
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|skeleton|lfsr:mylfsr|mux2In:muxMatrix7[1].mux_
-low => out.DATAA
-high => out.DATAB
-cond => out.OUTPUTSELECT
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|skeleton|lfsr:mylfsr|mux2In:muxMatrix7[2].mux_
-low => out.DATAA
-high => out.DATAB
-cond => out.OUTPUTSELECT
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|skeleton|lfsr:mylfsr|mux2In:muxMatrix7[3].mux_
-low => out.DATAA
-high => out.DATAB
-cond => out.OUTPUTSELECT
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|skeleton|lfsr:mylfsr|mux2In:muxMatrix7[4].mux_
-low => out.DATAA
-high => out.DATAB
-cond => out.OUTPUTSELECT
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|skeleton|lfsr:mylfsr|mux2In:muxMatrix7[5].mux_
-low => out.DATAA
-high => out.DATAB
-cond => out.OUTPUTSELECT
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|skeleton|lfsr:mylfsr|mux2In:muxMatrix7[6].mux_
-low => out.DATAA
-high => out.DATAB
-cond => out.OUTPUTSELECT
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|skeleton|lfsr:mylfsr|mux2In:mux_7
-low => out.DATAA
-high => out.DATAB
-cond => out.OUTPUTSELECT
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |skeleton|Reset_Delay:r0
