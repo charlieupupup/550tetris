@@ -1,10 +1,10 @@
-module keyboardTest(clock, clock_b, resetn, ps2_out, field);
+module keyboardTest(clock, clock_b, resetn, ps2_out, field, stableKey);
 
 	input clock, clock_b, resetn;
 	input [7:0] ps2_out;
-	output [399:0] field;
+	output reg [399:0] field;
+	output reg [7:0] stableKey;
 	
-	reg [399:0] field;
 	reg [7:0] keySignal;
 	integer count_b;
 	reg countFlag;
@@ -24,6 +24,7 @@ module keyboardTest(clock, clock_b, resetn, ps2_out, field);
 			count_b <= 1;
 		end
 	end*/
+	
 	// Improved version
 	always @(posedge clock) begin
 		if (ps2_out > 8'b0 && count_b < 'd4) keySignal <= ps2_out;
@@ -40,6 +41,7 @@ module keyboardTest(clock, clock_b, resetn, ps2_out, field);
 		else if (keySignal == 8'h23) field <= field >> 1'b1;
 		else if (keySignal == 8'h2d) field <= field >> 'd20;
 		else if (keySignal == 8'h2b) field <= field << 'd20;
+		stableKey <= keySignal;
 	end
 
 endmodule

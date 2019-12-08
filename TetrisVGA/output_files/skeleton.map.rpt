@@ -1,5 +1,5 @@
 Analysis & Synthesis report for skeleton
-Sun Dec 08 00:48:32 2019
+Sun Dec 08 12:00:18 2019
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -47,10 +47,10 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
  39. Port Connectivity Checks: "processor:myprocessor|imem:myimem"
  40. Port Connectivity Checks: "processor:myprocessor|dmem:mydmem"
  41. Port Connectivity Checks: "VGA_Audio_PLL:p1"
- 42. Port Connectivity Checks: "keyProcess:my_kp"
- 43. Port Connectivity Checks: "PS2_Interface:myps2|PS2_Controller:PS2"
- 44. Port Connectivity Checks: "PS2_Interface:myps2"
- 45. Port Connectivity Checks: "clkCounter:myclkCounter"
+ 42. Port Connectivity Checks: "lfsr:mylfsr"
+ 43. Port Connectivity Checks: "keyProcess:my_kp"
+ 44. Port Connectivity Checks: "PS2_Interface:myps2|PS2_Controller:PS2"
+ 45. Port Connectivity Checks: "PS2_Interface:myps2"
  46. Port Connectivity Checks: "pll:div"
  47. Post-Synthesis Netlist Statistics for Top Partition
  48. Elapsed Time Per Partition
@@ -82,7 +82,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec 08 00:48:32 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 08 12:00:18 2019       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; skeleton                                    ;
 ; Top-level Entity Name              ; skeleton                                    ;
@@ -231,6 +231,8 @@ agreement for further details.
 ; fieldDisplay.v                   ; yes             ; User Verilog HDL File            ; H:/Altera_lite/Github/550tetris/TetrisVGA/fieldDisplay.v                  ;         ;
 ; keyProcess.v                     ; yes             ; User Verilog HDL File            ; H:/Altera_lite/Github/550tetris/TetrisVGA/keyProcess.v                    ;         ;
 ; keyboardTest.v                   ; yes             ; User Verilog HDL File            ; H:/Altera_lite/Github/550tetris/TetrisVGA/keyboardTest.v                  ;         ;
+; lfsr.v                           ; yes             ; User Verilog HDL File            ; H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v                          ;         ;
+; mux2In.v                         ; yes             ; User Verilog HDL File            ; H:/Altera_lite/Github/550tetris/TetrisVGA/mux2In.v                        ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                     ; h:/altera_lite/16.0/quartus/libraries/megafunctions/altpll.tdf            ;         ;
 ; aglobal160.inc                   ; yes             ; Megafunction                     ; h:/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc        ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                     ; h:/altera_lite/16.0/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
@@ -1852,6 +1854,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lfsr:mylfsr"                                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "keyProcess:my_kp"                                                                         ;
 +------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1883,15 +1894,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ps2_key_data    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; ps2_key_pressed ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-----------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "clkCounter:myclkCounter"                                                               ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; clock_a ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -1942,7 +1944,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -1952,7 +1954,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sun Dec 08 00:48:18 2019
+    Info: Processing started: Sun Dec 08 12:00:05 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off skeleton -c skeleton
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2006,14 +2008,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file lfsr.v
     Info (12023): Found entity 1: lfsr File: H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux2in.v
     Info (12023): Found entity 1: mux2In File: H:/Altera_lite/Github/550tetris/TetrisVGA/mux2In.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at skeleton.v(67): created implicit net for "DLY_RST" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 67
-Warning (10236): Verilog HDL Implicit Net warning at skeleton.v(68): created implicit net for "VGA_CTRL_CLK" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 68
-Warning (10236): Verilog HDL Implicit Net warning at skeleton.v(68): created implicit net for "AUD_CTRL_CLK" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 68
+Warning (10236): Verilog HDL Implicit Net warning at skeleton.v(74): created implicit net for "DLY_RST" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 74
+Warning (10236): Verilog HDL Implicit Net warning at skeleton.v(75): created implicit net for "VGA_CTRL_CLK" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 75
+Warning (10236): Verilog HDL Implicit Net warning at skeleton.v(75): created implicit net for "AUD_CTRL_CLK" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 75
 Warning (10236): Verilog HDL Implicit Net warning at processor.v(29): created implicit net for "debug_data" File: H:/Altera_lite/Github/550tetris/TetrisVGA/processor.v Line: 29
 Warning (10236): Verilog HDL Implicit Net warning at lfsr.v(27): created implicit net for "laodFlag" File: H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v Line: 27
 Info (12127): Elaborating entity "skeleton" for the top level hierarchy
 Warning (10034): Output port "VGA_SYNC" at skeleton.v(22) has no driver File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 22
-Info (12128): Elaborating entity "pll" for hierarchy "pll:div" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 55
+Info (12128): Elaborating entity "pll" for hierarchy "pll:div" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 59
 Info (12128): Elaborating entity "altpll" for hierarchy "pll:div|altpll:altpll_component" File: H:/Altera_lite/Github/550tetris/TetrisVGA/pll.v Line: 90
 Info (12130): Elaborated megafunction instantiation "pll:div|altpll:altpll_component" File: H:/Altera_lite/Github/550tetris/TetrisVGA/pll.v Line: 90
 Info (12133): Instantiated megafunction "pll:div|altpll:altpll_component" with the following parameter: File: H:/Altera_lite/Github/550tetris/TetrisVGA/pll.v Line: 90
@@ -2070,16 +2072,19 @@ Info (12133): Instantiated megafunction "pll:div|altpll:altpll_component" with t
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
     Info (12023): Found entity 1: pll_altpll File: H:/Altera_lite/Github/550tetris/TetrisVGA/db/pll_altpll.v Line: 30
 Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:div|altpll:altpll_component|pll_altpll:auto_generated" File: h:/altera_lite/16.0/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "clkCounter" for hierarchy "clkCounter:myclkCounter" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 57
-Info (12128): Elaborating entity "PS2_Interface" for hierarchy "PS2_Interface:myps2" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 60
+Info (12128): Elaborating entity "clkCounter" for hierarchy "clkCounter:myclkCounter" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 61
+Info (12128): Elaborating entity "PS2_Interface" for hierarchy "PS2_Interface:myps2" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 64
 Info (12128): Elaborating entity "PS2_Controller" for hierarchy "PS2_Interface:myps2|PS2_Controller:PS2" File: H:/Altera_lite/Github/550tetris/TetrisVGA/PS2_Interface.v Line: 27
 Info (12128): Elaborating entity "Altera_UP_PS2_Data_In" for hierarchy "PS2_Interface:myps2|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In" File: H:/Altera_lite/Github/550tetris/TetrisVGA/PS2_Controller.v Line: 248
 Info (12128): Elaborating entity "Altera_UP_PS2_Command_Out" for hierarchy "PS2_Interface:myps2|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out" File: H:/Altera_lite/Github/550tetris/TetrisVGA/PS2_Controller.v Line: 268
-Info (12128): Elaborating entity "keyboardTest" for hierarchy "keyboardTest:mykbTest" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 61
-Info (12128): Elaborating entity "keyProcess" for hierarchy "keyProcess:my_kp" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 64
-Info (12128): Elaborating entity "Reset_Delay" for hierarchy "Reset_Delay:r0" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 67
+Info (12128): Elaborating entity "keyboardTest" for hierarchy "keyboardTest:mykbTest" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 65
+Info (12128): Elaborating entity "keyProcess" for hierarchy "keyProcess:my_kp" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 67
+Info (12128): Elaborating entity "lfsr" for hierarchy "lfsr:mylfsr" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 70
+Warning (10230): Verilog HDL assignment warning at lfsr.v(39): truncated value with size 8 to match size of target (3) File: H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v Line: 39
+Info (12128): Elaborating entity "mux2In" for hierarchy "lfsr:mylfsr|mux2In:muxMatrix7[0].mux_" File: H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v Line: 27
+Info (12128): Elaborating entity "Reset_Delay" for hierarchy "Reset_Delay:r0" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 74
 Warning (10230): Verilog HDL assignment warning at Reset_Delay.v(10): truncated value with size 32 to match size of target (20) File: H:/Altera_lite/Github/550tetris/TetrisVGA/Reset_Delay.v Line: 10
-Info (12128): Elaborating entity "VGA_Audio_PLL" for hierarchy "VGA_Audio_PLL:p1" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 68
+Info (12128): Elaborating entity "VGA_Audio_PLL" for hierarchy "VGA_Audio_PLL:p1" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 75
 Info (12128): Elaborating entity "altpll" for hierarchy "VGA_Audio_PLL:p1|altpll:altpll_component" File: H:/Altera_lite/Github/550tetris/TetrisVGA/VGA_Audio_PLL.v Line: 107
 Info (12130): Elaborated megafunction instantiation "VGA_Audio_PLL:p1|altpll:altpll_component" File: H:/Altera_lite/Github/550tetris/TetrisVGA/VGA_Audio_PLL.v Line: 107
 Info (12133): Instantiated megafunction "VGA_Audio_PLL:p1|altpll:altpll_component" with the following parameter: File: H:/Altera_lite/Github/550tetris/TetrisVGA/VGA_Audio_PLL.v Line: 107
@@ -2141,7 +2146,7 @@ Info (12133): Instantiated megafunction "VGA_Audio_PLL:p1|altpll:altpll_componen
     Info (12134): Parameter "port_extclk1" = "PORT_UNUSED"
     Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_controller:vga_ins" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 77
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_controller:vga_ins" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 84
 Warning (10230): Verilog HDL assignment warning at vga_controller.v(45): truncated value with size 32 to match size of target (19) File: H:/Altera_lite/Github/550tetris/TetrisVGA/vga_controller.v Line: 45
 Info (12128): Elaborating entity "video_sync_generator" for hierarchy "vga_controller:vga_ins|video_sync_generator:LTM_ins" File: H:/Altera_lite/Github/550tetris/TetrisVGA/vga_controller.v Line: 35
 Warning (10230): Verilog HDL assignment warning at video_sync_generator.v(77): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisVGA/video_sync_generator.v Line: 77
@@ -2176,7 +2181,7 @@ Info (10041): Inferred latch for "bgr_data_raw[20]" at fieldDisplay.v(20) File: 
 Info (10041): Inferred latch for "bgr_data_raw[21]" at fieldDisplay.v(20) File: H:/Altera_lite/Github/550tetris/TetrisVGA/fieldDisplay.v Line: 20
 Info (10041): Inferred latch for "bgr_data_raw[22]" at fieldDisplay.v(20) File: H:/Altera_lite/Github/550tetris/TetrisVGA/fieldDisplay.v Line: 20
 Info (10041): Inferred latch for "bgr_data_raw[23]" at fieldDisplay.v(20) File: H:/Altera_lite/Github/550tetris/TetrisVGA/fieldDisplay.v Line: 20
-Info (12128): Elaborating entity "processor" for hierarchy "processor:myprocessor" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 83
+Info (12128): Elaborating entity "processor" for hierarchy "processor:myprocessor" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 90
 Info (12128): Elaborating entity "dmem" for hierarchy "processor:myprocessor|dmem:mydmem" File: H:/Altera_lite/Github/550tetris/TetrisVGA/processor.v Line: 32
 Info (12128): Elaborating entity "altsyncram" for hierarchy "processor:myprocessor|dmem:mydmem|altsyncram:altsyncram_component" File: H:/Altera_lite/Github/550tetris/TetrisVGA/dmem.v Line: 85
 Info (12130): Elaborated megafunction instantiation "processor:myprocessor|dmem:mydmem|altsyncram:altsyncram_component" File: H:/Altera_lite/Github/550tetris/TetrisVGA/dmem.v Line: 85
@@ -2219,8 +2224,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
     Info (12023): Found entity 1: altsyncram_2m81 File: H:/Altera_lite/Github/550tetris/TetrisVGA/db/altsyncram_2m81.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_2m81" for hierarchy "processor:myprocessor|imem:myimem|altsyncram:altsyncram_component|altsyncram_2m81:auto_generated" File: h:/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Warning (287013): Variable or input pin "clocken0" is defined but never used. File: H:/Altera_lite/Github/550tetris/TetrisVGA/db/altsyncram_2m81.tdf Line: 32
-Info (12128): Elaborating entity "lcd" for hierarchy "lcd:mylcd" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 85
-Info (12128): Elaborating entity "Hexadecimal_To_Seven_Segment" for hierarchy "Hexadecimal_To_Seven_Segment:hex1" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 87
+Info (12128): Elaborating entity "lcd" for hierarchy "lcd:mylcd" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 92
+Info (12128): Elaborating entity "Hexadecimal_To_Seven_Segment" for hierarchy "Hexadecimal_To_Seven_Segment:hex1" File: H:/Altera_lite/Github/550tetris/TetrisVGA/skeleton.v Line: 94
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "lfsr:mylfsr|xorOut[6]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v Line: 7
+    Warning (12110): Net "lfsr:mylfsr|xorOut[5]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v Line: 7
+    Warning (12110): Net "lfsr:mylfsr|xorOut[4]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v Line: 7
+    Warning (12110): Net "lfsr:mylfsr|xorOut[3]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v Line: 7
+    Warning (12110): Net "lfsr:mylfsr|xorOut[2]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v Line: 7
+    Warning (12110): Net "lfsr:mylfsr|xorOut[1]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v Line: 7
+    Warning (12110): Net "lfsr:mylfsr|xorOut[0]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v Line: 7
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "processor:myprocessor|imem:myimem|altsyncram:altsyncram_component|altsyncram_2m81:auto_generated|q_a[0]" File: H:/Altera_lite/Github/550tetris/TetrisVGA/db/altsyncram_2m81.tdf Line: 36
@@ -2468,11 +2481,11 @@ Info (21057): Implemented 2602 device resources after synthesis - the final reso
     Info (21060): Implemented 2 bidirectional pins
     Info (21061): Implemented 2447 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 198 warnings
-    Info: Peak virtual memory: 5025 megabytes
-    Info: Processing ended: Sun Dec 08 00:48:32 2019
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:25
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 207 warnings
+    Info: Peak virtual memory: 5027 megabytes
+    Info: Processing ended: Sun Dec 08 12:00:18 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +------------------------------------------+

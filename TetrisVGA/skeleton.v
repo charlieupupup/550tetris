@@ -36,8 +36,6 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	output 	[31:0] 	debug_data_in;
 	output   [11:0]   debug_addr;
 	
-	//------------------------------------------------------------------------------
-	
 	
 	wire			 clock;
 	wire			 lcd_write_en;
@@ -46,23 +44,32 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	wire			 ps2_key_pressed;
 	wire	[7:0]	 ps2_out;	
 	
+	//------------------------------------------------------------------------------
+	
 	wire clock_10M, clock_b, clock_a;
+	
+	wire [7:0] stableKey;
 	wire leftTrue, rightTrue, rotateTrue;
+	
+	wire [2:0] random5; // Random integer from 0 to 4.
 	
 	wire [399:0] field;
 	
 	// clock divider by 5 to 10 MHz
 	pll div(CLOCK_50, clock_10M);
 	assign clock = CLOCK_50; // Now clock is 50 MHz
-	clkCounter myclkCounter(CLOCK_50, clock_b, clock_a); // b 10Hz and a 1Hz. (Have fixed 10Hz counting number)
+	clkCounter myclkCounter(CLOCK_50, clock_b, clock_a); // b 10Hz and a 1Hz.
 	
 	// keyboard controller
-	PS2_Interface myps2(clock, resetn, ps2_clock, ps2_data, ps2_key_data, ps2_key_pressed, ps2_out); // Input clock 50MHz.Output ps2_out.
-	keyboardTest mykbTest(clock, clock_b, resetn, ps2_out, field); ///////////////////////
-	
+	PS2_Interface myps2(clock, resetn, ps2_clock, ps2_data, ps2_key_data, ps2_key_pressed, ps2_out); // Input clock 50MHz. Output ps2_out.
+	keyboardTest mykbTest(clock, clock_b, resetn, ps2_out, field, stableKey); // stableKey is updated by clock_b. ////////////////
 	// Keyboard signal processing
-	keyProcess my_kp(ps2_out, leftTrue, rightTrue, rotateTrue);////////////////////
+	keyProcess my_kp(stableKey, leftTrue, rightTrue, rotateTrue);
 
+	// Use LFSR to produce pseudo-random number.
+	lfsr mylfsr(clock_a, random5);/// Clock needs revised.
+	//assign field[2:0] = random5;/////////
+	
 	// VGA
 	Reset_Delay			r0	(.iCLK(CLOCK_50),.oRESET(DLY_RST)	);
 	VGA_Audio_PLL 		p1	(.areset(~DLY_RST),.inclk0(CLOCK_50),.c0(VGA_CTRL_CLK),.c1(AUD_CTRL_CLK),.c2(VGA_CLK)	);

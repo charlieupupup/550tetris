@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for skeleton
-Sun Dec 08 00:49:06 2019
+Sun Dec 08 12:00:51 2019
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -124,9 +124,9 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   4.2%      ;
-;     Processor 3            ;   3.0%      ;
-;     Processor 4            ;   2.8%      ;
+;     Processor 2            ;   4.3%      ;
+;     Processor 3            ;   3.2%      ;
+;     Processor 4            ;   3.0%      ;
 +----------------------------+-------------+
 
 
@@ -1379,42 +1379,42 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.524 ; keyboardTest:mykbTest|field[354] ; keyboardTest:mykbTest|field[374] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.465      ; 1.160      ;
 ; 0.527 ; keyboardTest:mykbTest|field[239] ; keyboardTest:mykbTest|field[240] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.770      ;
 ; 0.528 ; keyboardTest:mykbTest|field[80]  ; keyboardTest:mykbTest|field[100] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.469      ; 1.168      ;
-; 0.528 ; keyboardTest:mykbTest|field[187] ; keyboardTest:mykbTest|field[188] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.771      ;
 ; 0.528 ; keyboardTest:mykbTest|field[342] ; keyboardTest:mykbTest|field[341] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.772      ;
+; 0.528 ; keyboardTest:mykbTest|field[187] ; keyboardTest:mykbTest|field[188] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.771      ;
 ; 0.531 ; keyboardTest:mykbTest|field[298] ; keyboardTest:mykbTest|field[297] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.775      ;
 ; 0.531 ; keyboardTest:mykbTest|field[332] ; keyboardTest:mykbTest|field[331] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.775      ;
 ; 0.533 ; keyboardTest:mykbTest|field[377] ; keyboardTest:mykbTest|field[378] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.777      ;
 ; 0.533 ; keyboardTest:mykbTest|field[309] ; keyboardTest:mykbTest|field[310] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.777      ;
-; 0.534 ; keyboardTest:mykbTest|field[167] ; keyboardTest:mykbTest|field[147] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.467      ; 1.172      ;
 ; 0.534 ; keyboardTest:mykbTest|field[253] ; keyboardTest:mykbTest|field[254] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.778      ;
+; 0.534 ; keyboardTest:mykbTest|field[167] ; keyboardTest:mykbTest|field[147] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.467      ; 1.172      ;
 ; 0.535 ; keyboardTest:mykbTest|field[59]  ; keyboardTest:mykbTest|field[60]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.779      ;
 ; 0.535 ; keyboardTest:mykbTest|field[314] ; keyboardTest:mykbTest|field[313] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.779      ;
 ; 0.536 ; keyboardTest:mykbTest|field[160] ; keyboardTest:mykbTest|field[159] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.780      ;
-; 0.538 ; keyboardTest:mykbTest|field[110] ; keyboardTest:mykbTest|field[90]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.782      ;
 ; 0.538 ; keyboardTest:mykbTest|field[51]  ; keyboardTest:mykbTest|field[31]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.782      ;
+; 0.538 ; keyboardTest:mykbTest|field[110] ; keyboardTest:mykbTest|field[90]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.782      ;
 ; 0.539 ; keyboardTest:mykbTest|field[152] ; keyboardTest:mykbTest|field[151] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.782      ;
 ; 0.540 ; keyboardTest:mykbTest|field[351] ; keyboardTest:mykbTest|field[352] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.088      ; 0.799      ;
-; 0.541 ; keyboardTest:mykbTest|field[186] ; keyboardTest:mykbTest|field[206] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.466      ; 1.178      ;
 ; 0.541 ; keyboardTest:mykbTest|field[310] ; keyboardTest:mykbTest|field[311] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.785      ;
+; 0.541 ; keyboardTest:mykbTest|field[186] ; keyboardTest:mykbTest|field[206] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.466      ; 1.178      ;
 ; 0.542 ; keyboardTest:mykbTest|field[183] ; keyboardTest:mykbTest|field[163] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.466      ; 1.179      ;
 ; 0.542 ; keyboardTest:mykbTest|field[102] ; keyboardTest:mykbTest|field[101] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.785      ;
 ; 0.545 ; keyboardTest:mykbTest|field[53]  ; keyboardTest:mykbTest|field[54]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.789      ;
-; 0.545 ; keyboardTest:mykbTest|field[90]  ; keyboardTest:mykbTest|field[91]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.789      ;
 ; 0.545 ; keyboardTest:mykbTest|field[313] ; keyboardTest:mykbTest|field[314] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.789      ;
-; 0.547 ; keyboardTest:mykbTest|field[159] ; keyboardTest:mykbTest|field[160] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.791      ;
+; 0.545 ; keyboardTest:mykbTest|field[90]  ; keyboardTest:mykbTest|field[91]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.789      ;
 ; 0.547 ; keyboardTest:mykbTest|field[355] ; keyboardTest:mykbTest|field[375] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.465      ; 1.183      ;
 ; 0.547 ; keyboardTest:mykbTest|field[344] ; keyboardTest:mykbTest|field[345] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.791      ;
+; 0.547 ; keyboardTest:mykbTest|field[159] ; keyboardTest:mykbTest|field[160] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.791      ;
 ; 0.548 ; keyboardTest:mykbTest|field[238] ; keyboardTest:mykbTest|field[218] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.791      ;
 ; 0.548 ; keyboardTest:mykbTest|field[132] ; keyboardTest:mykbTest|field[131] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.466      ; 1.185      ;
 ; 0.548 ; keyboardTest:mykbTest|field[181] ; keyboardTest:mykbTest|field[201] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.470      ; 1.189      ;
 ; 0.549 ; keyboardTest:mykbTest|field[71]  ; keyboardTest:mykbTest|field[51]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.793      ;
-; 0.551 ; keyboardTest:mykbTest|field[221] ; keyboardTest:mykbTest|field[222] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.468      ; 1.190      ;
 ; 0.551 ; keyboardTest:mykbTest|field[344] ; keyboardTest:mykbTest|field[324] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.795      ;
 ; 0.551 ; keyboardTest:mykbTest|field[254] ; keyboardTest:mykbTest|field[234] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.795      ;
+; 0.551 ; keyboardTest:mykbTest|field[221] ; keyboardTest:mykbTest|field[222] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.468      ; 1.190      ;
 ; 0.552 ; keyboardTest:mykbTest|field[60]  ; keyboardTest:mykbTest|field[61]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.796      ;
 ; 0.552 ; keyboardTest:mykbTest|field[143] ; keyboardTest:mykbTest|field[163] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.466      ; 1.189      ;
-; 0.552 ; keyboardTest:mykbTest|field[179] ; keyboardTest:mykbTest|field[180] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.796      ;
 ; 0.552 ; keyboardTest:mykbTest|field[360] ; keyboardTest:mykbTest|field[340] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.796      ;
+; 0.552 ; keyboardTest:mykbTest|field[179] ; keyboardTest:mykbTest|field[180] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.796      ;
 ; 0.553 ; keyboardTest:mykbTest|field[306] ; keyboardTest:mykbTest|field[286] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.797      ;
 ; 0.553 ; keyboardTest:mykbTest|field[306] ; keyboardTest:mykbTest|field[307] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.797      ;
 ; 0.554 ; keyboardTest:mykbTest|field[117] ; keyboardTest:mykbTest|field[118] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.797      ;
@@ -1436,13 +1436,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.574 ; keyboardTest:mykbTest|field[381] ; keyboardTest:mykbTest|field[382] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.818      ;
 ; 0.574 ; keyboardTest:mykbTest|field[387] ; keyboardTest:mykbTest|field[388] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.818      ;
 ; 0.575 ; keyboardTest:mykbTest|field[18]  ; keyboardTest:mykbTest|field[19]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.819      ;
+; 0.575 ; keyboardTest:mykbTest|field[392] ; keyboardTest:mykbTest|field[393] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.819      ;
 ; 0.575 ; keyboardTest:mykbTest|field[4]   ; keyboardTest:mykbTest|field[5]   ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.818      ;
 ; 0.575 ; keyboardTest:mykbTest|field[10]  ; keyboardTest:mykbTest|field[11]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.818      ;
-; 0.575 ; keyboardTest:mykbTest|field[392] ; keyboardTest:mykbTest|field[393] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.819      ;
 ; 0.576 ; keyboardTest:mykbTest|field[1]   ; keyboardTest:mykbTest|field[2]   ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.820      ;
 ; 0.576 ; keyboardTest:mykbTest|field[15]  ; keyboardTest:mykbTest|field[16]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.820      ;
-; 0.578 ; keyboardTest:mykbTest|field[156] ; keyboardTest:mykbTest|field[157] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.821      ;
 ; 0.578 ; keyboardTest:mykbTest|field[16]  ; keyboardTest:mykbTest|field[17]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.822      ;
+; 0.578 ; keyboardTest:mykbTest|field[156] ; keyboardTest:mykbTest|field[157] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.821      ;
 ; 0.579 ; keyboardTest:mykbTest|field[393] ; keyboardTest:mykbTest|field[394] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.823      ;
 ; 0.580 ; keyboardTest:mykbTest|field[389] ; keyboardTest:mykbTest|field[390] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.824      ;
 ; 0.581 ; keyboardTest:mykbTest|field[382] ; keyboardTest:mykbTest|field[383] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.073      ; 0.825      ;
@@ -1451,7 +1451,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.585 ; keyboardTest:mykbTest|field[12]  ; keyboardTest:mykbTest|field[13]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.828      ;
 ; 0.587 ; keyboardTest:mykbTest|field[125] ; keyboardTest:mykbTest|field[124] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.465      ; 1.223      ;
 ; 0.592 ; keyboardTest:mykbTest|field[13]  ; keyboardTest:mykbTest|field[14]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.835      ;
-; 0.594 ; keyboardTest:mykbTest|field[11]  ; keyboardTest:mykbTest|field[12]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.072      ; 0.837      ;
+; 0.594 ; keyboardTest:mykbTest|field[352] ; keyboardTest:mykbTest|field[353] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.088      ; 0.853      ;
 +-------+----------------------------------+----------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
 
 
@@ -2176,8 +2176,8 @@ No synchronizer chains to report.
 ; 0.245 ; keyboardTest:mykbTest|field[132] ; keyboardTest:mykbTest|field[131] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.245      ; 0.574      ;
 ; 0.251 ; keyboardTest:mykbTest|field[245] ; keyboardTest:mykbTest|field[225] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.245      ; 0.580      ;
 ; 0.252 ; keyboardTest:mykbTest|field[83]  ; keyboardTest:mykbTest|field[103] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.245      ; 0.581      ;
-; 0.256 ; keyboardTest:mykbTest|field[229] ; keyboardTest:mykbTest|field[249] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.244      ; 0.584      ;
 ; 0.256 ; keyboardTest:mykbTest|field[372] ; keyboardTest:mykbTest|field[373] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.050      ; 0.390      ;
+; 0.256 ; keyboardTest:mykbTest|field[229] ; keyboardTest:mykbTest|field[249] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.244      ; 0.584      ;
 ; 0.257 ; keyboardTest:mykbTest|field[354] ; keyboardTest:mykbTest|field[374] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.245      ; 0.586      ;
 ; 0.258 ; keyboardTest:mykbTest|field[80]  ; keyboardTest:mykbTest|field[100] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.247      ; 0.589      ;
 ; 0.258 ; keyboardTest:mykbTest|field[342] ; keyboardTest:mykbTest|field[341] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.043      ; 0.385      ;
@@ -2185,17 +2185,17 @@ No synchronizer chains to report.
 ; 0.259 ; keyboardTest:mykbTest|field[187] ; keyboardTest:mykbTest|field[188] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.385      ;
 ; 0.260 ; keyboardTest:mykbTest|field[298] ; keyboardTest:mykbTest|field[297] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.043      ; 0.387      ;
 ; 0.261 ; keyboardTest:mykbTest|field[332] ; keyboardTest:mykbTest|field[331] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.387      ;
-; 0.263 ; keyboardTest:mykbTest|field[167] ; keyboardTest:mykbTest|field[147] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.244      ; 0.591      ;
 ; 0.263 ; keyboardTest:mykbTest|field[377] ; keyboardTest:mykbTest|field[378] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.389      ;
 ; 0.263 ; keyboardTest:mykbTest|field[309] ; keyboardTest:mykbTest|field[310] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.389      ;
 ; 0.263 ; keyboardTest:mykbTest|field[314] ; keyboardTest:mykbTest|field[313] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.389      ;
+; 0.263 ; keyboardTest:mykbTest|field[167] ; keyboardTest:mykbTest|field[147] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.244      ; 0.591      ;
 ; 0.264 ; keyboardTest:mykbTest|field[59]  ; keyboardTest:mykbTest|field[60]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.043      ; 0.391      ;
 ; 0.264 ; keyboardTest:mykbTest|field[160] ; keyboardTest:mykbTest|field[159] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.390      ;
+; 0.265 ; keyboardTest:mykbTest|field[253] ; keyboardTest:mykbTest|field[254] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.391      ;
+; 0.265 ; keyboardTest:mykbTest|field[51]  ; keyboardTest:mykbTest|field[31]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.043      ; 0.392      ;
 ; 0.265 ; keyboardTest:mykbTest|field[221] ; keyboardTest:mykbTest|field[222] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.244      ; 0.593      ;
 ; 0.265 ; keyboardTest:mykbTest|field[152] ; keyboardTest:mykbTest|field[151] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.043      ; 0.392      ;
 ; 0.265 ; keyboardTest:mykbTest|field[181] ; keyboardTest:mykbTest|field[201] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.246      ; 0.595      ;
-; 0.265 ; keyboardTest:mykbTest|field[253] ; keyboardTest:mykbTest|field[254] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.391      ;
-; 0.265 ; keyboardTest:mykbTest|field[51]  ; keyboardTest:mykbTest|field[31]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.043      ; 0.392      ;
 ; 0.266 ; keyboardTest:mykbTest|field[110] ; keyboardTest:mykbTest|field[90]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.392      ;
 ; 0.267 ; keyboardTest:mykbTest|field[102] ; keyboardTest:mykbTest|field[101] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.393      ;
 ; 0.268 ; keyboardTest:mykbTest|field[21]  ; keyboardTest:mykbTest|field[1]   ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.394      ;
@@ -2204,34 +2204,34 @@ No synchronizer chains to report.
 ; 0.269 ; keyboardTest:mykbTest|field[310] ; keyboardTest:mykbTest|field[311] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.395      ;
 ; 0.269 ; keyboardTest:mykbTest|field[349] ; keyboardTest:mykbTest|field[350] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.245      ; 0.598      ;
 ; 0.270 ; keyboardTest:mykbTest|field[53]  ; keyboardTest:mykbTest|field[54]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.396      ;
-; 0.270 ; keyboardTest:mykbTest|field[238] ; keyboardTest:mykbTest|field[218] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.396      ;
-; 0.270 ; keyboardTest:mykbTest|field[90]  ; keyboardTest:mykbTest|field[91]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.396      ;
 ; 0.270 ; keyboardTest:mykbTest|field[351] ; keyboardTest:mykbTest|field[352] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.050      ; 0.404      ;
 ; 0.270 ; keyboardTest:mykbTest|field[313] ; keyboardTest:mykbTest|field[314] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.396      ;
+; 0.270 ; keyboardTest:mykbTest|field[238] ; keyboardTest:mykbTest|field[218] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.396      ;
+; 0.270 ; keyboardTest:mykbTest|field[90]  ; keyboardTest:mykbTest|field[91]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.396      ;
 ; 0.271 ; keyboardTest:mykbTest|field[63]  ; keyboardTest:mykbTest|field[64]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.273      ; 0.628      ;
 ; 0.271 ; keyboardTest:mykbTest|field[71]  ; keyboardTest:mykbTest|field[51]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.043      ; 0.398      ;
 ; 0.272 ; keyboardTest:mykbTest|field[143] ; keyboardTest:mykbTest|field[163] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.244      ; 0.600      ;
 ; 0.272 ; keyboardTest:mykbTest|field[355] ; keyboardTest:mykbTest|field[375] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.245      ; 0.601      ;
 ; 0.272 ; keyboardTest:mykbTest|field[344] ; keyboardTest:mykbTest|field[345] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.398      ;
-; 0.273 ; keyboardTest:mykbTest|field[159] ; keyboardTest:mykbTest|field[160] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.399      ;
-; 0.273 ; keyboardTest:mykbTest|field[156] ; keyboardTest:mykbTest|field[157] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.399      ;
 ; 0.273 ; keyboardTest:mykbTest|field[360] ; keyboardTest:mykbTest|field[340] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.043      ; 0.400      ;
 ; 0.273 ; keyboardTest:mykbTest|field[254] ; keyboardTest:mykbTest|field[234] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.399      ;
 ; 0.273 ; keyboardTest:mykbTest|field[8]   ; keyboardTest:mykbTest|field[9]   ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.399      ;
+; 0.273 ; keyboardTest:mykbTest|field[159] ; keyboardTest:mykbTest|field[160] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.399      ;
+; 0.273 ; keyboardTest:mykbTest|field[156] ; keyboardTest:mykbTest|field[157] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.399      ;
 ; 0.274 ; keyboardTest:mykbTest|field[344] ; keyboardTest:mykbTest|field[324] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.400      ;
 ; 0.275 ; keyboardTest:mykbTest|field[60]  ; keyboardTest:mykbTest|field[61]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.043      ; 0.402      ;
-; 0.275 ; keyboardTest:mykbTest|field[179] ; keyboardTest:mykbTest|field[180] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.401      ;
 ; 0.275 ; keyboardTest:mykbTest|field[306] ; keyboardTest:mykbTest|field[286] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.401      ;
+; 0.275 ; keyboardTest:mykbTest|field[179] ; keyboardTest:mykbTest|field[180] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.401      ;
 ; 0.277 ; keyboardTest:mykbTest|field[117] ; keyboardTest:mykbTest|field[118] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.041      ; 0.402      ;
 ; 0.277 ; keyboardTest:mykbTest|field[246] ; keyboardTest:mykbTest|field[247] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.403      ;
-; 0.277 ; keyboardTest:mykbTest|field[4]   ; keyboardTest:mykbTest|field[5]   ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.403      ;
-; 0.277 ; keyboardTest:mykbTest|field[10]  ; keyboardTest:mykbTest|field[11]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.403      ;
 ; 0.277 ; keyboardTest:mykbTest|field[381] ; keyboardTest:mykbTest|field[382] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.403      ;
 ; 0.277 ; keyboardTest:mykbTest|field[380] ; keyboardTest:mykbTest|field[381] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.403      ;
 ; 0.277 ; keyboardTest:mykbTest|field[360] ; keyboardTest:mykbTest|field[361] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.043      ; 0.404      ;
 ; 0.277 ; keyboardTest:mykbTest|field[306] ; keyboardTest:mykbTest|field[307] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.403      ;
-; 0.278 ; keyboardTest:mykbTest|field[27]  ; keyboardTest:mykbTest|field[28]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.404      ;
+; 0.277 ; keyboardTest:mykbTest|field[4]   ; keyboardTest:mykbTest|field[5]   ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.403      ;
+; 0.277 ; keyboardTest:mykbTest|field[10]  ; keyboardTest:mykbTest|field[11]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.403      ;
 ; 0.278 ; keyboardTest:mykbTest|field[387] ; keyboardTest:mykbTest|field[388] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.404      ;
+; 0.278 ; keyboardTest:mykbTest|field[27]  ; keyboardTest:mykbTest|field[28]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.404      ;
 ; 0.279 ; keyboardTest:mykbTest|field[1]   ; keyboardTest:mykbTest|field[2]   ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.405      ;
 ; 0.279 ; keyboardTest:mykbTest|field[18]  ; keyboardTest:mykbTest|field[19]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.405      ;
 ; 0.279 ; keyboardTest:mykbTest|field[393] ; keyboardTest:mykbTest|field[394] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.405      ;
@@ -2246,13 +2246,13 @@ No synchronizer chains to report.
 ; 0.282 ; keyboardTest:mykbTest|field[389] ; keyboardTest:mykbTest|field[390] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.408      ;
 ; 0.282 ; keyboardTest:mykbTest|field[299] ; keyboardTest:mykbTest|field[300] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.408      ;
 ; 0.283 ; keyboardTest:mykbTest|field[83]  ; keyboardTest:mykbTest|field[82]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.245      ; 0.612      ;
+; 0.285 ; keyboardTest:mykbTest|field[385] ; keyboardTest:mykbTest|field[386] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.411      ;
 ; 0.285 ; keyboardTest:mykbTest|field[12]  ; keyboardTest:mykbTest|field[13]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.411      ;
 ; 0.285 ; keyboardTest:mykbTest|field[127] ; keyboardTest:mykbTest|field[147] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.244      ; 0.613      ;
-; 0.285 ; keyboardTest:mykbTest|field[385] ; keyboardTest:mykbTest|field[386] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.411      ;
 ; 0.286 ; keyboardTest:mykbTest|field[223] ; keyboardTest:mykbTest|field[222] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.244      ; 0.614      ;
 ; 0.288 ; keyboardTest:mykbTest|field[11]  ; keyboardTest:mykbTest|field[12]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.414      ;
 ; 0.288 ; keyboardTest:mykbTest|field[13]  ; keyboardTest:mykbTest|field[14]  ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.042      ; 0.414      ;
-; 0.290 ; keyboardTest:mykbTest|field[145] ; keyboardTest:mykbTest|field[146] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.244      ; 0.618      ;
+; 0.290 ; keyboardTest:mykbTest|field[304] ; keyboardTest:mykbTest|field[284] ; clkCounter:myclkCounter|clock_b ; clkCounter:myclkCounter|clock_b ; 0.000        ; 0.245      ; 0.619      ;
 +-------+----------------------------------+----------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
 
 
@@ -3468,7 +3468,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sun Dec 08 00:49:03 2019
+    Info: Processing started: Sun Dec 08 12:00:48 2019
 Info: Command: quartus_sta skeleton -c skeleton
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -3580,8 +3580,8 @@ Info (332146): Worst-case minimum pulse width slack is -1.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5106 megabytes
-    Info: Processing ended: Sun Dec 08 00:49:06 2019
+    Info: Peak virtual memory: 5110 megabytes
+    Info: Processing ended: Sun Dec 08 12:00:51 2019
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
