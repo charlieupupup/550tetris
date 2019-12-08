@@ -3,23 +3,23 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'p1|altpll_component|pll|clk[2]'
-Slack : -22.180
-TNS   : -235.362
+Slack : -23.496
+TNS   : -244.141
 
 Type  : Slow 1200mV 85C Model Setup 'clkCounter:myclkCounter|clock_b'
-Slack : -4.329
-TNS   : -1513.205
+Slack : -4.379
+TNS   : -1551.726
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -1.673
-TNS   : -1.673
+Slack : -1.410
+TNS   : -1.410
 
 Type  : Slow 1200mV 85C Model Hold 'clkCounter:myclkCounter|clock_b'
-Slack : 0.391
+Slack : 0.246
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : 0.402
+Slack : 0.403
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'p1|altpll_component|pll|clk[2]'
@@ -27,11 +27,11 @@ Slack : 0.453
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'p1|altpll_component|pll|clk[2]'
-Slack : 12.869
+Slack : 14.250
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'p1|altpll_component|pll|clk[2]'
-Slack : 4.637
+Slack : 4.137
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clkCounter:myclkCounter|clock_b'
@@ -39,43 +39,43 @@ Slack : -1.285
 TNS   : -514.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.753
+Slack : 9.749
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'p1|altpll_component|pll|clk[2]'
-Slack : 19.710
+Slack : 19.708
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'p1|altpll_component|pll|clk[2]'
-Slack : -18.103
-TNS   : -185.029
+Slack : -19.350
+TNS   : -193.977
 
 Type  : Slow 1200mV 0C Model Setup 'clkCounter:myclkCounter|clock_b'
-Slack : -3.892
-TNS   : -1352.034
+Slack : -3.989
+TNS   : -1403.198
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -1.501
-TNS   : -1.501
+Slack : -1.260
+TNS   : -1.260
+
+Type  : Slow 1200mV 0C Model Hold 'clkCounter:myclkCounter|clock_b'
+Slack : 0.221
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
 Slack : 0.354
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'clkCounter:myclkCounter|clock_b'
-Slack : 0.367
-TNS   : 0.000
-
 Type  : Slow 1200mV 0C Model Hold 'p1|altpll_component|pll|clk[2]'
-Slack : 0.416
+Slack : 0.417
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'p1|altpll_component|pll|clk[2]'
-Slack : 13.596
+Slack : 14.847
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'p1|altpll_component|pll|clk[2]'
-Slack : 4.112
+Slack : 3.672
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clkCounter:myclkCounter|clock_b'
@@ -87,39 +87,39 @@ Slack : 9.775
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'p1|altpll_component|pll|clk[2]'
-Slack : 19.712
+Slack : 19.710
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'p1|altpll_component|pll|clk[2]'
-Slack : -3.952
-TNS   : -15.343
+Slack : -3.920
+TNS   : -15.032
 
 Type  : Fast 1200mV 0C Model Setup 'clkCounter:myclkCounter|clock_b'
-Slack : -1.729
-TNS   : -572.687
+Slack : -1.693
+TNS   : -575.027
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -0.804
-TNS   : -0.804
+Slack : -0.531
+TNS   : -0.531
 
 Type  : Fast 1200mV 0C Model Hold 'clkCounter:myclkCounter|clock_b'
-Slack : 0.165
+Slack : 0.107
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.182
+Slack : 0.181
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'p1|altpll_component|pll|clk[2]'
-Slack : 0.197
+Slack : 0.198
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'p1|altpll_component|pll|clk[2]'
-Slack : 16.081
+Slack : 16.878
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'p1|altpll_component|pll|clk[2]'
-Slack : 2.316
+Slack : 2.122
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clkCounter:myclkCounter|clock_b'
@@ -127,11 +127,11 @@ Slack : -1.000
 TNS   : -400.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.436
+Slack : 9.437
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'p1|altpll_component|pll|clk[2]'
-Slack : 19.749
+Slack : 19.752
 TNS   : 0.000
 
 ------------------------------------------------------------
