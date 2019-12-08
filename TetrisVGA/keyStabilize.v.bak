@@ -1,8 +1,8 @@
-module keyboardTest(clock, clock_b, resetn, ps2_out, field, stableKey);
+module keyStabilize(clock, clock_b, resetn, ps2_out, /*field,*/ stableKey);
 
 	input clock, clock_b, resetn;
 	input [7:0] ps2_out;
-	output reg [399:0] field;
+	//output reg [399:0] field;
 	output reg [7:0] stableKey;
 	
 	reg [7:0] keySignal;
@@ -10,12 +10,12 @@ module keyboardTest(clock, clock_b, resetn, ps2_out, field, stableKey);
 	reg countFlag;
 	
 	initial begin
-		field <= 400'h700000000000000000;
+		//field <= 400'h700000000000000000;
 		keySignal <= 8'b0;
 		count_b <= 1;
 	end
 	
-	// Original version
+	// Original version --------------------------------------------------
 	/*always @(posedge clock) begin
 		if (ps2_out > 8'b0) keySignal <= ps2_out;
 		if (keySignal > 8'b0) count_b = count_b + 1;
@@ -24,6 +24,7 @@ module keyboardTest(clock, clock_b, resetn, ps2_out, field, stableKey);
 			count_b <= 1;
 		end
 	end*/
+	// -----------------------------------------------------------------
 	
 	// Improved version
 	always @(posedge clock) begin
@@ -36,11 +37,13 @@ module keyboardTest(clock, clock_b, resetn, ps2_out, field, stableKey);
 	end
 	
 	always @(posedge clock_b) begin
+	/*
 		if (~resetn) field <= 400'h700000000000000000;
 		else if (keySignal == 8'h34) field <= field << 1'b1;
 		else if (keySignal == 8'h23) field <= field >> 1'b1;
 		else if (keySignal == 8'h2d) field <= field >> 'd20;
 		else if (keySignal == 8'h2b) field <= field << 'd20;
+	*/
 		stableKey <= keySignal;
 	end
 

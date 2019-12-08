@@ -46,10 +46,10 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	
 	//------------------------------------------------------------------------------
 	
-	wire clock_10M, clock_b, clock_a;
+	wire clock_10M, clock_b, clock_a, clock_a2;
 	
 	wire [7:0] stableKey;
-	wire leftTrue, rightTrue, rotateTrue;
+	wire leftTrue, rightTrue, rotateTrue, speedTrue;
 	
 	wire [2:0] random5; // Random integer from 0 to 4.
 	
@@ -58,17 +58,20 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	// clock divider by 5 to 10 MHz
 	pll div(CLOCK_50, clock_10M);
 	assign clock = CLOCK_50; // Now clock is 50 MHz
-	clkCounter myclkCounter(CLOCK_50, clock_b, clock_a); // b 10Hz and a 1Hz.
+	clkCounter myclkCounter(CLOCK_50, clock_b, clock_a2, clock_a); // b 10Hz and a2 2Hz, a 1Hz.
 	
 	// keyboard controller
 	PS2_Interface myps2(clock, resetn, ps2_clock, ps2_data, ps2_key_data, ps2_key_pressed, ps2_out); // Input clock 50MHz. Output ps2_out.
-	keyboardTest mykbTest(clock, clock_b, resetn, ps2_out, field, stableKey); // stableKey is updated by clock_b. ////////////////
+	keyStabilize mykbTest(clock, clock_b, resetn, ps2_out, /*field,*/ stableKey); // stableKey is updated by clock_b. /// Remove field.
 	// Keyboard signal processing
-	keyProcess my_kp(stableKey, leftTrue, rightTrue, rotateTrue);
+	keyProcess my_kp(stableKey, leftTrue, rightTrue, rotateTrue, speedTrue);
 
 	// Use LFSR to produce pseudo-random number.
 	lfsr mylfsr(clock_a, random5);/// Clock needs revised.
-	//assign field[2:0] = random5;/////////
+	//assign field[2:0] = random5;///////////// Testing only.
+	
+	// Speed power up
+	//speedUp my_su(clock_b, speedTrue, field); /// field should be replaced by downTrue.
 	
 	// VGA
 	Reset_Delay			r0	(.iCLK(CLOCK_50),.oRESET(DLY_RST)	);

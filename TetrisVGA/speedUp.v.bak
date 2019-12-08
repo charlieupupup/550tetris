@@ -1,0 +1,8 @@
+module speedUp(clock_a2, clock_a, field);
+
+	input clock_a2, clock_a; 
+	output reg [399:0] field;
+	
+	
+
+endmodule

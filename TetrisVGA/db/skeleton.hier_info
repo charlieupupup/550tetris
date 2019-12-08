@@ -233,6 +233,39 @@ inclk[1] => pll1.CLK1
 
 
 |skeleton|clkCounter:myclkCounter
+CLOCK_50M => clock_a2~reg0.CLK
+CLOCK_50M => count_a2[0].CLK
+CLOCK_50M => count_a2[1].CLK
+CLOCK_50M => count_a2[2].CLK
+CLOCK_50M => count_a2[3].CLK
+CLOCK_50M => count_a2[4].CLK
+CLOCK_50M => count_a2[5].CLK
+CLOCK_50M => count_a2[6].CLK
+CLOCK_50M => count_a2[7].CLK
+CLOCK_50M => count_a2[8].CLK
+CLOCK_50M => count_a2[9].CLK
+CLOCK_50M => count_a2[10].CLK
+CLOCK_50M => count_a2[11].CLK
+CLOCK_50M => count_a2[12].CLK
+CLOCK_50M => count_a2[13].CLK
+CLOCK_50M => count_a2[14].CLK
+CLOCK_50M => count_a2[15].CLK
+CLOCK_50M => count_a2[16].CLK
+CLOCK_50M => count_a2[17].CLK
+CLOCK_50M => count_a2[18].CLK
+CLOCK_50M => count_a2[19].CLK
+CLOCK_50M => count_a2[20].CLK
+CLOCK_50M => count_a2[21].CLK
+CLOCK_50M => count_a2[22].CLK
+CLOCK_50M => count_a2[23].CLK
+CLOCK_50M => count_a2[24].CLK
+CLOCK_50M => count_a2[25].CLK
+CLOCK_50M => count_a2[26].CLK
+CLOCK_50M => count_a2[27].CLK
+CLOCK_50M => count_a2[28].CLK
+CLOCK_50M => count_a2[29].CLK
+CLOCK_50M => count_a2[30].CLK
+CLOCK_50M => count_a2[31].CLK
 CLOCK_50M => clock_b~reg0.CLK
 CLOCK_50M => count_b[0].CLK
 CLOCK_50M => count_b[1].CLK
@@ -267,6 +300,7 @@ CLOCK_50M => count_b[29].CLK
 CLOCK_50M => count_b[30].CLK
 CLOCK_50M => count_b[31].CLK
 clock_b <= clock_b~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock_a2 <= clock_a2~reg0.DB_MAX_OUTPUT_PORT_TYPE
 clock_a <= clock_a~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -583,7 +617,7 @@ command_was_sent <= command_was_sent~reg0.DB_MAX_OUTPUT_PORT_TYPE
 error_communication_timed_out <= error_communication_timed_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|skeleton|keyboardTest:mykbTest
+|skeleton|keyStabilize:mykbTest
 clock => count_b[0].CLK
 clock => count_b[1].CLK
 clock => count_b[2].CLK
@@ -1870,30 +1904,39 @@ stableKey[7] <= stableKey[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 stableKey[0] => Equal0.IN2
 stableKey[0] => Equal1.IN7
 stableKey[0] => Equal2.IN3
+stableKey[0] => Equal3.IN3
 stableKey[1] => Equal0.IN1
 stableKey[1] => Equal1.IN6
 stableKey[1] => Equal2.IN7
+stableKey[1] => Equal3.IN2
 stableKey[2] => Equal0.IN7
 stableKey[2] => Equal1.IN2
 stableKey[2] => Equal2.IN2
+stableKey[2] => Equal3.IN7
 stableKey[3] => Equal0.IN6
 stableKey[3] => Equal1.IN5
 stableKey[3] => Equal2.IN1
+stableKey[3] => Equal3.IN1
 stableKey[4] => Equal0.IN5
 stableKey[4] => Equal1.IN1
 stableKey[4] => Equal2.IN6
+stableKey[4] => Equal3.IN6
 stableKey[5] => Equal0.IN0
 stableKey[5] => Equal1.IN0
 stableKey[5] => Equal2.IN0
+stableKey[5] => Equal3.IN0
 stableKey[6] => Equal0.IN4
 stableKey[6] => Equal1.IN4
 stableKey[6] => Equal2.IN5
+stableKey[6] => Equal3.IN5
 stableKey[7] => Equal0.IN3
 stableKey[7] => Equal1.IN3
 stableKey[7] => Equal2.IN4
+stableKey[7] => Equal3.IN4
 leftTrue <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 rightTrue <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
 rotateTrue <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+speedTrue <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |skeleton|lfsr:mylfsr
