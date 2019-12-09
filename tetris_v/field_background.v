@@ -1,9 +1,4 @@
-module field_background(clk,
-    reset,
-    block_check_result,
-    field_in,
-    field_out
-);
+module field_background(clk, reset, block_check_result, field_in, field_out);
 
     input clk;
 

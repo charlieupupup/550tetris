@@ -1,17 +1,10 @@
-module block_pos(
-    clk, err,
-    drop,
-    left,
-    right, ro,
-    block_pos_y_out,
-    block_pos_x_out, rotate
-    
-);
-
-input clk, drop, left, right, ro;
+module block_pos(clk, err, block_pos_refresh, block_pos_y_out_o,block_pos_x_out_o, rotate_out_o, block_pos_x_in, block_pos_y_in, rotate_in);
 
 
-output reg [9:0] block_pos_x_out, block_pos_y_out, rotate;
+output reg [9:0] block_pos_y_out, block_pos_x_out, rotate_out;
+input clk, err, refresh;
+input [9:0] block_pos_y_in, block_pos_x_in, rotate_in;
+
 
 
 initial begin
@@ -26,23 +19,10 @@ always @ (posedge clk) begin
         block_pos_x_out = 9'd9;
         rotate = 9'd0;
     end
-    else begin
-        if (drop == 1) begin
-        block_pos_y_out <= block_pos_y_out + 1;
-        end
-
-        else if (left == 1) begin
-        block_pos_x_out <= block_pos_x_out - 1;   
-        end
-
-        else if (right == 1) begin
-        block_pos_x_out <= block_pos_x_out + 1;   
-        end
-
-        else if (ro == 1) begin
-        rotate = rotate + 9'd1;
-        end
-
+    else if (refresh) begin     
+        block_pos_y_out = block_pos_y_in;
+        block_pos_x_out = block_pos_x_in;
+        rotate_out = rotate_in;s
     end
     
 end

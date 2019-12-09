@@ -1,5 +1,4 @@
-module keyboard_input(clk, block_pos_x_in, block_pos_y_in, rotate_in, left, right, down, ro,
-block_pos_x_out, block_pos_y_out, rotate_out
+module keyboard_input(clk, block_pos_y_in, block_pos_x_in, rotate_in, left, right, down, ro,block_pos_x_out, block_pos_y_out, rotate_out
     
 );
 
