@@ -1,4 +1,4 @@
-module skeleton(resetn, 										// Need to re-assign the pin !!!!!
+module skeleton(resetn, 										
 	ps2_clock, ps2_data, 										// ps2 related I/O
 	debug_data_in, debug_addr, leds, 						// extra debugging ports
 	lcd_data, lcd_rw, lcd_en, lcd_rs, lcd_on, lcd_blon,// LCD info
@@ -53,6 +53,8 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	
 	wire [2:0] random5; // Random integer from 0 to 4.
 	
+	wire [31:0] score;
+	
 	wire [399:0] field;
 	
 	// clock divider by 5 to 10 MHz
@@ -67,10 +69,13 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 	keyProcess my_kp(stableKey, leftTrue, rightTrue, rotateTrue, speedTrue);
 
 	// Use LFSR to produce pseudo-random number.
-	lfsr my_lfsr(clock_b, 8'b00101010, random5);
+	lfsr my_lfsr(clock_b, 8'b00101010, random5); // The second argument is the random seed.
 	
 	// Speed power up
 	speedUp my_su(clock_b, speedTrue, field); /// field should be replaced by downTrue.
+	
+	// Scores
+	scoreDisplayTest my_sDT(~resetn, clock_b, clock_a2, speedTrue, score); ///// Only for testing.
 	
 	// VGA
 	Reset_Delay			r0	(.iCLK(CLOCK_50),.oRESET(DLY_RST)	);
@@ -83,7 +88,8 @@ module skeleton(resetn, 										// Need to re-assign the pin !!!!!
 								 .b_data(VGA_B),
 								 .g_data(VGA_G),
 								 .r_data(VGA_R),
-								 .field(field)); // clock 10 MHz
+								 .field(field),
+								 .score(score)); // clock 50 MHz /// score should be wire type.
 	
 	
 	

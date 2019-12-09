@@ -6,12 +6,14 @@ module vga_controller(iRST_n,
                       b_data,
                       g_data,
                       r_data,
-							 field);
+							 field,
+							 score);
 
 	
 input iRST_n;
 input iVGA_CLK;
 input [399:0] field;
+input [31:0] score;
 output reg oBLANK_n;
 output reg oHS;
 output reg oVS;
@@ -49,7 +51,7 @@ end
 //////INDEX addr.
 assign VGA_CLK_n = ~iVGA_CLK;
 
-fieldDisplay myfD(ADDR, field, bgr_data_raw);
+fieldDisplay myfD(ADDR, field, score, bgr_data_raw);
 
 //////
 //////latch valid data at falling edge;
