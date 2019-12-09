@@ -1,6 +1,4 @@
-module field_merge(field_display, field_background, block_expand
-    
-);
+module field_merge(field_display, field_background, block_expand);
 
 input [399:0] block_expand;
 input [399:0] field_background;

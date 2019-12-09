@@ -1,7 +1,4 @@
-module block_choice(rotate,
-    block_num,
-    block_matrix
-);
+module block_choice(rotate,block_num,block_matrix);
 
 input [9:0] block_num, rotate;
 output [15:0] block_matrix;

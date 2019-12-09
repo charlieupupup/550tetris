@@ -4,7 +4,7 @@ module block_pos(
     left,
     right, ro,
     block_pos_y_out,
-    block_pos_x_out
+    block_pos_x_out, rotate
     
 );
 

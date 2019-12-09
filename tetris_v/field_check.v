@@ -1,6 +1,4 @@
-module field_check(err, field_display, field_background, block_expand
-    
-);
+module field_check(err, field_display, field_background, block_expand);
 
 output err;
 
