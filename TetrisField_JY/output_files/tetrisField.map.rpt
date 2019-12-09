@@ -1,0 +1,705 @@
+Analysis & Synthesis report for tetrisField
+Mon Dec 09 00:32:43 2019
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Dec 09 00:32:43 2019       ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                      ; tetrisField                                 ;
+; Top-level Entity Name              ; field                                       ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 411                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; field              ; tetrisField        ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
+; field.v                          ; yes             ; User Verilog HDL File  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 411   ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 411   ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |field                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 411  ; 0            ; |field              ; field       ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 411                         ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Mon Dec 09 00:32:34 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tetrisField -c tetrisField
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file field.v
+    Info (12023): Found entity 1: field File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 1
+Info (12127): Elaborating entity "field" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at field.v(10): object "fieldWire" assigned a value but never read File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 10
+Warning (10036): Verilog HDL or VHDL warning at field.v(11): object "blockWire" assigned a value but never read File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 11
+Warning (10858): Verilog HDL warning at field.v(13): object field used but never assigned File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+Warning (10858): Verilog HDL warning at field.v(14): object block used but never assigned File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 14
+Warning (10858): Verilog HDL warning at field.v(16): object blockX used but never assigned File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 16
+Warning (10858): Verilog HDL warning at field.v(16): object blockY used but never assigned File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 16
+Warning (10030): Net "field" at field.v(13) has no driver or initial value, using a default initial value '0' File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+Warning (10030): Net "block" at field.v(14) has no driver or initial value, using a default initial value '0' File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 14
+Warning (10030): Net "blockX" at field.v(16) has no driver or initial value, using a default initial value '0' File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 16
+Warning (10030): Net "blockY" at field.v(16) has no driver or initial value, using a default initial value '0' File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 16
+Warning (10034): Output port "nextBlockTrue" at field.v(7) has no driver File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
+Warning (10034): Output port "gameOver" at field.v(7) has no driver File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
+Warning (10034): Output port "score" at field.v(7) has no driver File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "fieldOut[399]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[398]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[397]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[396]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[395]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[394]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[393]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[392]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[391]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[390]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[389]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[388]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[387]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[386]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[385]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[384]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[383]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[382]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[381]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[380]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[379]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[378]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[377]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[376]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[375]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[374]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[373]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[372]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[371]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[370]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[369]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[368]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[367]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[366]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[365]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[364]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[363]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[362]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[361]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[360]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[359]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[358]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[357]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[356]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[355]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[354]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[353]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[352]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[351]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[350]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[349]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[348]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[347]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[346]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[345]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[344]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[343]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[342]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[341]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[340]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[339]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[338]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[337]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[336]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[335]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[334]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[333]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[332]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[331]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[330]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[329]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[328]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[327]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[326]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[325]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[324]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[323]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[322]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[321]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[320]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[319]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[318]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[317]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[316]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[315]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[314]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[313]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[312]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[311]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[310]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[309]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[308]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[307]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[306]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[305]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[304]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[303]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[302]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[301]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[300]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[299]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[298]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[297]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[296]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[295]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[294]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[293]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[292]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[291]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[290]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[289]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[288]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[287]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[286]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[285]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[284]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[283]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[282]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[281]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[280]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[279]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[278]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[277]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[276]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[275]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[274]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[273]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[272]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[271]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[270]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[269]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[268]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[267]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[266]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[265]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[264]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[263]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[262]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[261]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[260]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[259]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[258]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[257]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[256]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[255]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[254]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[253]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[252]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[251]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[250]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[249]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[248]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[247]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[246]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[245]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[244]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[243]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[242]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[241]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[240]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[239]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[238]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[237]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[236]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[235]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[234]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[233]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[232]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[231]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[230]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[229]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[228]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[227]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[226]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[225]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[224]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[223]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[222]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[221]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[220]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[219]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[218]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[217]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[216]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[215]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[214]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[213]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[212]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[211]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[210]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[209]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[208]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[207]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[206]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[205]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[204]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[203]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[202]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[201]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[200]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[199]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[198]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[197]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[196]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[195]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[194]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[193]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[192]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[191]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[190]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[189]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[188]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[187]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[186]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[185]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[184]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[183]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[182]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[181]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[180]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[179]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[178]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[177]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[176]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[175]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[174]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[173]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[172]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[171]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[170]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[169]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[168]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[167]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[166]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[165]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[164]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[163]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[162]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[161]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[160]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[159]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[158]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[157]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[156]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[155]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[154]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[153]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[152]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[151]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[150]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[149]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[148]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[147]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[146]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[145]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[144]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[143]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[142]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[141]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[140]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[139]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[138]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[137]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[136]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[135]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[134]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[133]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[132]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[131]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[130]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[129]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[128]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[127]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[126]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[125]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[124]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[123]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[122]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[121]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[120]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[119]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[118]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[117]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[116]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[115]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[114]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[113]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[112]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[111]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[110]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[109]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[108]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[107]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[106]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[105]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[104]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[103]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[102]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[101]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[100]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[99]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[98]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[97]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[96]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[95]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[94]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[93]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[92]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[91]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[90]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[89]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[88]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[87]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[86]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[85]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[84]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[83]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[82]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[81]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[80]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[79]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[78]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[77]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[76]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[75]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[74]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[73]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[72]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[71]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[70]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[69]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[68]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[67]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[66]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[65]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[64]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[63]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[62]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[61]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[60]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[59]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[58]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[57]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[56]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[55]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[54]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[53]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[52]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[51]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[50]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[49]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[48]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[47]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[46]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[45]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[44]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[43]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[42]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[41]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[40]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[39]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[38]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[37]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[36]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[35]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[34]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[33]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[32]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[31]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[30]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[29]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[28]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[27]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[26]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[25]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[24]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[23]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[22]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[21]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[20]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[19]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[18]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[17]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[16]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[15]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[14]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[13]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[12]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[11]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[10]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[9]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[8]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[7]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[6]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[5]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[4]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[3]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[2]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[1]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "fieldOut[0]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
+    Warning (13410): Pin "nextBlockTrue" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
+    Warning (13410): Pin "gameOver" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
+    Warning (13410): Pin "score" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 8 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clock" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 4
+    Warning (15610): No output dependent on input pin "leftTrue" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 4
+    Warning (15610): No output dependent on input pin "rightTrue" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 4
+    Warning (15610): No output dependent on input pin "downTrue" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 4
+    Warning (15610): No output dependent on input pin "rotateTrue" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 4
+    Warning (15610): No output dependent on input pin "blockType[0]" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 5
+    Warning (15610): No output dependent on input pin "blockType[1]" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 5
+    Warning (15610): No output dependent on input pin "blockType[2]" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 5
+Info (21057): Implemented 411 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 403 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 427 warnings
+    Info: Peak virtual memory: 4958 megabytes
+    Info: Processing ended: Mon Dec 09 00:32:43 2019
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:21
+
+
