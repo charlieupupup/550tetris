@@ -15,25 +15,18 @@ output [399:0] field_display;
 reg [399:0] field_background;
 reg xpos, ypos;
 
-init(rst, field_background, field_init);
 
-rowdown(field_background, field_background2);
+block_pos();
+block_expand;
+field_merge(block_expand, field_background);
 
-rowfull(field_background, field_background3, score_flag);
-blockcheck(block, screen, xpos, ypos, rotate)
+field_check(field_merge 0, field_background);
 
-block_rotate(x, y, r);
+keyinput();
+block_tmp;
+field_display;
+field_check;
 
-field_merge(field_background, blockb, xpos, ypos, rotate);
-
-field_refresh(field_background, field_display);
-
-block_rotate(x, y, rotate);
-
-
-block_choice(random, block);
-
-
-
+field_check field_check_game()
 
 endmodule // 

@@ -1,10 +1,13 @@
-module block_choice(
+module block_choice(rotate,
     block_num,
     block_matrix
 );
 
-input [2:0] block_num;
+input [9:0] block_num, rotate;
 output [15:0] block_matrix;
+
+reg [9:0] rotate_tmp;
+assign rotate_tmp = rotate % 4;
 
 
 reg [15:0] block_0 = 16'b0010001000100010;
