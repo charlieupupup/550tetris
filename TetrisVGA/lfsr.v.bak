@@ -1,0 +1,9 @@
+module lfsr(clock, q);
+
+	input clock;
+	output [2:0] q;
+	
+	genvar i;
+	
+
+endmodule

@@ -1,0 +1,32 @@
+module scoreDisplay(ADDRx, ADDRy, score, score_data_raw);
+
+	input [18:0] ADDRx, ADDRy;
+	input [31:0] score;
+	output reg [23:0] score_data_raw;
+
+	wire scoreTrue1, scoreTrue0;
+	wire [2:0] x1, x0, x, y;
+	wire [3:0] digit1, digit0;
+	wire [23:0] score1_raw, score0_raw;
+	
+	
+	assign scoreTrue1 = (ADDRx > 19'd484 && ADDRx < 19'd557 && ADDRy > 19'd119 && ADDRy < 19'd240)? 1'b1 : 1'b0;
+	assign scoreTrue0 = (ADDRx > 19'd562 && ADDRx < 19'd635 && ADDRy > 19'd119 && ADDRy < 19'd240)? 1'b1 : 1'b0;
+	assign x1 = (ADDRx - 'd485) / 'd24;
+	assign x0 = (ADDRx - 'd563) / 'd24;
+	assign y = (ADDRy - 'd120) / 'd24;
+	assign x = (scoreTrue1)? x1 : x0;
+	
+	assign digit1 = score / 'd10;
+	assign digit0 = score % 'd10;
+	
+	digitDisplay(x, y, digit1, score1_raw);
+	digitDisplay(x, y, digit0, score0_raw);
+	
+	always @(*) begin
+		if (~scoreTrue1 && ~scoreTrue0) score_data_raw <= 24'h4f223b;
+		else if (scoreTrue1) score_data_raw <= score1_raw;
+		else score_data_raw <= score0_raw;
+	end
+
+endmodule 

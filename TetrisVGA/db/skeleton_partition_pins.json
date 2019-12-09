@@ -120,10 +120,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[2]",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_R[3]",
 					"strict" : false
 				},
@@ -136,23 +132,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[6]",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_R[7]",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_G[0]",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_G[1]",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_G[2]",
 					"strict" : false
 				},
 				{
@@ -160,15 +140,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[4]",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_G[5]",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_G[6]",
 					"strict" : false
 				},
 				{
@@ -192,19 +164,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[4]",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_B[5]",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_B[6]",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_B[7]",
 					"strict" : false
 				},
 				{
@@ -221,22 +181,6 @@
 				},
 				{
 					"name" : "resetn",
-					"strict" : false
-				},
-				{
-					"name" : "key[1]",
-					"strict" : false
-				},
-				{
-					"name" : "key[0]",
-					"strict" : false
-				},
-				{
-					"name" : "key[3]",
-					"strict" : false
-				},
-				{
-					"name" : "key[2]",
 					"strict" : false
 				}
 			]

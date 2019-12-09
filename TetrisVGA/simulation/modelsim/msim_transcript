@@ -1,0 +1,115 @@
+# Reading H:/Altera_lite/16.0/modelsim_ase/tcl/vsim/pref.tcl
+# do skeleton_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying H:/Altera_lite/16.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+H:/Altera_lite/Github/550tetris/TetrisVGA {H:/Altera_lite/Github/550tetris/TetrisVGA/dffe_ref.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:07:45 on Dec 08,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/Altera_lite/Github/550tetris/TetrisVGA" H:/Altera_lite/Github/550tetris/TetrisVGA/dffe_ref.v 
+# -- Compiling module dffe_ref
+# 
+# Top level modules:
+# 	dffe_ref
+# End time: 16:07:45 on Dec 08,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/Altera_lite/Github/550tetris/TetrisVGA {H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:07:45 on Dec 08,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/Altera_lite/Github/550tetris/TetrisVGA" H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v 
+# -- Compiling module lfsr
+# 
+# Top level modules:
+# 	lfsr
+# End time: 16:07:45 on Dec 08,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/Altera_lite/Github/550tetris/TetrisVGA {H:/Altera_lite/Github/550tetris/TetrisVGA/mux2In.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:07:45 on Dec 08,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/Altera_lite/Github/550tetris/TetrisVGA" H:/Altera_lite/Github/550tetris/TetrisVGA/mux2In.v 
+# -- Compiling module mux2In
+# 
+# Top level modules:
+# 	mux2In
+# End time: 16:07:45 on Dec 08,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+H:/Altera_lite/Github/550tetris/TetrisVGA {H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:07:45 on Dec 08,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/Altera_lite/Github/550tetris/TetrisVGA" H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr_tb.v 
+# -- Compiling module lfsr_tb
+# 
+# Top level modules:
+# 	lfsr_tb
+# End time: 16:07:45 on Dec 08,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  lfsr_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" lfsr_tb 
+# Start time: 16:07:45 on Dec 08,2019
+# Loading work.lfsr_tb
+# Loading work.lfsr
+# Loading work.mux2In
+# Loading work.dffe_ref
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+#                    0 << Starting the Simulation >>
+# q = 0
+# q = 2
+# q = 2
+# q = 1
+# q = 3
+# q = 1
+# q = 1
+# q = 3
+# q = 4
+# q = 2
+# q = 4
+# q = 1
+# q = 2
+# q = 3
+# q = 4
+# q = 2
+# q = 3
+# q = 2
+# q = 0
+# q = 0
+# q = 1
+# q = 3
+# q = 0
+# q = 3
+# q = 3
+# q = 1
+# q = 0
+# q = 0
+# q = 3
+# q = 4
+# q = 4
+# q = 2
+# q = 1
+# q = 0
+# q = 0
+# q = 0
+# q = 0
+# q = 0
+# q = 2
+# q = 4
+# q = 4
+# ** Note: $stop    : H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr_tb.v(27)
+#    Time: 810 ns  Iteration: 1  Instance: /lfsr_tb
+# Break in Module lfsr_tb at H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr_tb.v line 27
+# End time: 16:10:38 on Dec 08,2019, Elapsed time: 0:02:53
+# Errors: 0, Warnings: 0

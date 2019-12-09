@@ -1,0 +1,10 @@
+module scoreDisplayTest(clock_a2, score);
+
+	input clock_a2;
+	output reg [31:0] score;
+	
+	initial score <= 32'b0;
+	
+	always @(posedge clock_a2) score <= score + 32'b1;
+
+endmodule

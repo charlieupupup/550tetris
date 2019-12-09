@@ -1,0 +1,95 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dH:/Altera_lite/Github/550tetris/TetrisVGA/simulation/modelsim
+vdffe_ref
+Z1 !s110 1575839265
+!i10b 1
+!s100 d@`=;EkH3O4D[aOF@UEBk2
+IekC8iI_K>VK6=YnH6oMjc3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1572912490
+8H:/Altera_lite/Github/550tetris/TetrisVGA/dffe_ref.v
+FH:/Altera_lite/Github/550tetris/TetrisVGA/dffe_ref.v
+L0 1
+Z3 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z4 !s108 1575839265.000000
+!s107 H:/Altera_lite/Github/550tetris/TetrisVGA/dffe_ref.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/Altera_lite/Github/550tetris/TetrisVGA|H:/Altera_lite/Github/550tetris/TetrisVGA/dffe_ref.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+H:/Altera_lite/Github/550tetris/TetrisVGA
+vlfsr
+R1
+!i10b 1
+!s100 Uo<9NiCSRCnZTDgVHHGK=2
+IL=@>LI:1__^EWLUaccFiK2
+R2
+R0
+w1575839181
+8H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v
+FH:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/Altera_lite/Github/550tetris/TetrisVGA|H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr.v|
+!i113 1
+R5
+R6
+vlfsr_tb
+R1
+!i10b 1
+!s100 l9eDBDFPTa<5_?NTKTQ8>1
+I8j4z76MoCBR`3WW0DTJ]70
+R2
+R0
+w1575838391
+8H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr_tb.v
+FH:/Altera_lite/Github/550tetris/TetrisVGA/lfsr_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/Altera_lite/Github/550tetris/TetrisVGA|H:/Altera_lite/Github/550tetris/TetrisVGA/lfsr_tb.v|
+!i113 1
+R5
+R6
+vmux2In
+R1
+!i10b 1
+!s100 l0lAW`95C=QB2ZMGGoSY>3
+IiJczZUXMk[M0dTW]@iBze2
+R2
+R0
+w1568235522
+8H:/Altera_lite/Github/550tetris/TetrisVGA/mux2In.v
+FH:/Altera_lite/Github/550tetris/TetrisVGA/mux2In.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 H:/Altera_lite/Github/550tetris/TetrisVGA/mux2In.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/Altera_lite/Github/550tetris/TetrisVGA|H:/Altera_lite/Github/550tetris/TetrisVGA/mux2In.v|
+!i113 1
+R5
+R6
+nmux2@in

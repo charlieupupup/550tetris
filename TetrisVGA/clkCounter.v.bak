@@ -1,0 +1,16 @@
+module clkCounter(CLOCK_50M, clock_10, clock_1);
+
+	input CLOCK_50M;
+	output clock_10, clock_1;
+	
+	integer count;
+	initial count = 0;
+	always @(posedge keyCLK) begin
+		count = count + 1;
+		if (count > 18'd250000) begin // moveFlag period = 50 ms
+			moveFlag <= ~moveFlag;
+			count <= 0;
+		end
+	end
+
+endmodule

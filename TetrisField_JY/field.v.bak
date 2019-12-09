@@ -1,0 +1,20 @@
+module field(clock, leftTrue, rightTrue, downTrue, rotateNum, blockType,
+				 fieldOut, nextBlockTrue, gameOver, score);
+				 
+	input clock, leftTrue, rightTrue, downTrue;
+	input [9:0] rotateNum;
+	input [2:0] blockType;
+	output [0:399] fieldOut;
+	output nextBlockTrue, gameOver, score;
+	
+	reg field [0:19][0:19];
+	
+	genvar i;
+	generate
+		for (i = 0; i < 20; i = i + 1) begin: fieldOutput
+			assign fieldOut[
+		end
+	endgenerate
+	
+				 
+endmodule
