@@ -10,8 +10,9 @@ module clearLines(temField, newField, score); ///////
 	
 
 endmodule
-
-/*
+	
+	// Syntax test for clear lines. Syntax Pass.
+	/*
 	wire [0:399] fW0;
 	reg [0:399] field0;
 	wire [0:19] lineCancel;

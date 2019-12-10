@@ -8,14 +8,15 @@ module field(clock, reset, leftTrue, rightTrue, downTrue, rotateTrue, blockType,
 	output reg score; ////////////////// Score might be larger than one!!!!!
 	
 	wire [0:399] fieldOut; // Final output for display.
-	wire [0:399] field;
+	reg [0:399] field; ////
+	/*
 	wire [399:0] reverseField;
 	genvar i;
 	generate
 		for (i = 0; i < 400; i = i + 1) begin: reverseFieldArray
 			assign field[i] = reverseField[i];
 		end
-	endgenerate
+	endgenerate*/
 	
 	wire [0:15] block;
 	reg [4:0] blockX, blockY; // Block top-left coordinate.
@@ -31,6 +32,8 @@ module field(clock, reset, leftTrue, rightTrue, downTrue, rotateTrue, blockType,
 			end
 		end
 	endgenerate
+	
+	
 	
 	
 	// Move prediction start --------------------------
@@ -105,6 +108,9 @@ module field(clock, reset, leftTrue, rightTrue, downTrue, rotateTrue, blockType,
 	
 	
 	// Choose one from the four
+	wire moveTrue;
+	assign moveTrue = downTrue | rightTrue | leftTrue | rotateTrue;
+	
 	reg opOK, bottomTouch;
 	wire [3:0] moveSelect;
 	assign moveSelect[0] = downTrue;
@@ -136,10 +142,15 @@ module field(clock, reset, leftTrue, rightTrue, downTrue, rotateTrue, blockType,
 	end
 	
 	// Move prediction end --------------------------
-	
+
+
+
 	// Random shape production.
 	wire [0:15] randomBlockShape;
 	randomShape my_randomS(blockType, randomBlockShape); ////////////////
+ 
+ 
+ 
  
 	
 	// Core matrix registers start ----------------------------------	
@@ -181,10 +192,12 @@ module field(clock, reset, leftTrue, rightTrue, downTrue, rotateTrue, blockType,
 		end
 
 		
-		
 	// Core matrix registers end----------------------------------
 
+	
+	
 
+	// Main always block
 	initial begin		
 		blockX <= 5'd8;
 		blockY <= 5'b0;
@@ -215,8 +228,20 @@ module field(clock, reset, leftTrue, rightTrue, downTrue, rotateTrue, blockType,
 	end
 	
 	
-	
 	// Background matrix start----------------------------------------------------
+	initial field = 400'b0;
+	integer i, j;
+	always @(clock) begin
+		if (moveTrue && opOK && bottomTouch) begin
+			for (j = 0; j < 4; j = j + 1) begin: newFieldY
+				for (i = 0; i < 4; i = i + 1) begin: newFieldX
+					field[(blockY + j) * 20 + blockX + i] <= block[j * 4 + i];					
+				end
+			end
+		end
+	end
+	
+	
 	
 	/*
 	background_always coreBackground(
@@ -228,7 +253,7 @@ module field(clock, reset, leftTrue, rightTrue, downTrue, rotateTrue, blockType,
 		block,// 4*4 matrix ////////
 		reverseField, //20*20 new background
 		total_line_num); // Number of cancelled lines.
-	*/
+	
 	
 	wire clk;
    wire rst;
@@ -799,27 +824,10 @@ always @(posedge clk) begin
   assign total_line_num = total_line_num_inner;
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	*/
 	// Background matrix end----------------------------------------------------
 	
 	
 endmodule
 
-// Syntax test for clear lines. Syntax Pass.
-	/*
-	wire [0:399] fW0;
-	reg [0:399] field0;
-	wire [0:19] lineCancel;
-	always @(fW0) field0 <= fW0;
-	always @(lineCancel) begin
-		if (lineCancel[0] == 1'b1) field0[0:19] = field0[0:19] >> 'd20;
-		if (lineCancel[1] == 1'b1) field0[0:39] = field0[0:39] >> 'd20;	
-	end
-	*/
+

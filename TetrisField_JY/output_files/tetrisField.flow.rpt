@@ -1,5 +1,5 @@
 Flow report for tetrisField
-Tue Dec 10 03:46:41 2019
+Tue Dec 10 12:33:20 2019
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,22 +41,22 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Dec 10 03:46:41 2019       ;
+; Flow Status                        ; Successful - Tue Dec 10 12:33:20 2019       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; tetrisField                                 ;
 ; Top-level Entity Name              ; field                                       ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 19,014                                      ;
+;     Total combinational functions  ; 19,014                                      ;
+;     Dedicated logic registers      ; 26                                          ;
+; Total registers                    ; 26                                          ;
+; Total pins                         ; 411                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/10/2019 03:46:31 ;
+; Start date & time ; 12/10/2019 12:31:10 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; tetrisField         ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 255543653242468.157596759005296 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 255543653242468.157599907001852 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                     ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)       ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                            ; --            ; --          ; eda_simulation ;
@@ -91,29 +91,29 @@ agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:11     ; 1.0                     ; 5034 MB             ; 00:00:24                           ;
-; Total                  ; 00:00:11     ; --                      ; --                  ; 00:00:24                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:02:09     ; 1.0                     ; 5116 MB             ; 00:02:21                           ;
+; Total                ; 00:02:09     ; --                      ; --                  ; 00:02:21                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                     ;
-+------------------------+------------------+-----------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+------------------------+------------------+-----------+------------+----------------+
-; Analysis & Elaboration ; LAPTOP-67AJ1T14  ; Windows 8 ; 6.2        ; x86_64         ;
-+------------------------+------------------+-----------+------------+----------------+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; LAPTOP-67AJ1T14  ; Windows 8 ; 6.2        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off tetrisField -c tetrisField --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off tetrisField -c tetrisField
 
 
 
