@@ -1,9 +1,10 @@
-module field_display(clk, err, score_plus, field_display_out, field_display_in);
+module field_display(clk, err, row_down, score_plus, field_display_out, field_display_in);
 
 input clk, err;
 
 input [399:0] field_display_in;
 
+output reg row_down;
 output reg [9:0] score_plus;
 
 

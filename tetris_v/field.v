@@ -26,7 +26,7 @@ block_pos block_pos_old(clk, err, block_refresh, block_pos_y_out_o,block_pos_x_o
 block_choice block_choice_old(rotate_out_o,block_num,block_matrix_o);
 block_expand block_expand_old(block_expand_o, block_matrix_o, block_pos_y_out_o, block_pos_x_out_o);
 
-field_background field_background_old(clk, field_background_refresh, field_display_out , field_background_out);
+field_background field_background_old(clk, field_background_refresh, row_down, field_display_out , field_background_out);
 
 field_merge field_merge_old(field_merge_o, field_background_out, block_expand_o);
 field_check field_check_old(gameover, field_merge_o, field_background_out, block_expand_o);
@@ -34,7 +34,7 @@ field_check field_check_old(gameover, field_merge_o, field_background_out, block
 
 //new scene
 
-wire next_block;
+wire next_block, row_down;
 wire [9:0] block_pos_y_n, block_pos_x_n, rotate_out_n;
 wire [15:0] block_matrix_n; 
 wire [399:0] block_expand_n, field_merge_n;
@@ -47,7 +47,7 @@ block_expand block_expand_new(block_expand_n, block_matrix_n, block_pos_y_n, blo
 field_merge field_merge_new(field_merge_n, field_background_out, block_expand_n);
 field_check field_check_new(next_block, field_merge_n, field_background_out, block_expand_n);
 
-field_display field_display_new(clk, next_block, score_plus, field_display_out, field_merge_n);
+field_display field_display_new(clk, next_block, row_down, score_plus, field_display_out, field_merge_n);
   
 
 
