@@ -1,8 +1,8 @@
-module field_background(clk, refresh, row_down, field_in, field_out);
+module field_background(clk, err, row_down, field_in, field_out);
 
     input clk;
 
-    input refresh, row_down;
+    input err, row_down;
     input [399:0] field_in;
     output reg [399:0] field_out;
 
@@ -16,7 +16,7 @@ module field_background(clk, refresh, row_down, field_in, field_out);
 
 always @ (posedge clk) begin
     
-    if (refresh == 1 || row_down == 1) begin
+    if(err == 0 || row_down == 1) begin
         field_out <= field_in;
     end
 	 

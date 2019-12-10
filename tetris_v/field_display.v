@@ -11,7 +11,6 @@ output reg [9:0] score_plus;
 output reg [399:0] field_display_out;
 
 
-
 initial begin
 field_display_out <= 399'd0; 
 end
@@ -19,6 +18,7 @@ end
 always @(posedge clk) begin
     if(err == 0) begin
        field_display_out <= field_display_in; 
+       
     end
 end     
 

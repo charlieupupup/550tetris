@@ -19,11 +19,14 @@ output reg [9:0] rotate_out;
 always @ (*)
 begin
 if (left == 1) begin
-    block_pos_x_out = block_pos_x_in - 1;
+block_pos_x_out = block_pos_x_in - 1;
 end
 
-else if (right == 1) begin
+else if (left != 1 && right == 1) begin
 block_pos_x_out = block_pos_x_in + 1;
+end
+else begin
+block_pos_x_out = block_pos_x_in;
 end
 end
 
@@ -32,11 +35,17 @@ always @(*) begin
 if(down == 1) begin
 block_pos_y_out = block_pos_y_in + 1;
 end
+else begin
+block_pos_y_out = block_pos_y_in;
+end
 end
 
 always @(*) begin
 if (ro == 1) begin
 rotate_out = (rotate_in + 1)%4;
+end
+else begin
+rotate_out = (rotate_in)%4;
 end
 end
 
