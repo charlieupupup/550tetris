@@ -9,7 +9,7 @@ module field(clock, leftTrue, rightTrue, downTrue, rotateTrue, blockType, // Inp
 	
 	wire [0:399] fieldOut; // Final output for display.
 	
-	reg nextBlockTrue;
+	
 	
 	// Internal core storage.
 	reg [0:399] field;
@@ -68,35 +68,64 @@ module field(clock, leftTrue, rightTrue, downTrue, rotateTrue, blockType, // Inp
 	rotatePredict my_rotate(field, block, blockX, blockY, ///////
 									rotateOK, rotateScore, rotateBottomTouch, rotateNewField, rotateNewBlock);
 									
+	reg nextBlockTrue;
 	wire [0:15] randomBlockShape;
-	randomShape(blockType, randomBlockShape); ////////////////
+	randomShape my_randomS(blockType, randomBlockShape); ////////////////
 									
 	initial begin
 		nextBlockTrue <= 1'b1;
 		field <= 400'b0;
 		block <= 16'b0;
-		shape0 <= 
-		shape1 <=
-		shape2 <=
-		shape3 <=
-		shape4 <=
 		blockX <= 5'd8;
 		blockY <= 5'b0;
 	end
 	
 	always @(posedge clock) begin
-		if (nextBlockTrue == 1'b1) block <= randomBlockShape;
-		else if (downTrue == 1'b1) begin
+		if (nextBlockTrue) begin
+			block <= randomBlockShape;
+			nextBlockTrue <= 1'b0;
+		end
+		else if (downTrue) begin
 			score <= downScore;
 			if (downBottomTouch == 1'b1) begin
 				field <= downNewField;
 				blockX <= 5'd8;
 				blockY <= 5'b0;
-				
+				block <= 16'b0;
+				nextBlockTrue <= 1'b1;
 			end
-			
-			blockY <= blockY + 16'b1;
-			
+			else blockY <= blockY + 16'b1;
+		end
+		else if (leftTrue && leftOK) begin
+			if (leftBottomTouch == 1'b1) begin
+				field <= leftNewField;
+				blockX <= 5'd8;
+				blockY <= 5'b0;
+				block <= 16'b0;
+				nextBlockTrue <= 1'b1;
+			end
+			else blockX <= blockX - 16'b1;
+		end
+		else if (rightTrue && rightOK) begin
+			if (rightBottomTouch == 1'b1) begin
+				field <= rightNewField;
+				blockX <= 5'd8;
+				blockY <= 5'b0;
+				block <= 16'b0;
+				nextBlockTrue <= 1'b1;
+			end
+			else blockX <= blockX + 16'b1;
+		end
+		else if (rotateTrue && rotateOK) begin
+			score <= rotateScore;
+			if (rotateBottomTouch == 1'b1) begin
+				field <= rotateNewField;
+				blockX <= 5'd8;
+				blockY <= 5'b0;
+				block <= 16'b0;
+				nextBlockTrue <= 1'b1;
+			end
+			else block <= rotateNewBlock;
 		end
 	end
  

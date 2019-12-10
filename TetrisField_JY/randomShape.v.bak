@@ -1,0 +1,11 @@
+module randomShape(blockType, randomBlockShape);
+
+	input [2:0] blockType;
+	output reg [0:15] randomBlockShape;
+	
+	always @(blockType) begin
+		if (blockType == 3'd0) randomBlockShape <= 16'h;
+		else if (blockType == 3'd1) randomBlockShape <= 16'h;
+	end
+
+endmodule
