@@ -4,22 +4,24 @@ input clk, err;
 
 input [399:0] field_display_in;
 
-output reg row_down;
-output reg [9:0] score_plus;
+output wire row_down;
+output wire [9:0] score_plus;
 
 
 output reg [399:0] field_display_out;
 
 reg [9:0] total_line_num;
+wire [19:0] line;
+wire is_any_line_full;
 
 genvar gv_i;
 generate for(gv_i = 0; gv_i < 20; gv_i = gv_i + 1)
     begin: line_check
-        assign line[gv_i] = & matrix_in[(20 * gv_i) : (20 * gv_i + 19)];
+        assign line[gv_i] = & field_display_in[(20 * gv_i + 19):(20 * gv_i)];
     end
 endgenerate
 
-assign is_any_line_full = |line[19:0]; //is_any_line_full is 1'd1 when at lease one line is full
+assign is_any_line_full = | line[19:0]; //is_any_line_full is 1'd1 when at lease one line is full
 
 initial begin
 field_display_out <= field_display_in;
@@ -530,7 +532,8 @@ always @(posedge clk) begin
         else begin
           field_display_out <= field_display_in;
         end
-    end
+		end
+	end
 end
 
 assign score_plus = total_line_num;

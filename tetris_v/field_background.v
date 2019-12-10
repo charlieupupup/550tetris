@@ -16,9 +16,12 @@ module field_background(clk, err, row_down, field_in, field_out);
 
 always @ (posedge clk) begin
     
-    if(err == 0 || row_down == 1) begin
-        field_out <= field_in;
+    if(row_down == 1) begin
+        field_out <= field_out & field_in;
     end
+	 else if (row_down == 0 && err == 1'd1) begin
+		field_out <= field_in;
+	 end
 	 
 end
 		
