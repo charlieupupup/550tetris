@@ -1,22 +1,18 @@
-module field_display(clk, en, field_display, 
-block_pos_x, block_pos_y, block_matrix, rotate
-  
-);
+module field_display(clk, err, score_plus, field_display_out, field_display_in);
 
-input clk, en;
+input clk, err;
+
+input [399:0] field_display_in;
+
+output reg [9:0] score_plus;
 
 
 output reg [399:0] field_display;
-input [4:0] block_pos_x, block_pos_y;
-input [15:0] block_matrix;
-input [9:0] rotate;
-
-wire [9:0] rotate_mod = rotate % 4;
 
 
 
 initial begin
-field_display <= 0; 
+field_display <= 399'd0; 
 end
 
 
