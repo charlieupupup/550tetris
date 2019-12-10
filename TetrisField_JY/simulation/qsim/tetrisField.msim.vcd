@@ -1,0 +1,458 @@
+$comment
+	File created using the following command:
+		vcd file tetrisField.msim.vcd -direction
+$end
+$date
+	Mon Dec 09 18:28:21 2019
+$end
+$version
+	ModelSim Version 10.4d
+$end
+$timescale
+	1ps
+$end
+
+$scope module blockBottom_vlg_vec_tst $end
+$var reg 16 ! block [0:15] $end
+$var wire 1 " bottomY [1] $end
+$var wire 1 # bottomY [0] $end
+
+$scope module i1 $end
+$var wire 1 $ gnd $end
+$var wire 1 % vcc $end
+$var wire 1 & unknown $end
+$var tri1 1 ' devclrn $end
+$var tri1 1 ( devpor $end
+$var tri1 1 ) devoe $end
+$var wire 1 * bottomY[0]~output_o $end
+$var wire 1 + bottomY[1]~output_o $end
+$var wire 1 , block[12]~input_o $end
+$var wire 1 - block[15]~input_o $end
+$var wire 1 . block[14]~input_o $end
+$var wire 1 / block[13]~input_o $end
+$var wire 1 0 Add1~1_combout $end
+$var wire 1 1 tempBlock~10_combout $end
+$var wire 1 2 block[10]~input_o $end
+$var wire 1 3 block[11]~input_o $end
+$var wire 1 4 tempBlock~8_combout $end
+$var wire 1 5 tempBlock~9_combout $end
+$var wire 1 6 block[8]~input_o $end
+$var wire 1 7 block[9]~input_o $end
+$var wire 1 8 tempBlock~16_combout $end
+$var wire 1 9 tempBlock~17_combout $end
+$var wire 1 : Add1~0_combout $end
+$var wire 1 ; tempBlock~18_combout $end
+$var wire 1 < tempBlock~12_combout $end
+$var wire 1 = tempBlock~13_combout $end
+$var wire 1 > tempBlock~19_combout $end
+$var wire 1 ? tempBlock~6_combout $end
+$var wire 1 @ tempBlock~7_combout $end
+$var wire 1 A tempBlock~11_combout $end
+$var wire 1 B tempBlock~20_combout $end
+$var wire 1 C tempBlock~14_combout $end
+$var wire 1 D tempBlock~15_combout $end
+$var wire 1 E Add4~0_combout $end
+$var wire 1 F Add1~2_combout $end
+$var wire 1 G Add4~1_combout $end
+$var wire 1 H Add1~3_combout $end
+$var wire 1 I Add4~2_combout $end
+$var wire 1 J Add6~1 $end
+$var wire 1 K Add6~3 $end
+$var wire 1 L Add6~4_combout $end
+$var wire 1 M tempBlock~21_combout $end
+$var wire 1 N block[7]~input_o $end
+$var wire 1 O tempBlock~23_combout $end
+$var wire 1 P tempBlock~24_combout $end
+$var wire 1 Q tempBlock~25_combout $end
+$var wire 1 R tempBlock~26_combout $end
+$var wire 1 S tempBlock~27_combout $end
+$var wire 1 T tempBlock~28_combout $end
+$var wire 1 U block[6]~input_o $end
+$var wire 1 V tempBlock~29_combout $end
+$var wire 1 W tempBlock~30_combout $end
+$var wire 1 X tempBlock~31_combout $end
+$var wire 1 Y tempBlock~32_combout $end
+$var wire 1 Z tempBlock~33_combout $end
+$var wire 1 [ tempBlock~34_combout $end
+$var wire 1 \ tempBlock~22_combout $end
+$var wire 1 ] Add7~0_combout $end
+$var wire 1 ^ tempBlock~36_combout $end
+$var wire 1 _ tempBlock~37_combout $end
+$var wire 1 ` tempBlock~97_combout $end
+$var wire 1 a tempBlock~40_combout $end
+$var wire 1 b tempBlock~39_combout $end
+$var wire 1 c tempBlock~38_combout $end
+$var wire 1 d tempBlock~41_combout $end
+$var wire 1 e tempBlock~45_combout $end
+$var wire 1 f tempBlock~42_combout $end
+$var wire 1 g block[5]~input_o $end
+$var wire 1 h tempBlock~43_combout $end
+$var wire 1 i tempBlock~44_combout $end
+$var wire 1 j tempBlock~46_combout $end
+$var wire 1 k tempBlock~47_combout $end
+$var wire 1 l tempBlock~48_combout $end
+$var wire 1 m tempBlock~98_combout $end
+$var wire 1 n tempBlock~96_combout $end
+$var wire 1 o tempBlock~49_combout $end
+$var wire 1 p block[4]~input_o $end
+$var wire 1 q tempBlock~50_combout $end
+$var wire 1 r tempBlock~51_combout $end
+$var wire 1 s tempBlock~52_combout $end
+$var wire 1 t tempBlock~53_combout $end
+$var wire 1 u tempBlock~54_combout $end
+$var wire 1 v tempBlock~55_combout $end
+$var wire 1 w tempBlock~56_combout $end
+$var wire 1 x tempBlock~57_combout $end
+$var wire 1 y tempBlock~58_combout $end
+$var wire 1 z tempBlock~59_combout $end
+$var wire 1 { tempBlock~60_combout $end
+$var wire 1 | tempBlock~61_combout $end
+$var wire 1 } tempBlock~62_combout $end
+$var wire 1 ~ tempBlock~35_combout $end
+$var wire 1 !! Add8~0_combout $end
+$var wire 1 "! Add6~2_combout $end
+$var wire 1 #! Add8~1_combout $end
+$var wire 1 $! Add8~2_combout $end
+$var wire 1 %! Add6~0_combout $end
+$var wire 1 &! Add10~1 $end
+$var wire 1 '! Add10~3 $end
+$var wire 1 (! Add10~4_combout $end
+$var wire 1 )! tempBlock~75_combout $end
+$var wire 1 *! tempBlock~65_combout $end
+$var wire 1 +! block[3]~input_o $end
+$var wire 1 ,! tempBlock~66_combout $end
+$var wire 1 -! tempBlock~67_combout $end
+$var wire 1 .! tempBlock~68_combout $end
+$var wire 1 /! tempBlock~69_combout $end
+$var wire 1 0! tempBlock~70_combout $end
+$var wire 1 1! block[2]~input_o $end
+$var wire 1 2! tempBlock~77_combout $end
+$var wire 1 3! tempBlock~78_combout $end
+$var wire 1 4! tempBlock~76_combout $end
+$var wire 1 5! tempBlock~79_combout $end
+$var wire 1 6! tempBlock~80_combout $end
+$var wire 1 7! tempBlock~81_combout $end
+$var wire 1 8! tempBlock~82_combout $end
+$var wire 1 9! tempBlock~83_combout $end
+$var wire 1 :! tempBlock~71_combout $end
+$var wire 1 ;! tempBlock~72_combout $end
+$var wire 1 <! tempBlock~84_combout $end
+$var wire 1 =! tempBlock~85_combout $end
+$var wire 1 >! tempBlock~63_combout $end
+$var wire 1 ?! tempBlock~73_combout $end
+$var wire 1 @! tempBlock~74_combout $end
+$var wire 1 A! tempBlock~64_combout $end
+$var wire 1 B! tempBlock~86_combout $end
+$var wire 1 C! Add10~2_combout $end
+$var wire 1 D! Add11~0_combout $end
+$var wire 1 E! Add10~0_combout $end
+$var wire 1 F! block[1]~input_o $end
+$var wire 1 G! tempBlock~88_combout $end
+$var wire 1 H! tempBlock~87_combout $end
+$var wire 1 I! tempBlock~89_combout $end
+$var wire 1 J! tempBlock~90_combout $end
+$var wire 1 K! tempBlock~91_combout $end
+$var wire 1 L! tempBlock~92_combout $end
+$var wire 1 M! tempBlock~93_combout $end
+$var wire 1 N! tempBlock~94_combout $end
+$var wire 1 O! tempBlock~95_combout $end
+$var wire 1 P! Add12~1_cout $end
+$var wire 1 Q! Add12~3 $end
+$var wire 1 R! Add12~5 $end
+$var wire 1 S! Add12~6_combout $end
+$var wire 1 T! Add12~4_combout $end
+$var wire 1 U! block[0]~input_o $end
+$var wire 1 V! zeroNum~0_combout $end
+$var wire 1 W! zeroNum~1_combout $end
+$var wire 1 X! zeroNum~2_combout $end
+$var wire 1 Y! Add12~2_combout $end
+$var wire 1 Z! zeroNum~3_combout $end
+$var wire 1 [! Add14~0_combout $end
+$var wire 1 \! Add6~5 $end
+$var wire 1 ]! Add6~6_combout $end
+$var wire 1 ^! Add10~5 $end
+$var wire 1 _! Add10~6_combout $end
+$var wire 1 `! Add12~7 $end
+$var wire 1 a! Add12~8_combout $end
+$var wire 1 b! zeroNum~4_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 !
+0#
+0"
+0$
+1%
+x&
+1'
+1(
+1)
+0*
+0+
+0,
+0-
+0.
+0/
+10
+01
+02
+03
+04
+05
+06
+07
+08
+09
+1:
+0;
+0<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+1E
+1F
+0G
+0H
+0I
+0J
+1K
+0L
+0M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+0X
+0Y
+0Z
+0[
+0\
+0]
+0^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+0j
+0k
+0l
+0m
+0n
+0o
+0p
+0q
+0r
+0s
+0t
+0u
+0v
+0w
+0x
+0y
+0z
+0{
+0|
+0}
+1~
+1!!
+0"!
+0#!
+0$!
+0%!
+0&!
+1'!
+1(!
+0)!
+0*!
+0+!
+0,!
+0-!
+0.!
+0/!
+00!
+01!
+02!
+03!
+04!
+05!
+06!
+07!
+08!
+09!
+0:!
+0;!
+0<!
+0=!
+0>!
+0?!
+0@!
+0A!
+0B!
+0C!
+0D!
+0E!
+0F!
+0G!
+0H!
+0I!
+0J!
+0K!
+0L!
+0M!
+0N!
+0O!
+1P!
+1Q!
+0R!
+1S!
+1T!
+0U!
+0V!
+0W!
+0X!
+1Y!
+0Z!
+1[!
+1\!
+1]!
+0^!
+1_!
+1`!
+1a!
+0b!
+$end
+#180000
+b10000000000 !
+b10010000000000 !
+b110010000000000 !
+1g
+11!
+1F!
+1h
+1G!
+12!
+1o
+1i
+1I!
+13!
+1j
+1J!
+15!
+1k
+1K!
+16!
+1l
+1L!
+17!
+1|
+1m
+1N!
+18!
+1}
+1X!
+1O!
+19!
+1>!
+1#!
+0!!
+0P!
+1<!
+1b!
+1Z!
+1*
+1+
+1W!
+1B!
+1C!
+0(!
+0Y!
+1V!
+1"
+1#
+0S!
+0[!
+0Z!
+0*
+0#
+#280000
+b110000000000000 !
+b100000000000000 !
+b0 !
+0g
+01!
+0F!
+0h
+0G!
+02!
+0o
+0i
+0I!
+03!
+0j
+0J!
+05!
+0k
+0K!
+06!
+0l
+0L!
+07!
+0|
+0m
+0N!
+08!
+0}
+09!
+0>!
+1=!
+0#!
+1!!
+0<!
+0O!
+1D!
+0C!
+1(!
+0V!
+0=!
+1Y!
+0T!
+1S!
+0W!
+0D!
+0B!
+0X!
+0Y!
+1T!
+1P!
+1Z!
+1*
+1Y!
+1#
+1[!
+0Z!
+0*
+0#
+0b!
+0+
+0"
+#1000000

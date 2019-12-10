@@ -1,0 +1,10 @@
+module bottomTouchCheck(field, block, blockX, blockY, bottomTouch);
+
+	input [0:399] field;
+	input [0:15] block;
+	input [4:0] blockX, blockY;
+	output wire bottomTouch;
+	
+	
+
+endmodule

@@ -1,0 +1,12 @@
+module rotatePredict(field, block, oldBlockX, oldBlockY, ///////
+							opOK, score, bottomTouch, newField);
+							
+	input [0:399] field;
+	input [0:15] block;
+	input [4:0] oldBlockX, oldBlockY;
+	output wire opOK, score, bottomTouch;
+	output wire [0:399] newField;
+	
+	
+							
+endmodule

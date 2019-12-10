@@ -1,5 +1,5 @@
-Analysis & Synthesis report for tetrisField
-Mon Dec 09 00:32:43 2019
+Analysis & Elaboration report for tetrisField
+Mon Dec 09 20:59:49 2019
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -7,16 +7,14 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "rotatePredict:my_rotate"
+  6. Port Connectivity Checks: "downPredict:my_down"
+  7. Port Connectivity Checks: "rightPredict:my_right"
+  8. Port Connectivity Checks: "leftPredict:my_left"
+  9. Analysis & Elaboration Messages
 
 
 
@@ -41,27 +39,43 @@ agreement for further details.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
+; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 09 00:32:43 2019       ;
+; Analysis & Elaboration Status      ; Successful - Mon Dec 09 20:59:49 2019       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; tetrisField                                 ;
 ; Top-level Entity Name              ; field                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 411                                         ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                        ;
+; Analysis & Elaboration Settings                                                                                      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
@@ -147,559 +161,533 @@ agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rotatePredict:my_rotate"                                                                   ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; opOK        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; score       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; bottomTouch ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; newField    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                           ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
-; field.v                          ; yes             ; User Verilog HDL File  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "downPredict:my_down"                                                                       ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; score       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; bottomTouch ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; newField    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 411   ;
-;                                             ;       ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 411   ;
-; Average fan-out                             ; 0.50  ;
-+---------------------------------------------+-------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rightPredict:my_right"                                                                     ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; opOK        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; bottomTouch ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; newField    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |field                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 411  ; 0            ; |field              ; field       ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "leftPredict:my_left"                                                                       ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; opOK        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; bottomTouch ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; newField    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 411                         ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
-;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Mon Dec 09 00:32:34 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tetrisField -c tetrisField
+    Info: Processing started: Mon Dec 09 20:59:37 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tetrisField -c tetrisField --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file field.v
     Info (12023): Found entity 1: field File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file leftpredict.v
+    Info (12023): Found entity 1: leftPredict File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bottomtouchcheck.v
+    Info (12023): Found entity 1: bottomTouchCheck File: H:/Altera_lite/Github/550tetris/TetrisField_JY/bottomTouchCheck.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file conflictcheck.v
+    Info (12023): Found entity 1: conflictCheck File: H:/Altera_lite/Github/550tetris/TetrisField_JY/conflictCheck.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rightpredict.v
+    Info (12023): Found entity 1: rightPredict File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file downpredict.v
+    Info (12023): Found entity 1: downPredict File: H:/Altera_lite/Github/550tetris/TetrisField_JY/downPredict.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file clearlines.v
+    Info (12023): Found entity 1: clearLines File: H:/Altera_lite/Github/550tetris/TetrisField_JY/clearLines.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rotatepredict.v
+    Info (12023): Found entity 1: rotatePredict File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rotatePredict.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file blockbottom.v
+    Info (12023): Found entity 1: blockBottom File: H:/Altera_lite/Github/550tetris/TetrisField_JY/blockBottom.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rotateanticlock.v
+    Info (12023): Found entity 1: rotateAntiClock File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rotateAntiClock.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rotateclockwise.v
+    Info (12023): Found entity 1: rotateClockWise File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rotateClockWise.v Line: 1
 Info (12127): Elaborating entity "field" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at field.v(10): object "fieldWire" assigned a value but never read File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 10
-Warning (10036): Verilog HDL or VHDL warning at field.v(11): object "blockWire" assigned a value but never read File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 11
-Warning (10858): Verilog HDL warning at field.v(13): object field used but never assigned File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-Warning (10858): Verilog HDL warning at field.v(14): object block used but never assigned File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 14
-Warning (10858): Verilog HDL warning at field.v(16): object blockX used but never assigned File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 16
-Warning (10858): Verilog HDL warning at field.v(16): object blockY used but never assigned File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 16
-Warning (10030): Net "field" at field.v(13) has no driver or initial value, using a default initial value '0' File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-Warning (10030): Net "block" at field.v(14) has no driver or initial value, using a default initial value '0' File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 14
-Warning (10030): Net "blockX" at field.v(16) has no driver or initial value, using a default initial value '0' File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 16
-Warning (10030): Net "blockY" at field.v(16) has no driver or initial value, using a default initial value '0' File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 16
 Warning (10034): Output port "nextBlockTrue" at field.v(7) has no driver File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
 Warning (10034): Output port "gameOver" at field.v(7) has no driver File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
 Warning (10034): Output port "score" at field.v(7) has no driver File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "fieldOut[399]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[398]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[397]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[396]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[395]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[394]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[393]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[392]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[391]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[390]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[389]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[388]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[387]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[386]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[385]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[384]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[383]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[382]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[381]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[380]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[379]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[378]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[377]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[376]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[375]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[374]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[373]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[372]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[371]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[370]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[369]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[368]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[367]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[366]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[365]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[364]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[363]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[362]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[361]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[360]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[359]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[358]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[357]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[356]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[355]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[354]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[353]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[352]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[351]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[350]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[349]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[348]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[347]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[346]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[345]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[344]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[343]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[342]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[341]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[340]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[339]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[338]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[337]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[336]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[335]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[334]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[333]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[332]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[331]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[330]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[329]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[328]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[327]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[326]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[325]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[324]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[323]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[322]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[321]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[320]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[319]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[318]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[317]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[316]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[315]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[314]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[313]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[312]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[311]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[310]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[309]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[308]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[307]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[306]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[305]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[304]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[303]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[302]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[301]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[300]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[299]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[298]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[297]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[296]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[295]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[294]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[293]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[292]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[291]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[290]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[289]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[288]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[287]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[286]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[285]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[284]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[283]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[282]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[281]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[280]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[279]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[278]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[277]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[276]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[275]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[274]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[273]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[272]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[271]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[270]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[269]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[268]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[267]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[266]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[265]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[264]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[263]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[262]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[261]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[260]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[259]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[258]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[257]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[256]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[255]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[254]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[253]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[252]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[251]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[250]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[249]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[248]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[247]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[246]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[245]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[244]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[243]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[242]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[241]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[240]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[239]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[238]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[237]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[236]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[235]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[234]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[233]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[232]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[231]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[230]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[229]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[228]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[227]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[226]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[225]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[224]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[223]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[222]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[221]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[220]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[219]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[218]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[217]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[216]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[215]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[214]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[213]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[212]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[211]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[210]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[209]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[208]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[207]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[206]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[205]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[204]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[203]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[202]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[201]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[200]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[199]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[198]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[197]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[196]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[195]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[194]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[193]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[192]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[191]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[190]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[189]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[188]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[187]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[186]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[185]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[184]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[183]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[182]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[181]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[180]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[179]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[178]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[177]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[176]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[175]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[174]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[173]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[172]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[171]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[170]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[169]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[168]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[167]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[166]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[165]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[164]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[163]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[162]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[161]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[160]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[159]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[158]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[157]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[156]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[155]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[154]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[153]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[152]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[151]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[150]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[149]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[148]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[147]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[146]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[145]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[144]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[143]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[142]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[141]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[140]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[139]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[138]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[137]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[136]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[135]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[134]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[133]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[132]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[131]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[130]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[129]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[128]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[127]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[126]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[125]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[124]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[123]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[122]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[121]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[120]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[119]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[118]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[117]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[116]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[115]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[114]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[113]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[112]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[111]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[110]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[109]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[108]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[107]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[106]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[105]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[104]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[103]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[102]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[101]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[100]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[99]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[98]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[97]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[96]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[95]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[94]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[93]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[92]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[91]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[90]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[89]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[88]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[87]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[86]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[85]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[84]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[83]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[82]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[81]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[80]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[79]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[78]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[77]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[76]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[75]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[74]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[73]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[72]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[71]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[70]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[69]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[68]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[67]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[66]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[65]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[64]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[63]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[62]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[61]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[60]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[59]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[58]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[57]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[56]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[55]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[54]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[53]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[52]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[51]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[50]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[49]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[48]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[47]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[46]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[45]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[44]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[43]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[42]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[41]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[40]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[39]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[38]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[37]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[36]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[35]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[34]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[33]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[32]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[31]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[30]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[29]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[28]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[27]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[26]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[25]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[24]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[23]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[22]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[21]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[20]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[19]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[18]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[17]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[16]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[15]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[14]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[13]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[12]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[11]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[10]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[9]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[8]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[7]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[6]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[5]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[4]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[3]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[2]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[1]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "fieldOut[0]" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 6
-    Warning (13410): Pin "nextBlockTrue" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
-    Warning (13410): Pin "gameOver" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
-    Warning (13410): Pin "score" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clock" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 4
-    Warning (15610): No output dependent on input pin "leftTrue" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 4
-    Warning (15610): No output dependent on input pin "rightTrue" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 4
-    Warning (15610): No output dependent on input pin "downTrue" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 4
-    Warning (15610): No output dependent on input pin "rotateTrue" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 4
-    Warning (15610): No output dependent on input pin "blockType[0]" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 5
-    Warning (15610): No output dependent on input pin "blockType[1]" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 5
-    Warning (15610): No output dependent on input pin "blockType[2]" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 5
-Info (21057): Implemented 411 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 403 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 427 warnings
-    Info: Peak virtual memory: 4958 megabytes
-    Info: Processing ended: Mon Dec 09 00:32:43 2019
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:21
+Info (12128): Elaborating entity "leftPredict" for hierarchy "leftPredict:my_left" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 53
+Warning (10230): Verilog HDL assignment warning at leftPredict.v(11): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 11
+Info (12128): Elaborating entity "conflictCheck" for hierarchy "leftPredict:my_left|conflictCheck:left_cC" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 22
+Info (12128): Elaborating entity "rotateAntiClock" for hierarchy "leftPredict:my_left|rotateAntiClock:my_rAC" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 23
+Info (12128): Elaborating entity "blockBottom" for hierarchy "leftPredict:my_left|blockBottom:left_bB" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 24
+Warning (10036): Verilog HDL or VHDL warning at blockBottom.v(8): object "zeroStopFlag" assigned a value but never read File: H:/Altera_lite/Github/550tetris/TetrisField_JY/blockBottom.v Line: 8
+Warning (10230): Verilog HDL assignment warning at blockBottom.v(26): truncated value with size 32 to match size of target (2) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/blockBottom.v Line: 26
+Info (12128): Elaborating entity "bottomTouchCheck" for hierarchy "leftPredict:my_left|bottomTouchCheck:left_bTC" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 28
+Info (12128): Elaborating entity "rightPredict" for hierarchy "rightPredict:my_right" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 56
+Warning (10230): Verilog HDL assignment warning at rightPredict.v(11): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 11
+Info (12128): Elaborating entity "rotateClockWise" for hierarchy "rightPredict:my_right|rotateClockWise:my_rCW" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 23
+Info (12128): Elaborating entity "downPredict" for hierarchy "downPredict:my_down" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 59
+Warning (10230): Verilog HDL assignment warning at downPredict.v(12): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/downPredict.v Line: 12
+Info (12128): Elaborating entity "clearLines" for hierarchy "downPredict:my_down|clearLines:down_cl" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/downPredict.v Line: 30
+Info (12128): Elaborating entity "rotatePredict" for hierarchy "rotatePredict:my_rotate" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 62
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "field[0]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[1]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[2]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[3]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[4]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[5]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[6]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[7]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[8]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[9]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[10]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[11]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[12]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[13]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[14]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[15]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[16]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[17]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[18]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[19]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[20]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[21]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[22]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[23]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[24]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[25]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[26]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[27]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[28]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[29]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[30]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[31]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[32]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[33]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[34]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[35]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[36]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[37]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[38]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[39]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[40]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[41]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[42]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[43]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[44]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[45]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[46]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[47]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[48]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[49]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[50]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[51]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[52]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[53]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[54]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[55]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[56]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[57]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[58]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[59]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[60]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[61]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[62]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[63]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[64]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[65]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[66]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[67]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[68]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[69]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[70]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[71]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[72]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[73]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[74]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[75]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[76]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[77]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[78]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[79]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[80]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[81]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[82]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[83]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[84]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[85]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[86]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[87]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[88]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[89]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[90]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[91]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[92]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[93]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[94]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[95]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[96]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[97]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[98]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[99]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[100]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[101]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[102]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[103]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[104]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[105]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[106]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[107]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[108]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[109]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[110]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[111]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[112]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[113]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[114]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[115]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[116]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[117]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[118]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[119]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[120]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[121]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[122]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[123]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[124]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[125]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[126]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[127]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[128]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[129]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[130]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[131]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[132]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[133]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[134]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[135]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[136]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[137]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[138]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[139]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[140]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[141]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[142]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[143]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[144]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[145]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[146]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[147]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[148]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[149]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[150]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[151]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[152]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[153]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[154]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[155]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[156]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[157]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[158]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[159]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[160]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[161]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[162]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[163]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[164]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[165]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[166]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[167]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[168]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[169]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[170]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[171]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[172]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[173]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[174]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[175]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[176]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[177]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[178]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[179]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[180]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[181]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[182]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[183]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[184]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[185]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[186]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[187]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[188]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[189]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[190]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[191]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[192]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[193]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[194]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[195]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[196]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[197]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[198]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[199]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[200]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[201]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[202]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[203]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[204]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[205]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[206]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[207]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[208]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[209]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[210]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[211]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[212]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[213]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[214]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[215]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[216]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[217]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[218]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[219]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[220]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[221]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[222]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[223]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[224]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[225]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[226]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[227]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[228]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[229]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[230]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[231]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[232]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[233]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[234]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[235]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[236]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[237]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[238]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[239]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[240]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[241]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[242]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[243]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[244]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[245]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[246]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[247]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[248]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[249]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[250]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[251]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[252]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[253]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[254]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[255]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[256]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[257]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[258]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[259]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[260]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[261]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[262]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[263]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[264]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[265]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[266]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[267]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[268]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[269]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[270]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[271]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[272]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[273]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[274]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[275]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[276]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[277]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[278]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[279]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[280]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[281]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[282]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[283]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[284]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[285]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[286]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[287]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[288]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[289]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[290]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[291]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[292]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[293]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[294]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[295]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[296]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[297]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[298]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[299]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[300]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[301]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[302]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[303]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[304]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[305]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[306]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[307]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[308]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[309]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[310]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[311]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[312]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[313]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[314]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[315]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[316]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[317]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[318]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[319]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[320]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[321]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[322]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[323]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[324]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[325]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[326]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[327]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[328]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[329]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[330]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[331]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[332]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[333]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[334]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[335]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[336]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[337]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[338]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[339]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[340]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[341]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[342]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[343]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[344]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[345]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[346]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[347]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[348]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[349]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[350]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[351]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[352]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[353]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[354]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[355]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[356]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[357]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[358]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[359]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[360]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[361]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[362]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[363]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[364]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[365]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[366]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[367]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[368]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[369]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[370]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[371]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[372]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[373]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[374]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[375]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[376]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[377]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[378]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[379]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[380]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[381]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[382]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[383]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[384]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[385]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[386]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[387]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[388]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[389]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[390]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[391]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[392]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[393]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[394]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[395]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[396]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[397]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[398]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "field[399]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
+    Warning (12110): Net "block[0]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[4]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[8]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[12]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[1]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[5]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[9]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[13]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[2]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[6]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[10]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[14]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[3]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[7]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[11]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "block[15]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
+    Warning (12110): Net "blockX[4]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
+    Warning (12110): Net "blockX[3]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
+    Warning (12110): Net "blockX[2]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
+    Warning (12110): Net "blockX[1]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
+    Warning (12110): Net "blockX[0]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
+    Warning (12110): Net "blockY[4]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
+    Warning (12110): Net "blockY[3]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
+    Warning (12110): Net "blockY[2]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
+    Warning (12110): Net "blockY[1]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
+    Warning (12110): Net "blockY[0]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 436 warnings
+    Info: Peak virtual memory: 5081 megabytes
+    Info: Processing ended: Mon Dec 09 20:59:49 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:25
 
 

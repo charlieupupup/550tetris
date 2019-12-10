@@ -1,0 +1,10 @@
+module clearLines(temField, newField, score);
+
+	input [0:399] temField;
+	output wire [0:399] newField;
+	output wire score;
+	
+	assign score = 1'b0; /////
+	assign newField = temField; //////
+
+endmodule

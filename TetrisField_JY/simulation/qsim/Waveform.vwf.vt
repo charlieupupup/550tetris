@@ -1,0 +1,134 @@
+// Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "12/09/2019 18:28:18"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          blockBottom
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module blockBottom_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [0:15] block;
+// wires                                               
+wire [1:0] bottomY;
+
+// assign statements (if any)                          
+blockBottom i1 (
+// port map - connection between master ports and signals/registers   
+	.block(block),
+	.bottomY(bottomY)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+// block[ 15 ]
+initial
+begin
+	block[15] = 1'b0;
+end 
+// block[ 14 ]
+initial
+begin
+	block[14] = 1'b0;
+end 
+// block[ 13 ]
+initial
+begin
+	block[13] = 1'b0;
+end 
+// block[ 12 ]
+initial
+begin
+	block[12] = 1'b0;
+end 
+// block[ 11 ]
+initial
+begin
+	block[11] = 1'b0;
+end 
+// block[ 10 ]
+initial
+begin
+	block[10] = 1'b0;
+end 
+// block[ 9 ]
+initial
+begin
+	block[9] = 1'b0;
+end 
+// block[ 8 ]
+initial
+begin
+	block[8] = 1'b0;
+end 
+// block[ 7 ]
+initial
+begin
+	block[7] = 1'b0;
+end 
+// block[ 6 ]
+initial
+begin
+	block[6] = 1'b0;
+end 
+// block[ 5 ]
+initial
+begin
+	block[5] = 1'b0;
+	block[5] = #180000 1'b1;
+	block[5] = #100000 1'b0;
+end 
+// block[ 4 ]
+initial
+begin
+	block[4] = 1'b0;
+end 
+// block[ 3 ]
+initial
+begin
+	block[3] = 1'b0;
+end 
+// block[ 2 ]
+initial
+begin
+	block[2] = 1'b0;
+	block[2] = #180000 1'b1;
+	block[2] = #100000 1'b0;
+end 
+// block[ 1 ]
+initial
+begin
+	block[1] = 1'b0;
+	block[1] = #180000 1'b1;
+	block[1] = #100000 1'b0;
+end 
+// block[ 0 ]
+initial
+begin
+	block[0] = 1'b0;
+end 
+endmodule
+

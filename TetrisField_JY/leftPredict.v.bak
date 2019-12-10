@@ -1,0 +1,21 @@
+module leftPredict(field, block, oldBlockX, oldBlockY,
+						 opOK, bottomTouch, newField);
+						 
+	input [0:399] field;
+	input [0:15] block;
+	input [4:0] oldBlockX, oldBlockY;
+	output opOK, bottomTouch;
+	output wire [0:399] newField;
+	
+	wire [4:0] blockX, blockY;
+	integer blockXInt, blockYInt;
+	assign blockX = oldBlockX - 'd1;
+	assign blockY = oldBlockY;
+	always @(blockX) blockXInt <= blockX;
+	always @(blockY) blockYInt <= blockY;
+	
+	wire [0:15] conflictFlag;
+	
+	
+	
+endmodule

@@ -1,5 +1,16 @@
 vendor_name = ModelSim
 source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v
+source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v
+source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/bottomTouchCheck.v
+source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/conflictCheck.v
+source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v
+source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/downPredict.v
+source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/clearLines.v
+source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/rotatePredict.v
+source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/blockBottom.v
+source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/Waveform.vwf
+source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/rotateAntiClock.v
+source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/rotateClockWise.v
 source_file = 1, H:/Altera_lite/Github/550tetris/TetrisField_JY/db/tetrisField.cbx.xml
 design_name = field
 instance = comp, \fieldOut[399]~output , fieldOut[399]~output, field, 1

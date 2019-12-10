@@ -1,0 +1,32 @@
+# do tetrisField.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 18:28:21 on Dec 09,2019
+# vlog -work work tetrisField.vo 
+# -- Compiling module blockBottom
+# 
+# Top level modules:
+# 	blockBottom
+# End time: 18:28:21 on Dec 09,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 18:28:21 on Dec 09,2019
+# vlog -work work Waveform.vwf.vt 
+# -- Compiling module blockBottom_vlg_vec_tst
+# 
+# Top level modules:
+# 	blockBottom_vlg_vec_tst
+# End time: 18:28:21 on Dec 09,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.blockBottom_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 18:28:21 on Dec 09,2019
+# Loading work.blockBottom_vlg_vec_tst
+# Loading work.blockBottom
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# ** Note: $finish    : Waveform.vwf.vt(45)
+#    Time: 1 us  Iteration: 0  Instance: /blockBottom_vlg_vec_tst
+# End time: 18:28:21 on Dec 09,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
