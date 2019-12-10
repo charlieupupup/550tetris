@@ -19,7 +19,7 @@ reg xpos, ypos;
 
 block_pos block_pos_old(clk, err, block_pos_refresh, block_pos_y_out_o,block_pos_x_out_o, rotate_out_o, block_pos_x_in, block_pos_y_in, rotate_in);
 block_choice block_choice_old(rotate_out_o,block_num,block_matrix);
-block_expand block_expand_old(block_expand_o, block_matrix, block_pos_y_out_o, block_pos_x_out_o);
+block_expand block_expand_old(block_expand_o, block_ matrix, block_pos_y_out_o, block_pos_x_out_o);
 
 field_background field_background_old(clk, field_background_refresh, field_background_in, field_background_out);
 

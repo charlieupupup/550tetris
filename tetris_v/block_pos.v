@@ -1,4 +1,4 @@
-module block_pos(clk, err, block_pos_refresh, block_pos_y_out_o,block_pos_x_out_o, rotate_out_o, block_pos_x_in, block_pos_y_in, rotate_in);
+module block_pos(clk, err, block_pos_refresh, block_pos_y_out,block_pos_x_out, rotate_out, block_pos_x_in, block_pos_y_in, rotate_in);
 
 
 output reg [9:0] block_pos_y_out, block_pos_x_out, rotate_out;
