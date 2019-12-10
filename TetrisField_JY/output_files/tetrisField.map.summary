@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Mon Dec 09 23:31:14 2019
+Analysis & Elaboration Status : Successful - Tue Dec 10 03:46:41 2019
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : tetrisField
 Top-level Entity Name : field
 Family : Cyclone IV E
-Total logic elements : 25,865
-    Total combinational functions : 25,865
-    Dedicated logic registers : 427
-Total registers : 427
-Total pins : 410
-Total virtual pins : 0
-Total memory bits : 0
-Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total logic elements : N/A until Partition Merge
+    Total combinational functions : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total memory bits : N/A until Partition Merge
+Embedded Multiplier 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge

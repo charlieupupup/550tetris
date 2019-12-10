@@ -1,5 +1,5 @@
-Analysis & Synthesis report for tetrisField
-Mon Dec 09 23:31:14 2019
+Analysis & Elaboration report for tetrisField
+Tue Dec 10 03:46:41 2019
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -7,23 +7,10 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for Inferred Entity Instance: rightPredict:my_right|lpm_divide:Mod0
- 13. Parameter Settings for Inferred Entity Instance: leftPredict:my_left|lpm_divide:Mod0
- 14. Parameter Settings for Inferred Entity Instance: rotatePredict:my_rotate|lpm_divide:Mod0
- 15. Parameter Settings for Inferred Entity Instance: rotatePredict:my_rotate|lpm_divide:Mod1
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
 
 
 
@@ -48,27 +35,43 @@ agreement for further details.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
+; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 09 23:31:14 2019       ;
+; Analysis & Elaboration Status      ; Successful - Tue Dec 10 03:46:41 2019       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; tetrisField                                 ;
 ; Top-level Entity Name              ; field                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 25,865                                      ;
-;     Total combinational functions  ; 25,865                                      ;
-;     Dedicated logic registers      ; 427                                         ;
-; Total registers                    ; 427                                         ;
-; Total pins                         ; 410                                         ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                        ;
+; Analysis & Elaboration Settings                                                                                      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
@@ -154,331 +157,24 @@ agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-+----------------------------+-------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
-; field.v                          ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v                    ;         ;
-; leftPredict.v                    ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v              ;         ;
-; bottomTouchCheck.v               ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/bottomTouchCheck.v         ;         ;
-; conflictCheck.v                  ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/conflictCheck.v            ;         ;
-; rightPredict.v                   ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v             ;         ;
-; downPredict.v                    ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/downPredict.v              ;         ;
-; clearLines.v                     ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/clearLines.v               ;         ;
-; rotatePredict.v                  ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/rotatePredict.v            ;         ;
-; blockBottom.v                    ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/blockBottom.v              ;         ;
-; rotateAntiClock.v                ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/rotateAntiClock.v          ;         ;
-; rotateClockWise.v                ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/rotateClockWise.v          ;         ;
-; randomShape.v                    ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/randomShape.v              ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; h:/altera_lite/16.0/quartus/libraries/megafunctions/lpm_divide.tdf        ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; h:/altera_lite/16.0/quartus/libraries/megafunctions/abs_divider.inc       ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; h:/altera_lite/16.0/quartus/libraries/megafunctions/sign_div_unsign.inc   ;         ;
-; aglobal160.inc                   ; yes             ; Megafunction                 ; h:/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc        ;         ;
-; db/lpm_divide_4bm.tdf            ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/lpm_divide_4bm.tdf      ;         ;
-; db/sign_div_unsign_plh.tdf       ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/sign_div_unsign_plh.tdf ;         ;
-; db/alt_u_div_67f.tdf             ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/alt_u_div_67f.tdf       ;         ;
-; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/add_sub_7pc.tdf         ;         ;
-; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/add_sub_8pc.tdf         ;         ;
-; db/lpm_divide_k9m.tdf            ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/lpm_divide_k9m.tdf      ;         ;
-; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/sign_div_unsign_9kh.tdf ;         ;
-; db/alt_u_div_64f.tdf             ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/alt_u_div_64f.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 25,865    ;
-;                                             ;           ;
-; Total combinational functions               ; 25865     ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 15269     ;
-;     -- 3 input functions                    ; 4324      ;
-;     -- <=2 input functions                  ; 6272      ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 19631     ;
-;     -- arithmetic mode                      ; 6234      ;
-;                                             ;           ;
-; Total registers                             ; 427       ;
-;     -- Dedicated logic registers            ; 427       ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 410       ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; blockX[0] ;
-; Maximum fan-out                             ; 2579      ;
-; Total fan-out                               ; 85730     ;
-; Average fan-out                             ; 3.16      ;
-+---------------------------------------------+-----------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                         ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Entity Name         ; Library Name ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |field                                    ; 25865 (5075)      ; 427 (427)    ; 0           ; 0            ; 0       ; 0         ; 410  ; 0            ; |field                                                                                                                         ;                     ;              ;
-;    |downPredict:my_down|                  ; 6697 (5511)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|downPredict:my_down                                                                                                     ; downPredict         ; work         ;
-;       |bottomTouchCheck:down_bTC|         ; 1186 (1186)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|downPredict:my_down|bottomTouchCheck:down_bTC                                                                           ; bottomTouchCheck    ; work         ;
-;    |leftPredict:my_left|                  ; 3122 (180)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left                                                                                                     ; leftPredict         ; work         ;
-;       |blockBottom:left_bB|               ; 117 (117)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|blockBottom:left_bB                                                                                 ; blockBottom         ; work         ;
-;       |bottomTouchCheck:left_bTC|         ; 1248 (1219)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|bottomTouchCheck:left_bTC                                                                           ; bottomTouchCheck    ; work         ;
-;          |blockBottom:my_bB|              ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|bottomTouchCheck:left_bTC|blockBottom:my_bB                                                         ; blockBottom         ; work         ;
-;       |conflictCheck:left_cC|             ; 1573 (1573)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|conflictCheck:left_cC                                                                               ; conflictCheck       ; work         ;
-;       |lpm_divide:Mod0|                   ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|lpm_divide:Mod0                                                                                     ; lpm_divide          ; work         ;
-;          |lpm_divide_k9m:auto_generated|  ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|lpm_divide:Mod0|lpm_divide_k9m:auto_generated                                                       ; lpm_divide_k9m      ; work         ;
-;             |sign_div_unsign_9kh:divider| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                           ; sign_div_unsign_9kh ; work         ;
-;                |alt_u_div_64f:divider|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider     ; alt_u_div_64f       ; work         ;
-;    |randomShape:my_randomS|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|randomShape:my_randomS                                                                                                  ; randomShape         ; work         ;
-;    |rightPredict:my_right|                ; 3660 (165)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right                                                                                                   ; rightPredict        ; work         ;
-;       |blockBottom:right_bB|              ; 133 (133)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|blockBottom:right_bB                                                                              ; blockBottom         ; work         ;
-;       |bottomTouchCheck:right_bTC|        ; 1217 (1216)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|bottomTouchCheck:right_bTC                                                                        ; bottomTouchCheck    ; work         ;
-;          |blockBottom:my_bB|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|bottomTouchCheck:right_bTC|blockBottom:my_bB                                                      ; blockBottom         ; work         ;
-;       |conflictCheck:right_cC|            ; 2102 (2102)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|conflictCheck:right_cC                                                                            ; conflictCheck       ; work         ;
-;       |lpm_divide:Mod0|                   ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|lpm_divide:Mod0                                                                                   ; lpm_divide          ; work         ;
-;          |lpm_divide_4bm:auto_generated|  ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|lpm_divide:Mod0|lpm_divide_4bm:auto_generated                                                     ; lpm_divide_4bm      ; work         ;
-;             |sign_div_unsign_plh:divider| ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|lpm_divide:Mod0|lpm_divide_4bm:auto_generated|sign_div_unsign_plh:divider                         ; sign_div_unsign_plh ; work         ;
-;                |alt_u_div_67f:divider|    ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|lpm_divide:Mod0|lpm_divide_4bm:auto_generated|sign_div_unsign_plh:divider|alt_u_div_67f:divider   ; alt_u_div_67f       ; work         ;
-;    |rotatePredict:my_rotate|              ; 7310 (4319)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate                                                                                                 ; rotatePredict       ; work         ;
-;       |blockBottom:left_bB|               ; 99 (99)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|blockBottom:left_bB                                                                             ; blockBottom         ; work         ;
-;       |blockBottom:right_bB|              ; 120 (120)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|blockBottom:right_bB                                                                            ; blockBottom         ; work         ;
-;       |bottomTouchCheck:rotate_bTC|       ; 1186 (1186)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|bottomTouchCheck:rotate_bTC                                                                     ; bottomTouchCheck    ; work         ;
-;       |conflictCheck:rotate_cC|           ; 1542 (1542)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|conflictCheck:rotate_cC                                                                         ; conflictCheck       ; work         ;
-;       |lpm_divide:Mod0|                   ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_4bm:auto_generated|  ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod0|lpm_divide_4bm:auto_generated                                                   ; lpm_divide_4bm      ; work         ;
-;             |sign_div_unsign_plh:divider| ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod0|lpm_divide_4bm:auto_generated|sign_div_unsign_plh:divider                       ; sign_div_unsign_plh ; work         ;
-;                |alt_u_div_67f:divider|    ; 40 (40)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod0|lpm_divide_4bm:auto_generated|sign_div_unsign_plh:divider|alt_u_div_67f:divider ; alt_u_div_67f       ; work         ;
-;       |lpm_divide:Mod1|                   ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_k9m:auto_generated|  ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod1|lpm_divide_k9m:auto_generated                                                   ; lpm_divide_k9m      ; work         ;
-;             |sign_div_unsign_9kh:divider| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod1|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
-;                |alt_u_div_64f:divider|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod1|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider ; alt_u_div_64f       ; work         ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; score~reg0                            ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 427   ;
-; Number of registers using Synchronous Clear  ; 6     ;
-; Number of registers using Synchronous Load   ; 1     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 25    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; blockX[3]                              ; 1084    ;
-; nextBlockTrue                          ; 418     ;
-; Total number of inverted registers = 2 ;         ;
-+----------------------------------------+---------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |field|blockY[4]           ;
-; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |field|block[5]            ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |field|blockX[2]           ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |field|block[6]            ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux300              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux262              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux243              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux201              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux181              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux143              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux120              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux82               ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux42               ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux0                ;
-; 4:1                ; 401 bits  ; 802 LEs       ; 802 LEs              ; 0 LEs                  ; No         ; |field|field               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+----------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: rightPredict:my_right|lpm_divide:Mod0 ;
-+------------------------+----------------+----------------------------------------------+
-; Parameter Name         ; Value          ; Type                                         ;
-+------------------------+----------------+----------------------------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                                      ;
-; LPM_WIDTHD             ; 5              ; Untyped                                      ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
-; LPM_PIPELINE           ; 0              ; Untyped                                      ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
-; CBXI_PARAMETER         ; lpm_divide_4bm ; Untyped                                      ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
-+------------------------+----------------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: leftPredict:my_left|lpm_divide:Mod0 ;
-+------------------------+----------------+--------------------------------------------+
-; Parameter Name         ; Value          ; Type                                       ;
-+------------------------+----------------+--------------------------------------------+
-; LPM_WIDTHN             ; 5              ; Untyped                                    ;
-; LPM_WIDTHD             ; 5              ; Untyped                                    ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
-; LPM_PIPELINE           ; 0              ; Untyped                                    ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
-; CBXI_PARAMETER         ; lpm_divide_k9m ; Untyped                                    ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
-+------------------------+----------------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: rotatePredict:my_rotate|lpm_divide:Mod0 ;
-+------------------------+----------------+------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                           ;
-+------------------------+----------------+------------------------------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                                        ;
-; LPM_WIDTHD             ; 5              ; Untyped                                        ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
-; LPM_PIPELINE           ; 0              ; Untyped                                        ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
-; CBXI_PARAMETER         ; lpm_divide_4bm ; Untyped                                        ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
-+------------------------+----------------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: rotatePredict:my_rotate|lpm_divide:Mod1 ;
-+------------------------+----------------+------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                           ;
-+------------------------+----------------+------------------------------------------------+
-; LPM_WIDTHN             ; 5              ; Untyped                                        ;
-; LPM_WIDTHD             ; 5              ; Untyped                                        ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
-; LPM_PIPELINE           ; 0              ; Untyped                                        ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
-; CBXI_PARAMETER         ; lpm_divide_k9m ; Untyped                                        ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
-+------------------------+----------------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 410                         ;
-; cycloneiii_ff         ; 427                         ;
-;     ENA               ; 19                          ;
-;     ENA SCLR          ; 5                           ;
-;     ENA SCLR SLD      ; 1                           ;
-;     plain             ; 402                         ;
-; cycloneiii_lcell_comb ; 25867                       ;
-;     arith             ; 6234                        ;
-;         1 data inputs ; 820                         ;
-;         2 data inputs ; 3432                        ;
-;         3 data inputs ; 1982                        ;
-;     normal            ; 19633                       ;
-;         0 data inputs ; 835                         ;
-;         1 data inputs ; 73                          ;
-;         2 data inputs ; 1114                        ;
-;         3 data inputs ; 2342                        ;
-;         4 data inputs ; 15269                       ;
-;                       ;                             ;
-; Max LUT depth         ; 23.40                       ;
-; Average LUT depth     ; 12.78                       ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:04:54     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Mon Dec 09 23:26:08 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tetrisField -c tetrisField
+    Info: Processing started: Tue Dec 10 03:46:30 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tetrisField -c tetrisField --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (10229): Verilog HDL Expression warning at field.v(787): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 787
+Warning (10229): Verilog HDL Expression warning at field.v(788): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 788
+Warning (10229): Verilog HDL Expression warning at field.v(789): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 789
+Warning (10229): Verilog HDL Expression warning at field.v(790): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 790
+Warning (10229): Verilog HDL Expression warning at field.v(791): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 791
+Warning (10229): Verilog HDL Expression warning at field.v(792): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 792
+Warning (10229): Verilog HDL Expression warning at field.v(793): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 793
+Warning (10229): Verilog HDL Expression warning at field.v(794): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 794
 Info (12021): Found 1 design units, including 1 entities, in source file field.v
     Info (12023): Found entity 1: field File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file leftpredict.v
@@ -503,76 +199,56 @@ Info (12021): Found 1 design units, including 1 entities, in source file rotatec
     Info (12023): Found entity 1: rotateClockWise File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rotateClockWise.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file randomshape.v
     Info (12023): Found entity 1: randomShape File: H:/Altera_lite/Github/550tetris/TetrisField_JY/randomShape.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file movepredict.v
+    Info (12023): Found entity 1: movePredict File: H:/Altera_lite/Github/550tetris/TetrisField_JY/movePredict.v Line: 1
+Warning (10229): Verilog HDL Expression warning at background_always.v(544): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/background_always.v Line: 544
+Warning (10229): Verilog HDL Expression warning at background_always.v(545): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/background_always.v Line: 545
+Warning (10229): Verilog HDL Expression warning at background_always.v(546): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/background_always.v Line: 546
+Warning (10229): Verilog HDL Expression warning at background_always.v(547): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/background_always.v Line: 547
+Warning (10229): Verilog HDL Expression warning at background_always.v(548): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/background_always.v Line: 548
+Warning (10229): Verilog HDL Expression warning at background_always.v(549): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/background_always.v Line: 549
+Warning (10229): Verilog HDL Expression warning at background_always.v(550): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/background_always.v Line: 550
+Warning (10229): Verilog HDL Expression warning at background_always.v(551): truncated literal to match 5 bits File: H:/Altera_lite/Github/550tetris/TetrisField_JY/background_always.v Line: 551
+Info (12021): Found 1 design units, including 1 entities, in source file background_always.v
+    Info (12023): Found entity 1: background_always File: H:/Altera_lite/Github/550tetris/TetrisField_JY/background_always.v Line: 1
 Info (12127): Elaborating entity "field" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at field.v(97): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 97
-Warning (10230): Verilog HDL assignment warning at field.v(107): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 107
-Warning (10230): Verilog HDL assignment warning at field.v(117): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 117
+Warning (10036): Verilog HDL or VHDL warning at field.v(108): object "opOK" assigned a value but never read File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 108
+Warning (10036): Verilog HDL or VHDL warning at field.v(234): object "rst" assigned a value but never read File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 234
+Warning (10036): Verilog HDL or VHDL warning at field.v(238): object "total_line_num" assigned a value but never read File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 238
+Warning (10230): Verilog HDL assignment warning at field.v(299): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 299
+Warning (10230): Verilog HDL assignment warning at field.v(324): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 324
+Warning (10230): Verilog HDL assignment warning at field.v(349): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 349
+Warning (10230): Verilog HDL assignment warning at field.v(374): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 374
+Warning (10230): Verilog HDL assignment warning at field.v(399): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 399
+Warning (10230): Verilog HDL assignment warning at field.v(424): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 424
+Warning (10230): Verilog HDL assignment warning at field.v(449): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 449
+Warning (10230): Verilog HDL assignment warning at field.v(474): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 474
+Warning (10230): Verilog HDL assignment warning at field.v(499): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 499
+Warning (10230): Verilog HDL assignment warning at field.v(524): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 524
+Warning (10230): Verilog HDL assignment warning at field.v(549): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 549
+Warning (10230): Verilog HDL assignment warning at field.v(574): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 574
+Warning (10230): Verilog HDL assignment warning at field.v(599): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 599
+Warning (10230): Verilog HDL assignment warning at field.v(624): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 624
+Warning (10230): Verilog HDL assignment warning at field.v(649): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 649
+Warning (10230): Verilog HDL assignment warning at field.v(674): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 674
+Warning (10230): Verilog HDL assignment warning at field.v(699): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 699
+Warning (10230): Verilog HDL assignment warning at field.v(724): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 724
+Warning (10230): Verilog HDL assignment warning at field.v(749): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 749
+Warning (10230): Verilog HDL assignment warning at field.v(774): truncated value with size 32 to match size of target (10) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 774
 Warning (10034): Output port "gameOver" at field.v(7) has no driver File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
-Info (12128): Elaborating entity "leftPredict" for hierarchy "leftPredict:my_left" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 60
-Warning (10230): Verilog HDL assignment warning at leftPredict.v(11): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 11
-Info (12128): Elaborating entity "conflictCheck" for hierarchy "leftPredict:my_left|conflictCheck:left_cC" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 22
-Info (12128): Elaborating entity "rotateAntiClock" for hierarchy "leftPredict:my_left|rotateAntiClock:my_rAC" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 23
-Info (12128): Elaborating entity "blockBottom" for hierarchy "leftPredict:my_left|blockBottom:left_bB" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 24
+Warning (10034): Output port "score" at field.v(8) has no driver File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 8
+Info (12128): Elaborating entity "bottomTouchCheck" for hierarchy "bottomTouchCheck:down_bTC" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 43
+Info (12128): Elaborating entity "blockBottom" for hierarchy "bottomTouchCheck:down_bTC|blockBottom:my_bB" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/bottomTouchCheck.v Line: 24
 Warning (10036): Verilog HDL or VHDL warning at blockBottom.v(8): object "zeroStopFlag" assigned a value but never read File: H:/Altera_lite/Github/550tetris/TetrisField_JY/blockBottom.v Line: 8
 Warning (10230): Verilog HDL assignment warning at blockBottom.v(26): truncated value with size 32 to match size of target (2) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/blockBottom.v Line: 26
-Info (12128): Elaborating entity "bottomTouchCheck" for hierarchy "leftPredict:my_left|bottomTouchCheck:left_bTC" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 28
-Info (12128): Elaborating entity "rightPredict" for hierarchy "rightPredict:my_right" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 63
-Warning (10230): Verilog HDL assignment warning at rightPredict.v(11): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 11
-Info (12128): Elaborating entity "rotateClockWise" for hierarchy "rightPredict:my_right|rotateClockWise:my_rCW" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 23
-Info (12128): Elaborating entity "downPredict" for hierarchy "downPredict:my_down" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 66
-Warning (10230): Verilog HDL assignment warning at downPredict.v(12): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/downPredict.v Line: 12
-Info (12128): Elaborating entity "clearLines" for hierarchy "downPredict:my_down|clearLines:down_cl" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/downPredict.v Line: 30
-Info (12128): Elaborating entity "rotatePredict" for hierarchy "rotatePredict:my_rotate" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 69
-Info (12128): Elaborating entity "randomShape" for hierarchy "randomShape:my_randomS" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 73
-Info (278001): Inferred 4 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rightPredict:my_right|Mod0" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 25
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "leftPredict:my_left|Mod0" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 25
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rotatePredict:my_rotate|Mod0" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rotatePredict.v Line: 30
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rotatePredict:my_rotate|Mod1" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rotatePredict.v Line: 31
-Info (12130): Elaborated megafunction instantiation "rightPredict:my_right|lpm_divide:Mod0" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 25
-Info (12133): Instantiated megafunction "rightPredict:my_right|lpm_divide:Mod0" with the following parameter: File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 25
-    Info (12134): Parameter "LPM_WIDTHN" = "32"
-    Info (12134): Parameter "LPM_WIDTHD" = "5"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4bm.tdf
-    Info (12023): Found entity 1: lpm_divide_4bm File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/lpm_divide_4bm.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_plh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_plh File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/sign_div_unsign_plh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_67f.tdf
-    Info (12023): Found entity 1: alt_u_div_67f File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/alt_u_div_67f.tdf Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
-    Info (12023): Found entity 1: add_sub_7pc File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/add_sub_7pc.tdf Line: 23
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
-    Info (12023): Found entity 1: add_sub_8pc File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/add_sub_8pc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "leftPredict:my_left|lpm_divide:Mod0" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 25
-Info (12133): Instantiated megafunction "leftPredict:my_left|lpm_divide:Mod0" with the following parameter: File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 25
-    Info (12134): Parameter "LPM_WIDTHN" = "5"
-    Info (12134): Parameter "LPM_WIDTHD" = "5"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_k9m.tdf
-    Info (12023): Found entity 1: lpm_divide_k9m File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/lpm_divide_k9m.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_9kh File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/sign_div_unsign_9kh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_64f.tdf
-    Info (12023): Found entity 1: alt_u_div_64f File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/alt_u_div_64f.tdf Line: 27
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "gameOver" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
-    Warning (13410): Pin "score" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 8
-Info (286030): Timing-Driven Synthesis is running
-Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "rotatePredict:my_rotate|lpm_divide:Mod0|lpm_divide_4bm:auto_generated|sign_div_unsign_plh:divider|alt_u_div_67f:divider|add_sub_30_result_int[1]~10" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/alt_u_div_67f.tdf Line: 147
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 26278 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 402 output pins
-    Info (21061): Implemented 25868 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 5192 megabytes
-    Info: Processing ended: Mon Dec 09 23:31:14 2019
-    Info: Elapsed time: 00:05:06
-    Info: Total CPU time (on all processors): 00:05:17
+Info (12128): Elaborating entity "conflictCheck" for hierarchy "conflictCheck:left_cC" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 54
+Info (12128): Elaborating entity "rotateAntiClock" for hierarchy "rotateAntiClock:left_rAC" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 55
+Info (12128): Elaborating entity "rotateClockWise" for hierarchy "rotateClockWise:right_rCW" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 72
+Info (12128): Elaborating entity "randomShape" for hierarchy "randomShape:my_randomS" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 142
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 44 warnings
+    Info: Peak virtual memory: 5034 megabytes
+    Info: Processing ended: Tue Dec 10 03:46:41 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:24
 
 

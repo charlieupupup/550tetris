@@ -1604,15 +1604,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "leftTrue",
-					"strict" : false
-				},
-				{
-					"name" : "downTrue",
-					"strict" : false
-				},
-				{
-					"name" : "rightTrue",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
@@ -1620,7 +1612,23 @@
 					"strict" : false
 				},
 				{
+					"name" : "downTrue",
+					"strict" : false
+				},
+				{
+					"name" : "leftTrue",
+					"strict" : false
+				},
+				{
+					"name" : "rightTrue",
+					"strict" : false
+				},
+				{
 					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "blockType[1]",
 					"strict" : false
 				},
 				{
@@ -1629,10 +1637,6 @@
 				},
 				{
 					"name" : "blockType[2]",
-					"strict" : false
-				},
-				{
-					"name" : "blockType[1]",
 					"strict" : false
 				}
 			]
