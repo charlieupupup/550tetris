@@ -15,7 +15,7 @@ module blockBottom(block, bottomY);
 		zeroStopFlag = 1'b0;
 		for (i = 0; i < 16; i = i + 1) begin
 			if (tempBlock[15] == 1'b1) zeroStopFlag = 1'b1;
-			if (tempBlock[15] == 1'b0) begin
+			else /*(tempBlock[15] == 1'b0)*/ begin
 				zeroNum = zeroNum + 4'b1;
 				//if (!zeroStopFlag) zeroNum = zeroNum + 4'b1;
 				tempBlock = tempBlock >> 1'b1;

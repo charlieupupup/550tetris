@@ -1,5 +1,5 @@
-Analysis & Elaboration report for tetrisField
-Mon Dec 09 20:59:49 2019
+Analysis & Synthesis report for tetrisField
+Mon Dec 09 23:31:14 2019
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -7,14 +7,23 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "rotatePredict:my_rotate"
-  6. Port Connectivity Checks: "downPredict:my_down"
-  7. Port Connectivity Checks: "rightPredict:my_right"
-  8. Port Connectivity Checks: "leftPredict:my_left"
-  9. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: rightPredict:my_right|lpm_divide:Mod0
+ 13. Parameter Settings for Inferred Entity Instance: leftPredict:my_left|lpm_divide:Mod0
+ 14. Parameter Settings for Inferred Entity Instance: rotatePredict:my_rotate|lpm_divide:Mod0
+ 15. Parameter Settings for Inferred Entity Instance: rotatePredict:my_rotate|lpm_divide:Mod1
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -39,43 +48,27 @@ agreement for further details.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                   ;
+; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Mon Dec 09 20:59:49 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec 09 23:31:14 2019       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; tetrisField                                 ;
 ; Top-level Entity Name              ; field                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 25,865                                      ;
+;     Total combinational functions  ; 25,865                                      ;
+;     Dedicated logic registers      ; 427                                         ;
+; Total registers                    ; 427                                         ;
+; Total pins                         ; 410                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
 +----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                      ;
+; Analysis & Synthesis Settings                                                                                        ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
@@ -161,59 +154,329 @@ agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "rotatePredict:my_rotate"                                                                   ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; opOK        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; score       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; bottomTouch ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; newField    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "downPredict:my_down"                                                                       ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; score       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; bottomTouch ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; newField    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+; field.v                          ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v                    ;         ;
+; leftPredict.v                    ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v              ;         ;
+; bottomTouchCheck.v               ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/bottomTouchCheck.v         ;         ;
+; conflictCheck.v                  ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/conflictCheck.v            ;         ;
+; rightPredict.v                   ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v             ;         ;
+; downPredict.v                    ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/downPredict.v              ;         ;
+; clearLines.v                     ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/clearLines.v               ;         ;
+; rotatePredict.v                  ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/rotatePredict.v            ;         ;
+; blockBottom.v                    ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/blockBottom.v              ;         ;
+; rotateAntiClock.v                ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/rotateAntiClock.v          ;         ;
+; rotateClockWise.v                ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/rotateClockWise.v          ;         ;
+; randomShape.v                    ; yes             ; User Verilog HDL File        ; H:/Altera_lite/Github/550tetris/TetrisField_JY/randomShape.v              ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; h:/altera_lite/16.0/quartus/libraries/megafunctions/lpm_divide.tdf        ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; h:/altera_lite/16.0/quartus/libraries/megafunctions/abs_divider.inc       ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; h:/altera_lite/16.0/quartus/libraries/megafunctions/sign_div_unsign.inc   ;         ;
+; aglobal160.inc                   ; yes             ; Megafunction                 ; h:/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc        ;         ;
+; db/lpm_divide_4bm.tdf            ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/lpm_divide_4bm.tdf      ;         ;
+; db/sign_div_unsign_plh.tdf       ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/sign_div_unsign_plh.tdf ;         ;
+; db/alt_u_div_67f.tdf             ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/alt_u_div_67f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/add_sub_8pc.tdf         ;         ;
+; db/lpm_divide_k9m.tdf            ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/lpm_divide_k9m.tdf      ;         ;
+; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/sign_div_unsign_9kh.tdf ;         ;
+; db/alt_u_div_64f.tdf             ; yes             ; Auto-Generated Megafunction  ; H:/Altera_lite/Github/550tetris/TetrisField_JY/db/alt_u_div_64f.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "rightPredict:my_right"                                                                     ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; opOK        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; bottomTouch ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; newField    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 25,865    ;
+;                                             ;           ;
+; Total combinational functions               ; 25865     ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 15269     ;
+;     -- 3 input functions                    ; 4324      ;
+;     -- <=2 input functions                  ; 6272      ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 19631     ;
+;     -- arithmetic mode                      ; 6234      ;
+;                                             ;           ;
+; Total registers                             ; 427       ;
+;     -- Dedicated logic registers            ; 427       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 410       ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; blockX[0] ;
+; Maximum fan-out                             ; 2579      ;
+; Total fan-out                               ; 85730     ;
+; Average fan-out                             ; 3.16      ;
++---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "leftPredict:my_left"                                                                       ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; opOK        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; bottomTouch ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; newField    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Entity Name         ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |field                                    ; 25865 (5075)      ; 427 (427)    ; 0           ; 0            ; 0       ; 0         ; 410  ; 0            ; |field                                                                                                                         ;                     ;              ;
+;    |downPredict:my_down|                  ; 6697 (5511)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|downPredict:my_down                                                                                                     ; downPredict         ; work         ;
+;       |bottomTouchCheck:down_bTC|         ; 1186 (1186)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|downPredict:my_down|bottomTouchCheck:down_bTC                                                                           ; bottomTouchCheck    ; work         ;
+;    |leftPredict:my_left|                  ; 3122 (180)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left                                                                                                     ; leftPredict         ; work         ;
+;       |blockBottom:left_bB|               ; 117 (117)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|blockBottom:left_bB                                                                                 ; blockBottom         ; work         ;
+;       |bottomTouchCheck:left_bTC|         ; 1248 (1219)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|bottomTouchCheck:left_bTC                                                                           ; bottomTouchCheck    ; work         ;
+;          |blockBottom:my_bB|              ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|bottomTouchCheck:left_bTC|blockBottom:my_bB                                                         ; blockBottom         ; work         ;
+;       |conflictCheck:left_cC|             ; 1573 (1573)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|conflictCheck:left_cC                                                                               ; conflictCheck       ; work         ;
+;       |lpm_divide:Mod0|                   ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|lpm_divide:Mod0                                                                                     ; lpm_divide          ; work         ;
+;          |lpm_divide_k9m:auto_generated|  ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|lpm_divide:Mod0|lpm_divide_k9m:auto_generated                                                       ; lpm_divide_k9m      ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                           ; sign_div_unsign_9kh ; work         ;
+;                |alt_u_div_64f:divider|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|leftPredict:my_left|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider     ; alt_u_div_64f       ; work         ;
+;    |randomShape:my_randomS|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|randomShape:my_randomS                                                                                                  ; randomShape         ; work         ;
+;    |rightPredict:my_right|                ; 3660 (165)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right                                                                                                   ; rightPredict        ; work         ;
+;       |blockBottom:right_bB|              ; 133 (133)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|blockBottom:right_bB                                                                              ; blockBottom         ; work         ;
+;       |bottomTouchCheck:right_bTC|        ; 1217 (1216)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|bottomTouchCheck:right_bTC                                                                        ; bottomTouchCheck    ; work         ;
+;          |blockBottom:my_bB|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|bottomTouchCheck:right_bTC|blockBottom:my_bB                                                      ; blockBottom         ; work         ;
+;       |conflictCheck:right_cC|            ; 2102 (2102)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|conflictCheck:right_cC                                                                            ; conflictCheck       ; work         ;
+;       |lpm_divide:Mod0|                   ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|lpm_divide:Mod0                                                                                   ; lpm_divide          ; work         ;
+;          |lpm_divide_4bm:auto_generated|  ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|lpm_divide:Mod0|lpm_divide_4bm:auto_generated                                                     ; lpm_divide_4bm      ; work         ;
+;             |sign_div_unsign_plh:divider| ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|lpm_divide:Mod0|lpm_divide_4bm:auto_generated|sign_div_unsign_plh:divider                         ; sign_div_unsign_plh ; work         ;
+;                |alt_u_div_67f:divider|    ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rightPredict:my_right|lpm_divide:Mod0|lpm_divide_4bm:auto_generated|sign_div_unsign_plh:divider|alt_u_div_67f:divider   ; alt_u_div_67f       ; work         ;
+;    |rotatePredict:my_rotate|              ; 7310 (4319)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate                                                                                                 ; rotatePredict       ; work         ;
+;       |blockBottom:left_bB|               ; 99 (99)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|blockBottom:left_bB                                                                             ; blockBottom         ; work         ;
+;       |blockBottom:right_bB|              ; 120 (120)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|blockBottom:right_bB                                                                            ; blockBottom         ; work         ;
+;       |bottomTouchCheck:rotate_bTC|       ; 1186 (1186)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|bottomTouchCheck:rotate_bTC                                                                     ; bottomTouchCheck    ; work         ;
+;       |conflictCheck:rotate_cC|           ; 1542 (1542)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|conflictCheck:rotate_cC                                                                         ; conflictCheck       ; work         ;
+;       |lpm_divide:Mod0|                   ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_4bm:auto_generated|  ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod0|lpm_divide_4bm:auto_generated                                                   ; lpm_divide_4bm      ; work         ;
+;             |sign_div_unsign_plh:divider| ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod0|lpm_divide_4bm:auto_generated|sign_div_unsign_plh:divider                       ; sign_div_unsign_plh ; work         ;
+;                |alt_u_div_67f:divider|    ; 40 (40)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod0|lpm_divide_4bm:auto_generated|sign_div_unsign_plh:divider|alt_u_div_67f:divider ; alt_u_div_67f       ; work         ;
+;       |lpm_divide:Mod1|                   ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_k9m:auto_generated|  ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod1|lpm_divide_k9m:auto_generated                                                   ; lpm_divide_k9m      ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod1|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;                |alt_u_div_64f:divider|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |field|rotatePredict:my_rotate|lpm_divide:Mod1|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider ; alt_u_div_64f       ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; score~reg0                            ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 427   ;
+; Number of registers using Synchronous Clear  ; 6     ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 25    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; blockX[3]                              ; 1084    ;
+; nextBlockTrue                          ; 418     ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |field|blockY[4]           ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |field|block[5]            ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |field|blockX[2]           ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |field|block[6]            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux300              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux262              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux243              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux201              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux181              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux143              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux120              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux82               ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux42               ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |field|Mux0                ;
+; 4:1                ; 401 bits  ; 802 LEs       ; 802 LEs              ; 0 LEs                  ; No         ; |field|field               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: rightPredict:my_right|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                      ;
+; LPM_WIDTHD             ; 5              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_4bm ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: leftPredict:my_left|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                                    ;
+; LPM_WIDTHD             ; 5              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_k9m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: rotatePredict:my_rotate|lpm_divide:Mod0 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 5              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_4bm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: rotatePredict:my_rotate|lpm_divide:Mod1 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                                        ;
+; LPM_WIDTHD             ; 5              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_k9m ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 410                         ;
+; cycloneiii_ff         ; 427                         ;
+;     ENA               ; 19                          ;
+;     ENA SCLR          ; 5                           ;
+;     ENA SCLR SLD      ; 1                           ;
+;     plain             ; 402                         ;
+; cycloneiii_lcell_comb ; 25867                       ;
+;     arith             ; 6234                        ;
+;         1 data inputs ; 820                         ;
+;         2 data inputs ; 3432                        ;
+;         3 data inputs ; 1982                        ;
+;     normal            ; 19633                       ;
+;         0 data inputs ; 835                         ;
+;         1 data inputs ; 73                          ;
+;         2 data inputs ; 1114                        ;
+;         3 data inputs ; 2342                        ;
+;         4 data inputs ; 15269                       ;
+;                       ;                             ;
+; Max LUT depth         ; 23.40                       ;
+; Average LUT depth     ; 12.78                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:04:54     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Mon Dec 09 20:59:37 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tetrisField -c tetrisField --analysis_and_elaboration
+    Info: Processing started: Mon Dec 09 23:26:08 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tetrisField -c tetrisField
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file field.v
@@ -238,11 +501,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file rotatea
     Info (12023): Found entity 1: rotateAntiClock File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rotateAntiClock.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file rotateclockwise.v
     Info (12023): Found entity 1: rotateClockWise File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rotateClockWise.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file randomshape.v
+    Info (12023): Found entity 1: randomShape File: H:/Altera_lite/Github/550tetris/TetrisField_JY/randomShape.v Line: 1
 Info (12127): Elaborating entity "field" for the top level hierarchy
-Warning (10034): Output port "nextBlockTrue" at field.v(7) has no driver File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
+Warning (10230): Verilog HDL assignment warning at field.v(97): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 97
+Warning (10230): Verilog HDL assignment warning at field.v(107): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 107
+Warning (10230): Verilog HDL assignment warning at field.v(117): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 117
 Warning (10034): Output port "gameOver" at field.v(7) has no driver File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
-Warning (10034): Output port "score" at field.v(7) has no driver File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
-Info (12128): Elaborating entity "leftPredict" for hierarchy "leftPredict:my_left" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 53
+Info (12128): Elaborating entity "leftPredict" for hierarchy "leftPredict:my_left" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 60
 Warning (10230): Verilog HDL assignment warning at leftPredict.v(11): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 11
 Info (12128): Elaborating entity "conflictCheck" for hierarchy "leftPredict:my_left|conflictCheck:left_cC" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 22
 Info (12128): Elaborating entity "rotateAntiClock" for hierarchy "leftPredict:my_left|rotateAntiClock:my_rAC" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 23
@@ -250,444 +516,63 @@ Info (12128): Elaborating entity "blockBottom" for hierarchy "leftPredict:my_lef
 Warning (10036): Verilog HDL or VHDL warning at blockBottom.v(8): object "zeroStopFlag" assigned a value but never read File: H:/Altera_lite/Github/550tetris/TetrisField_JY/blockBottom.v Line: 8
 Warning (10230): Verilog HDL assignment warning at blockBottom.v(26): truncated value with size 32 to match size of target (2) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/blockBottom.v Line: 26
 Info (12128): Elaborating entity "bottomTouchCheck" for hierarchy "leftPredict:my_left|bottomTouchCheck:left_bTC" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 28
-Info (12128): Elaborating entity "rightPredict" for hierarchy "rightPredict:my_right" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 56
+Info (12128): Elaborating entity "rightPredict" for hierarchy "rightPredict:my_right" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 63
 Warning (10230): Verilog HDL assignment warning at rightPredict.v(11): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 11
 Info (12128): Elaborating entity "rotateClockWise" for hierarchy "rightPredict:my_right|rotateClockWise:my_rCW" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 23
-Info (12128): Elaborating entity "downPredict" for hierarchy "downPredict:my_down" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 59
+Info (12128): Elaborating entity "downPredict" for hierarchy "downPredict:my_down" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 66
 Warning (10230): Verilog HDL assignment warning at downPredict.v(12): truncated value with size 16 to match size of target (5) File: H:/Altera_lite/Github/550tetris/TetrisField_JY/downPredict.v Line: 12
 Info (12128): Elaborating entity "clearLines" for hierarchy "downPredict:my_down|clearLines:down_cl" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/downPredict.v Line: 30
-Info (12128): Elaborating entity "rotatePredict" for hierarchy "rotatePredict:my_rotate" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 62
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "field[0]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[1]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[2]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[3]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[4]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[5]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[6]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[7]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[8]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[9]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[10]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[11]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[12]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[13]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[14]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[15]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[16]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[17]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[18]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[19]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[20]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[21]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[22]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[23]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[24]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[25]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[26]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[27]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[28]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[29]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[30]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[31]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[32]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[33]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[34]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[35]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[36]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[37]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[38]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[39]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[40]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[41]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[42]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[43]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[44]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[45]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[46]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[47]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[48]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[49]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[50]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[51]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[52]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[53]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[54]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[55]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[56]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[57]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[58]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[59]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[60]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[61]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[62]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[63]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[64]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[65]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[66]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[67]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[68]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[69]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[70]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[71]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[72]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[73]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[74]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[75]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[76]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[77]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[78]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[79]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[80]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[81]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[82]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[83]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[84]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[85]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[86]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[87]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[88]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[89]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[90]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[91]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[92]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[93]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[94]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[95]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[96]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[97]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[98]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[99]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[100]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[101]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[102]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[103]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[104]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[105]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[106]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[107]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[108]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[109]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[110]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[111]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[112]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[113]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[114]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[115]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[116]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[117]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[118]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[119]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[120]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[121]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[122]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[123]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[124]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[125]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[126]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[127]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[128]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[129]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[130]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[131]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[132]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[133]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[134]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[135]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[136]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[137]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[138]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[139]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[140]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[141]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[142]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[143]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[144]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[145]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[146]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[147]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[148]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[149]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[150]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[151]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[152]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[153]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[154]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[155]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[156]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[157]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[158]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[159]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[160]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[161]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[162]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[163]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[164]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[165]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[166]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[167]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[168]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[169]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[170]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[171]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[172]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[173]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[174]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[175]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[176]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[177]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[178]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[179]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[180]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[181]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[182]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[183]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[184]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[185]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[186]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[187]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[188]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[189]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[190]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[191]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[192]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[193]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[194]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[195]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[196]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[197]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[198]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[199]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[200]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[201]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[202]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[203]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[204]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[205]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[206]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[207]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[208]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[209]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[210]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[211]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[212]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[213]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[214]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[215]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[216]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[217]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[218]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[219]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[220]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[221]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[222]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[223]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[224]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[225]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[226]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[227]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[228]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[229]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[230]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[231]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[232]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[233]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[234]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[235]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[236]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[237]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[238]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[239]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[240]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[241]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[242]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[243]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[244]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[245]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[246]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[247]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[248]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[249]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[250]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[251]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[252]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[253]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[254]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[255]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[256]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[257]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[258]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[259]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[260]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[261]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[262]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[263]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[264]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[265]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[266]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[267]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[268]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[269]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[270]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[271]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[272]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[273]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[274]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[275]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[276]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[277]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[278]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[279]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[280]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[281]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[282]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[283]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[284]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[285]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[286]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[287]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[288]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[289]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[290]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[291]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[292]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[293]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[294]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[295]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[296]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[297]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[298]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[299]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[300]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[301]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[302]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[303]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[304]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[305]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[306]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[307]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[308]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[309]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[310]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[311]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[312]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[313]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[314]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[315]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[316]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[317]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[318]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[319]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[320]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[321]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[322]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[323]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[324]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[325]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[326]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[327]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[328]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[329]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[330]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[331]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[332]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[333]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[334]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[335]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[336]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[337]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[338]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[339]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[340]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[341]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[342]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[343]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[344]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[345]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[346]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[347]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[348]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[349]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[350]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[351]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[352]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[353]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[354]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[355]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[356]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[357]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[358]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[359]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[360]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[361]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[362]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[363]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[364]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[365]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[366]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[367]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[368]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[369]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[370]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[371]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[372]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[373]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[374]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[375]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[376]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[377]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[378]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[379]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[380]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[381]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[382]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[383]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[384]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[385]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[386]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[387]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[388]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[389]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[390]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[391]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[392]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[393]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[394]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[395]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[396]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[397]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[398]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "field[399]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 12
-    Warning (12110): Net "block[0]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[4]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[8]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[12]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[1]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[5]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[9]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[13]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[2]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[6]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[10]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[14]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[3]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[7]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[11]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "block[15]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 13
-    Warning (12110): Net "blockX[4]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
-    Warning (12110): Net "blockX[3]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
-    Warning (12110): Net "blockX[2]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
-    Warning (12110): Net "blockX[1]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
-    Warning (12110): Net "blockX[0]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
-    Warning (12110): Net "blockY[4]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
-    Warning (12110): Net "blockY[3]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
-    Warning (12110): Net "blockY[2]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
-    Warning (12110): Net "blockY[1]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
-    Warning (12110): Net "blockY[0]" is missing source, defaulting to GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 17
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 436 warnings
-    Info: Peak virtual memory: 5081 megabytes
-    Info: Processing ended: Mon Dec 09 20:59:49 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:25
+Info (12128): Elaborating entity "rotatePredict" for hierarchy "rotatePredict:my_rotate" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 69
+Info (12128): Elaborating entity "randomShape" for hierarchy "randomShape:my_randomS" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 73
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rightPredict:my_right|Mod0" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "leftPredict:my_left|Mod0" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rotatePredict:my_rotate|Mod0" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rotatePredict.v Line: 30
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "rotatePredict:my_rotate|Mod1" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rotatePredict.v Line: 31
+Info (12130): Elaborated megafunction instantiation "rightPredict:my_right|lpm_divide:Mod0" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 25
+Info (12133): Instantiated megafunction "rightPredict:my_right|lpm_divide:Mod0" with the following parameter: File: H:/Altera_lite/Github/550tetris/TetrisField_JY/rightPredict.v Line: 25
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4bm.tdf
+    Info (12023): Found entity 1: lpm_divide_4bm File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/lpm_divide_4bm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_plh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_plh File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/sign_div_unsign_plh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_67f.tdf
+    Info (12023): Found entity 1: alt_u_div_67f File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/alt_u_div_67f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "leftPredict:my_left|lpm_divide:Mod0" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 25
+Info (12133): Instantiated megafunction "leftPredict:my_left|lpm_divide:Mod0" with the following parameter: File: H:/Altera_lite/Github/550tetris/TetrisField_JY/leftPredict.v Line: 25
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_k9m.tdf
+    Info (12023): Found entity 1: lpm_divide_k9m File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/lpm_divide_k9m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/sign_div_unsign_9kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_64f.tdf
+    Info (12023): Found entity 1: alt_u_div_64f File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/alt_u_div_64f.tdf Line: 27
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "gameOver" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 7
+    Warning (13410): Pin "score" is stuck at GND File: H:/Altera_lite/Github/550tetris/TetrisField_JY/field.v Line: 8
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "rotatePredict:my_rotate|lpm_divide:Mod0|lpm_divide_4bm:auto_generated|sign_div_unsign_plh:divider|alt_u_div_67f:divider|add_sub_30_result_int[1]~10" File: H:/Altera_lite/Github/550tetris/TetrisField_JY/db/alt_u_div_67f.tdf Line: 147
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 26278 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 402 output pins
+    Info (21061): Implemented 25868 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 5192 megabytes
+    Info: Processing ended: Mon Dec 09 23:31:14 2019
+    Info: Elapsed time: 00:05:06
+    Info: Total CPU time (on all processors): 00:05:17
 
 
