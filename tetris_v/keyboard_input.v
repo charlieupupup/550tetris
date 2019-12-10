@@ -14,13 +14,13 @@ output reg [4:0] block_pos_x_out, block_pos_y_out;
 output reg [9:0] rotate_out;
 
 initial begin
-block_pos_x_out = block_pos_x_in;
-block_pos_y_out = block_pos_y_in;
-rotate_out = rotate_in;
+block_pos_x_out <= block_pos_x_in;
+block_pos_y_out <= block_pos_y_in;
+rotate_out <= rotate_in;
 end
 
 always @ (posedge clk)
-
+begin
 if (left == 1) begin
     block_pos_x_out <= block_pos_x_in - 1;
 end
@@ -34,9 +34,9 @@ block_pos_y_out <= block_pos_y_in + 1;
 end
 
 else if (ro == 1) begin
-rotate_out <= rotate_in + 1;
+rotate_out <= (rotate_in + 1)%4;
 end
-
+end
 
 
 endmodule // input  

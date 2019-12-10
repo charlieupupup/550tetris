@@ -2,7 +2,7 @@ module field_background(clk, refresh, row_down, field_in, field_out);
 
     input clk;
 
-    input refresh;
+    input refresh, row_down;
     input [399:0] field_in;
     output reg [399:0] field_out;
 

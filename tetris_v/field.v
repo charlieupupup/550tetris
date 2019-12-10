@@ -3,7 +3,7 @@ module field(clk, block_num, left, right, down, ro, score_plus, next_block, fiel
     
 );
 
-input clk, drop, left, right;
+input clk, down, left, right;
 
 input [9:0] block_num, ro;
 

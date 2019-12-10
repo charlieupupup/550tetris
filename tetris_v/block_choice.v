@@ -1,10 +1,9 @@
-module block_choice(rotate,block_num,block_matrix);
+module block_choice(rotate_tmp,block_num,block_matrix);
 
-input [9:0] block_num, rotate;
+input [9:0] block_num, rotate_tmp;
 output [15:0] block_matrix;
 
-reg [9:0] rotate_tmp;
-assign rotate_tmp = rotate % 4;
+
 
 
 
@@ -34,40 +33,41 @@ reg[15:0] block_4_3 = 16'b0000000000011111;
 
 
 always @ (*)
+
 case (block_num)
     0: case (rotate_tmp)
-        0:    block_matrix = block_0_0
-        1:    block_matrix = block_0_1
-        2:    block_matrix = block_0_2
-        3:    block_matrix = block_0_3
+        0:    block_matrix = block_0_0;
+        1:    block_matrix = block_0_1;
+        2:    block_matrix = block_0_2;
+        3:    block_matrix = block_0_3;
     endcase
 
     1: case (rotate_tmp)
-        0:    block_matrix = block_1_0
-        1:    block_matrix = block_1_1
-        2:    block_matrix = block_1_2
-        3:    block_matrix = block_1_3
+        0:    block_matrix = block_1_0;
+        1:    block_matrix = block_1_1;
+        2:    block_matrix = block_1_2;
+        3:    block_matrix = block_1_3;
     endcase
 
     2: case (rotate_tmp)
-        0:    block_matrix = block_2_0
-        1:    block_matrix = block_2_1
-        2:    block_matrix = block_2_2
-        3:    block_matrix = block_2_3
+        0:    block_matrix = block_2_0;
+        1:    block_matrix = block_2_1;
+        2:    block_matrix = block_2_2;
+        3:    block_matrix = block_2_3;
     endcase
 
     3: case (rotate_tmp)
-        0:    block_matrix = block_3_0
-        1:    block_matrix = block_3_1
-        2:    block_matrix = block_3_2
-        3:    block_matrix = block_3_3
+        0:    block_matrix = block_3_0;
+        1:    block_matrix = block_3_1;
+        2:    block_matrix = block_3_2;
+        3:    block_matrix = block_3_3;
     endcase
 
     4: case (rotate_tmp)
-        0:    block_matrix = block_4_0
-        1:    block_matrix = block_4_1
-        2:    block_matrix = block_4_2
-        3:    block_matrix = block_4_3
+        0:    block_matrix = block_4_0;
+        1:    block_matrix = block_4_1;
+        2:    block_matrix = block_4_2;
+        3:    block_matrix = block_4_3;
     endcase
 
     default: block_matrix = block_0_0;

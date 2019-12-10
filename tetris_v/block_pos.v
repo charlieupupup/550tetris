@@ -10,14 +10,14 @@ input [9:0] block_pos_y_in, block_pos_x_in, rotate_in;
 initial begin
     block_pos_y_out = 9'd0;
     block_pos_x_out = 9'd9;
-    rotate = 9'd0;
+    rotate_out = 9'd0;
 end
 
 always @ (posedge clk) begin
     if(err) begin
         block_pos_y_out = 9'd0;
         block_pos_x_out = 9'd9;
-        rotate = 9'd0;
+        rotate_out = 9'd0;
     end
     else if (refresh) begin     
         block_pos_y_out = block_pos_y_in;
