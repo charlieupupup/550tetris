@@ -32,44 +32,93 @@ reg[15:0] block_4_3 = 16'b0000000000011111;
 
 
 
-always @ (*)
+always @ (*) begin
 
-case (block_num)
-    0: case (rotate_tmp)
-        0:    block_matrix = block_0_0;
-        1:    block_matrix = block_0_1;
-        2:    block_matrix = block_0_2;
-        3:    block_matrix = block_0_3;
-    endcase
+    if (block_num == 0&&rotate_tmp == 0) begin
+    block_matrix = block_0_0;
+    end
 
-    1: case (rotate_tmp)
-        0:    block_matrix = block_1_0;
-        1:    block_matrix = block_1_1;
-        2:    block_matrix = block_1_2;
-        3:    block_matrix = block_1_3;
-    endcase
+    else if (block_num == 0&&rotate_tmp == 1) begin
+    block_matrix = block_0_1;
+    end
 
-    2: case (rotate_tmp)
-        0:    block_matrix = block_2_0;
-        1:    block_matrix = block_2_1;
-        2:    block_matrix = block_2_2;
-        3:    block_matrix = block_2_3;
-    endcase
+    else if (block_num == 0&&rotate_tmp == 2) begin
+    block_matrix = block_0_2;
+    end
 
-    3: case (rotate_tmp)
-        0:    block_matrix = block_3_0;
-        1:    block_matrix = block_3_1;
-        2:    block_matrix = block_3_2;
-        3:    block_matrix = block_3_3;
-    endcase
+    else if (block_num == 0&&rotate_tmp == 3) begin
+    block_matrix = block_0_3;
+    end
 
-    4: case (rotate_tmp)
-        0:    block_matrix = block_4_0;
-        1:    block_matrix = block_4_1;
-        2:    block_matrix = block_4_2;
-        3:    block_matrix = block_4_3;
-    endcase
+    else if (block_num == 1&&rotate_tmp == 0) begin
+    block_matrix = block_1_0;
+    end
 
-    default: block_matrix = block_0_0;
-endcase
+    else if (block_num == 1&&rotate_tmp == 1) begin
+    block_matrix = block_1_1;
+    end
+
+    else if (block_num == 1&&rotate_tmp == 2) begin
+    block_matrix = block_1_2;
+    end
+
+    else if (block_num == 1&&rotate_tmp == 3) begin
+    block_matrix = block_1_3;
+    end
+
+    else if (block_num == 2&&rotate_tmp == 0) begin
+    block_matrix = block_2_0;
+    end
+
+    else if (block_num == 2&&rotate_tmp == 1) begin
+    block_matrix = block_2_1;
+    end
+
+    else if (block_num == 2&&rotate_tmp == 2) begin
+    block_matrix = block_2_2;
+    end
+
+    else if (block_num == 2&&rotate_tmp == 3) begin
+    block_matrix = block_2_3;
+    end
+
+    else if (block_num == 3&&rotate_tmp == 0) begin
+    block_matrix = block_3_0;
+    end
+
+    else if (block_num == 3&&rotate_tmp == 1) begin
+    block_matrix = block_3_1;
+    end
+
+    else if (block_num == 3&&rotate_tmp == 2) begin
+    block_matrix = block_3_2;
+    end
+
+    else if (block_num == 3&&rotate_tmp == 3) begin
+    block_matrix = block_3_3;
+    end
+
+    else if (block_num == 4&&rotate_tmp == 0) begin
+    block_matrix = block_4_0;
+    end
+
+    else if (block_num == 4&&rotate_tmp == 1) begin
+    block_matrix = block_4_1;
+    end
+
+    else if (block_num == 4&&rotate_tmp == 2) begin
+    block_matrix = block_4_2;
+    end
+
+    else if (block_num == 4&&rotate_tmp == 3) begin
+    block_matrix = block_4_3;
+    end
+
+
+    else begin
+    block_matrix = block_0_0;
+    end
+
+end
+
 endmodule // block_choice

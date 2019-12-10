@@ -39,7 +39,7 @@ wire [9:0] block_pos_y_n, block_pos_x_n, rotate_out_n;
 wire [15:0] block_matrix_n; 
 wire [399:0] block_expand_n, field_merge_n;
 
-keyboard_input keyboard_input_new(clk, block_pos_y_out_o, block_pos_x_out_o, rotate_out_o, left, right, down, ro ,block_pos_x_n, block_pos_y_n, rotate_out_n);
+keyboard_input keyboard_input_new(block_pos_y_out_o, block_pos_x_out_o, rotate_out_o, left, right, down, ro ,block_pos_x_n, block_pos_y_n, rotate_out_n);
 
 block_choice block_choice_new(rotate_out_n,block_num,block_matrix_n);
 block_expand block_expand_new(block_expand_n, block_matrix_n, block_pos_y_n, block_pos_x_n);
