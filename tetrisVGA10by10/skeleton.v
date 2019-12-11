@@ -56,8 +56,6 @@ module skeleton(resetn,
 	
 	wire [31:0] score;
 	
-	wire gameOver;
-	
 	wire [0:99] field;
 	
 	// clock divider by 5 to 10 MHz
@@ -82,7 +80,7 @@ module skeleton(resetn,
 	
 	// tetris field
 	field my_field(clock_b, ~resetn, leftTrue, rightTrue, downTrue, rotateTrue, random5, // Input
-						field, gameOver, score);
+						field, score);
 	
 	// VGA
 	Reset_Delay			r0	(.iCLK(CLOCK_50),.oRESET(DLY_RST)	);

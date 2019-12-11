@@ -9,6 +9,7 @@ module randomShape(blockType, randomBlockShape);
 		else if (blockType == 3'd2) randomBlockShape <= 9'h92;
 		else if (blockType == 3'd3) randomBlockShape <= 9'h36;
 		else if (blockType == 3'd4) randomBlockShape <= 9'h17;
+		else if (blockType == 3'd5) randomBlockShape <= 9'h97;
 		else randomBlockShape <= 9'h0;
 	end
 

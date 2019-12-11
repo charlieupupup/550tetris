@@ -50,6 +50,6 @@ module lfsr(clock, seed, q);
 		else loadFlag <= 1'b0;
 	end
 	
-	assign q = dffeOut % 3'b101;
+	assign q = dffeOut % 3'b110;
 	
 endmodule
