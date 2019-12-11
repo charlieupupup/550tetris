@@ -1,3 +1,4 @@
+Warning (10268): Verilog HDL information at field.v(296): always construct contains both blocking and non-blocking assignments File: H:/Altera_lite/Github/550tetris/tetrisVGA10by10/field.v Line: 296
 Warning (10268): Verilog HDL information at positionMove.v(20): always construct contains both blocking and non-blocking assignments File: H:/Altera_lite/Github/550tetris/tetrisVGA10by10/positionMove.v Line: 20
 Warning (10268): Verilog HDL information at clkCounter.v(16): always construct contains both blocking and non-blocking assignments File: H:/Altera_lite/Github/550tetris/tetrisVGA10by10/clkCounter.v Line: 16
 Warning (10268): Verilog HDL information at clkCounter.v(24): always construct contains both blocking and non-blocking assignments File: H:/Altera_lite/Github/550tetris/tetrisVGA10by10/clkCounter.v Line: 24

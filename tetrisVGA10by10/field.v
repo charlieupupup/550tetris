@@ -47,7 +47,8 @@ module field(clock, reset, leftTrue, rightTrue, downTrue, rotateTrue, blockType,
 	wire gameOverConflict;
 	conflictCheck gameOver_cC(field, block, blockX, blockY, gameOverConflict);
 	always @(*) begin
-		if (blockX == 4'd4 && blockY == 4'd0 && gameOverConflict) gameOver = 1'b1;
+		if (realfield[0:9] != 10'b0) gameOver = 1'b1;
+		else if (blockX == 4'd4 && blockY == 4'd0 && gameOverConflict) gameOver = 1'b1;
 		else gameOver = 1'b0;
 	end
 	
@@ -145,7 +146,14 @@ module field(clock, reset, leftTrue, rightTrue, downTrue, rotateTrue, blockType,
 	reg [0:8] nextBlock;
 	
 	always @(*) begin
-		if (downTrue) begin
+		if (clearTrue) begin 
+			opOK = 1'b0;
+			bottomTouch = 1'b0;
+			nextBlockX = blockX;
+			nextBlockY = blockY;
+			nextBlock = block;
+		end 
+		else if (downTrue) begin
 			opOK = 1'b1;
 			bottomTouch = downBottomTouch;
 			nextBlockX = blockX;
@@ -286,7 +294,23 @@ module field(clock, reset, leftTrue, rightTrue, downTrue, rotateTrue, blockType,
 	
 	integer i, j;
 	always @(negedge clock or posedge reset) begin ////////////
-		if (reset) realfield <= 100'h0000000000;
+		if (reset) begin
+			realfield <= 100'h0000000000;
+			score = 32'b0;
+		end
+		else if (clearTrue) begin
+			if (clearFlag[0]) realfield[0:9] = realfield[0:9] >> 10;
+			else if (clearFlag[1]) realfield[0:19] = realfield[0:19] >> 10;
+			else if (clearFlag[2]) realfield[0:29] = realfield[0:29] >> 10;
+			else if (clearFlag[3]) realfield[0:39] = realfield[0:39] >> 10;
+			else if (clearFlag[4]) realfield[0:49] = realfield[0:49] >> 10;
+			else if (clearFlag[5]) realfield[0:59] = realfield[0:59] >> 10;
+			else if (clearFlag[6]) realfield[0:69] = realfield[0:69] >> 10;
+			else if (clearFlag[7]) realfield[0:79] = realfield[0:79] >> 10;
+			else if (clearFlag[8]) realfield[0:89] = realfield[0:89] >> 10;
+			else if (clearFlag[9]) realfield[0:99] = realfield[0:99] >> 10;
+			score = score + 32'b1;
+		end
 		else if (/*moveTrue &&*/ opOK && bottomTouch) begin
 			for (j = 0; j < 3; j = j + 1) begin
 				for (i = 0; i < 3; i = i + 1) begin
@@ -296,6 +320,22 @@ module field(clock, reset, leftTrue, rightTrue, downTrue, rotateTrue, blockType,
 		end
 		
 	end
+	
+	// Clear lines
+	reg [0:9] clearFlag;
+	reg clearTrue;
+	initial clearFlag = 10'b0;
+	initial clearTrue = 1'b0;
+	always @(*) begin
+		for (i = 0; i < 10; i = i + 1) begin
+			clearFlag[i] = realfield[10 * i + 0] & realfield[10 * i + 1] & realfield[10 * i + 2] &
+								realfield[10 * i + 3] & realfield[10 * i + 4] & realfield[10 * i + 5] & realfield[10 * i + 6] &
+								realfield[10 * i + 7] & realfield[10 * i + 8] & realfield[10 * i + 9];
+		end
+		if (clearFlag != 10'b0) clearTrue = 1'b1;
+		else clearTrue = 1'b0;
+	end
+	
 	
 	
 	// Background matrix end----------------------------------------------------
